@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token 
 
-  def sef.find_by_credentials(email=null, username=null, password)
+  def self.find_by_credentials(email=null, username=null, password)
     username == null ? user = User.find_by(email: email) : user = User.find_by(username: usernmae)
     return nil unless user && user.valid_password?(password)
     user
