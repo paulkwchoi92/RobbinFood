@@ -1,36 +1,35 @@
-import React from 'react'
+import React from "react";
 
-import { withRouter } from 'react-router-dom'
+import { withRouter } from "react-router-dom";
 
-class SessionForm extends React.Componenet {
+class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: ''
+      username: "",
+      password: ""
     };
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
+
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarger.value
-    })
+    return e =>
+      this.setState({
+        [field]: e.currentTarger.value
+      });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
+    this.props.processForm(user);
   }
 
   renderErrors() {
     return (
       <ul>
-        {this.props.errors.maps((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
     );
@@ -43,33 +42,37 @@ class SessionForm extends React.Componenet {
           Welcome to RobbinFood
           <br />
           {this.renderErrors()}
-          <div clasName="login-form">
+          <div className="login-form">
             <br />
-            <label>Email or Username
-              <input type="text"
+            <label>
+              Email or Username
+              <input
+                type="text"
                 value={this.state.username}
-                onChange={this.update('username')}
+                onChange={this.update("username")}
                 className="login-input"
               />
             </label>
-            <label>Password:
-              <input type="password"
+            <label>
+              Password:
+              <input
+                type="password"
                 value={this.state.password}
-                onChage={this.update('password')}
+                onChange={this.update("password")}
                 className="login-input"
               />
             </label>
-            <br/>
-                <input
-                  className="session-submit"
-                  type="submit"
-                 value={this.props.formType}
-                  />
+            <br />
+            <input
+              className="session-submit"
+              type="submit"
+              value={this.props.formType}
+            />
           </div>
         </form>
       </div>
-    )
+    );
   }
-
-  
 }
+
+export default SessionForm;

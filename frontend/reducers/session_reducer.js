@@ -1,7 +1,7 @@
 import {
   RECEIVE_CURRENT_USER,
   LOGOUT_CURRENT_USER
-} from '../actions/sessions_actions'
+} from '../actions/session_actions'
 
 const _nullUser = Object.freeze({
   id: null 
@@ -18,3 +18,5 @@ const sessionReducer = (state = _nullUser, action) => {
       return state;
   }
 }
+
+export default sessionReducer
