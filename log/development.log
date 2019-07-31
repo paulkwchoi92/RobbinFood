@@ -8,3 +8,845 @@ Completed 200 OK in 433ms (Views: 416.1ms | ActiveRecord: 0.0ms)
 
 
   [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2019-07-30 22:44:59 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kilwoungchoi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 994ms (Views: 984.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 22:45:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 231ms (Views: 229.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 22:46:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 260ms (Views: 258.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 22:49:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 234ms (Views: 232.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 22:49:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 247ms (Views: 246.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 22:53:21 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 265ms (Views: 263.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 22:53:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 266ms (Views: 264.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 22:55:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 255ms (Views: 253.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 22:56:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 270ms (Views: 268.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 22:59:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 265ms (Views: 263.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 22:59:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 247ms (Views: 245.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:02:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 233ms (Views: 231.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:03:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 241ms (Views: 239.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:05:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 234ms (Views: 232.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:08:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:10:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 234ms (Views: 232.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:10:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:10:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 253ms (Views: 251.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:12:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:13:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 222ms (Views: 220.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:13:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:13:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 242ms (Views: 240.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:13:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:14:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:14:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:16:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 235ms (Views: 234.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:17:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 258ms (Views: 256.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:18:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 234ms (Views: 232.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 23:18:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:18:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 252ms (Views: 250.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:19:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:19:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 232ms (Views: 230.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:24:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:24:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 244ms (Views: 242.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:26:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 249ms (Views: 247.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:27:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 227ms (Views: 225.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:28:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 256ms (Views: 254.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:28:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:28:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:28:13 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:28:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 293ms (Views: 291.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:31:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:31:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//" for ::1 at 2019-07-30 23:32:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 267ms (Views: 265.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 08:22:59 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kilwoungchoi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 973ms (Views: 965.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 08:29:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 08:31:48 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kilwoungchoi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 1075ms (Views: 1064.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 08:33:55 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kilwoungchoi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 686ms (Views: 676.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 08:41:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 08:44:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 304ms (Views: 301.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 08:49:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 292ms (Views: 290.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 08:56:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 08:57:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 253ms (Views: 251.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 08:57:23 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"sdfsdf", "password"=>"[FILTERED]"}, "froamt"=>:json}
+Completed 500 Internal Server Error in 233ms (ActiveRecord: 10.2ms)
+
+
+
+NoMethodError - undefined method `ssesion_token' for #<User:0x00007fe17e9d1b08>
+Did you mean?  session_token
+               session_token=
+               session_token?:
+  app/models/user.rb:33:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:8:in `create'
+
+Started GET "/" for ::1 at 2019-07-31 09:02:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 09:02:35 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"asdfasdfasdf", "password"=>"[FILTERED]"}, "froamt"=>:json}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 200 OK in 232ms (Views: 0.1ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 09:04:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 09:04:44 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"paulpaul@gmail.com", "password"=>"[FILTERED]"}, "froamt"=>:json}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 422 Unprocessable Entity in 224ms (Views: 0.2ms | ActiveRecord: 6.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(835949762669211330)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AlterUsersTable (20190731160632)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.6ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "username"[0m
+  ↳ db/migrate/20190731160632_alter_users_table.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190731160632"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (3.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(835949762669211330)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-07-31 09:45:24 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kilwoungchoi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 09:45:27 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"asdfasdf", "password"=>"[FILTERED]"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 500 Internal Server Error in 227ms (ActiveRecord: 9.6ms)
+
+
+
+NoMethodError - undefined method `username' for #<User:0x00007fe1dd6a8d78>:
+  app/controllers/api/users_controller.rb:9:in `create'
+
+Started POST "/api/users" for ::1 at 2019-07-31 09:47:04 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"asdfasdf", "password"=>"[FILTERED]"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.3ms)
+
+
+
+NoMethodError - undefined method `username' for #<User:0x00007fe1dddd1aa0>:
+  app/controllers/api/users_controller.rb:9:in `create'
+
+Started GET "/" for ::1 at 2019-07-31 09:56:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 09:57:00 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"ㅁㄴㅇㄹㅁㄴㅇㄹ", "password"=>"[FILTERED]"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 500 Internal Server Error in 208ms (ActiveRecord: 0.4ms)
+
+
+
+NoMethodError - undefined method `username' for #<User:0x00007fe1dcb98cd0>:
+  app/controllers/api/users_controller.rb:9:in `create'
+
+Started GET "/" for ::1 at 2019-07-31 10:00:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 10:01:00 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"paulpaul@gmail.com", "password"=>"[FILTERED]"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 500 Internal Server Error in 226ms (ActiveRecord: 10.1ms)
+
+
+
+NoMethodError - undefined method `username' for #<User:0x00007fe1bd4a2dc8>:
+  app/controllers/api/users_controller.rb:9:in `create'
+
+Started GET "/" for ::1 at 2019-07-31 10:29:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 363ms (Views: 360.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 10:32:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 318ms (Views: 316.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 10:32:45 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"paulpaul@gmail.com", "password"=>"[FILTERED]", "first_name"=>"Paul", "last_name"=>"Choi", "dob"=>"2019-07-17"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 500 Internal Server Error in 221ms (ActiveRecord: 0.3ms)
+
+
+
+NoMethodError - undefined method `username' for #<User:0x00007fe17e97a0d8>:
+  app/controllers/api/users_controller.rb:9:in `create'
+
+Started GET "/" for ::1 at 2019-07-31 10:35:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 280ms (Views: 278.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 10:35:25 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"aasdfasdfasdf", "password"=>"[FILTERED]", "first_name"=>"asdfasdfasdf", "last_name"=>"asdfasdfasdf", "dob"=>"2019-07-24"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 500 Internal Server Error in 212ms (ActiveRecord: 0.3ms)
+
+
+
+NoMethodError - undefined method `username' for #<User:0x00007fe1dcb32e58>:
+  app/controllers/api/users_controller.rb:9:in `create'
+
+Started GET "/" for ::1 at 2019-07-31 10:40:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 10:41:12 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"paulpaul@gmail.com", "password"=>"[FILTERED]", "first_name"=>"paul", "last_name"=>"choi", "dob"=>"2019-07-24"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 422 Unprocessable Entity in 218ms (Views: 0.2ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 10:41:15 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"paulpaul@gmail.com", "password"=>"[FILTERED]", "first_name"=>"paul", "last_name"=>"choi", "dob"=>"2019-07-24"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 422 Unprocessable Entity in 205ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 10:42:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 284ms (Views: 282.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 10:42:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 353ms (Views: 350.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 10:42:57 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "first_name"=>"paul", "last_name"=>"choi", "dob"=>"2019-07-23", "username"=>"paulpaul@gmail.com"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 422 Unprocessable Entity in 209ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 10:42:59 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "first_name"=>"paul", "last_name"=>"choi", "dob"=>"2019-07-23", "username"=>"paulpaul@gmail.com"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 422 Unprocessable Entity in 203ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 10:49:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 318ms (Views: 316.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 10:53:07 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "first_name"=>"Paul", "last_name"=>"Choi", "dob"=>"", "username"=>"paulpaul@gmail.com"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 422 Unprocessable Entity in 199ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 11:04:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 515ms (Views: 513.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 11:07:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 500ms (Views: 498.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 11:09:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 527ms (Views: 525.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 11:13:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 500ms (Views: 497.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 11:13:32 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "first_name"=>"paul", "last_name"=>"choi", "dob"=>"2019-07-17", "username"=>"paulpaul@gmail.com"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 422 Unprocessable Entity in 374ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 11:15:45 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 707ms (Views: 704.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 11:15:51 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "first_name"=>"", "last_name"=>"", "dob"=>""}, "froamt"=>:json}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 422 Unprocessable Entity in 317ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 11:19:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 701ms (Views: 699.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 11:19:56 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "first_name"=>"paul", "last_name"=>"choi", "dob"=>"2019-07-23", "username"=>"paulpaul@gmail.com"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 422 Unprocessable Entity in 340ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 11:21:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 723ms (Views: 720.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 11:21:50 -0700
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "first_name"=>"paulpaul", "last_name"=>"paul", "dob"=>"2019-07-10", "username"=>"paulpaul@gmail.com"}, "froamt"=>:json}
+Unpermitted parameter: :username
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 422 Unprocessable Entity in 325ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 11:24:36 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kilwoungchoi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 2649ms (Views: 2644.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 11:24:39 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"paulpaul@gmail.com", "password"=>"[FILTERED]", "first_name"=>"paulpaul", "last_name"=>"choi", "dob"=>"2019-07-23"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[36mUser Create (30.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "first_name", "last_name", "dob", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "paulpaul@gmail.com"], ["password_digest", "$2a$12$ojAcRGKrx5Mg4Hlxp4sV5.1RyRLzZCcmIsjfe3gL0sEzdmHAclLr6"], ["session_token", "mu3BCew0HhYobb9R2PSF9A"], ["first_name", "paulpaul"], ["last_name", "choi"], ["dob", "2019-07-23"], ["created_at", "2019-07-31 18:24:40.014948"], ["updated_at", "2019-07-31 18:24:40.014948"]]
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 500 Internal Server Error in 574ms (ActiveRecord: 47.8ms)
+
+
+
+NoMethodError - undefined method `login!' for #<Api::UsersController:0x00007ff65ae81f40>
+Did you mean?  login:
+  app/controllers/api/users_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2019-07-31 11:25:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-31 11:25:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 58ms (Views: 51.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 11:26:00 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"paulpaul@gmail.com", "password"=>"[FILTERED]", "first_name"=>"paul", "last_name"=>"choi", "dob"=>"2019-07-29"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "first_name", "last_name", "dob", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "paulpaul@gmail.com"], ["password_digest", "$2a$12$1Z6GdNXeLEEyt62Zbns0GOjoNuyK1mKxw.VIjA6qE48Z06xdwn3Xi"], ["session_token", "oviz1lCV0YHmCwujxk6OhQ"], ["first_name", "paul"], ["last_name", "choi"], ["dob", "2019-07-29"], ["created_at", "2019-07-31 18:26:01.009220"], ["updated_at", "2019-07-31 18:26:01.009220"]]
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 500 Internal Server Error in 442ms (ActiveRecord: 20.7ms)
+
+
+
+NoMethodError - undefined method `reset_session_token!' for #<User:0x00007ff63b6bf240>
+Did you mean?  restore_session_token!:
+  app/controllers/application_controller.rb:18:in `login'
+  app/controllers/api/users_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2019-07-31 11:26:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 11:27:05 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"paulpaul@gmail.com", "password"=>"[FILTERED]", "first_name"=>"paul", "last_name"=>"choi", "dob"=>"2019-07-18"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "first_name", "last_name", "dob", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "paulpaul@gmail.com"], ["password_digest", "$2a$12$8FHhzLo5dAQ8oMYp9LmyPOZkJYFcL5Z3qQDP9Tgzt/jZI57C1wEzG"], ["session_token", "NilQXh_tSvTPuSRj9vWTeA"], ["first_name", "paul"], ["last_name", "choi"], ["dob", "2019-07-18"], ["created_at", "2019-07-31 18:27:06.059736"], ["updated_at", "2019-07-31 18:27:06.059736"]]
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:26
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "5tak0dzaD3x7cWtLydyO-w"], ["updated_at", "2019-07-31 18:27:06.063958"], ["id", 3]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:26
+Completed 200 OK in 387ms (Views: 0.2ms | ActiveRecord: 12.4ms)
+
+
