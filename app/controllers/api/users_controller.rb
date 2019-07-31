@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
       login!(@user)
       render json: 'Creation Successful'
     else
-      render json: 'Failed'
+      render json: @user.errors.full_messages, status: 422
     end
   end
 
