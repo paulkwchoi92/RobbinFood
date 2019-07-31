@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux'
 
+
 import {
   Route,
   Redirect,
@@ -9,6 +10,10 @@ import {
   HashRouter
 } from 'react-router-dom';
 
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import GreetingContainer from './greetings/greetings_container'
+import SignUpFormContainer from './session_form/signup_form_container';
+import LogInFormContainer from './session_form/login_form_container';
 const App = () => (
   <div> 
     <header>
@@ -24,3 +29,5 @@ const App = () => (
     </Switch>
   </div>
 )
+
+export default App
