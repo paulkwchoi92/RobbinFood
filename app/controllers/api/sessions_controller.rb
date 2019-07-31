@@ -1,4 +1,4 @@
-class Api::SessionsControllers < ApplicationController
+class Api::SessionsController < ApplicationController
   def create #fix5
     @user = User.find_by_credentials(
       params[:user][:email],
@@ -15,12 +15,12 @@ class Api::SessionsControllers < ApplicationController
 
   def destroy
   @user = current_user
-  if @user
-    logout
-    render "api/users/show"
-  else
-    render json: ["Nobody signed in"], status: 404
-  end
+    if @user
+      logout
+      render "api/users/show"
+    else
+      render json: ["Nobody signed in"], status: 404
+    end
   end
 
 end
