@@ -1,9 +1,6 @@
 class Api::SessionsControllers < ApplicationController
   def create #fix5
-    @user = params[:user][:username] ? User.find_by_credentials(
-       params[:user][:username],
-      params[:user][:password]
-    ) : User.find_by_credentials(
+    @user = User.find_by_credentials(
       params[:user][:email],
       params[:user][:password])
     if @user

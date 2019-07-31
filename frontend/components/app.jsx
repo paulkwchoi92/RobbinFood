@@ -1,5 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux'
+import { faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 import {
@@ -18,7 +20,7 @@ const App = () => (
   <div> 
     <header>
       <Link to="/" className="header-link-logo">
-        <h1>RobbinFood</h1>
+        <FontAwesomeIcon icon={faPizzaSlice} /><h1>RobbinFood</h1>
       </Link>
       <GreetingContainer />
     </header>
