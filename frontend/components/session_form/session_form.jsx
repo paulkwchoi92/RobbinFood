@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
+    // debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
@@ -114,6 +114,7 @@ class SessionForm extends React.Component {
             />
           </div>
         </form>
+        {this.renderErrors()}
       </div>
     );
     } else {
@@ -152,6 +153,7 @@ class SessionForm extends React.Component {
               />
             </div>
           </form>
+          {this.renderErrors()}
         </div>
       );
     }

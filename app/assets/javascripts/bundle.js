@@ -145,9 +145,11 @@ var login = function login(user) {
   };
 };
 var logout = function logout() {
-  return distpach(_util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function (user) {
-    return dispatch(logoutCurrentUser());
-  }));
+  return function (dispatch) {
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function (user) {
+      return dispatch(logoutCurrentUser());
+    });
+  };
 };
 
 /***/ }),
@@ -238,7 +240,7 @@ var Greeting = function Greeting(_ref) {
       className: "header-group"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
       className: "header-name"
-    }, "Hi, ", currentUser.username, "!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }, "Hi, ", currentUser.first_name, " ", currentUser.last_name, "!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "header-button",
       onClick: logout
     }, "Log Out"));
@@ -430,7 +432,7 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      debugger;
+      // debugger
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user);
@@ -489,7 +491,7 @@ function (_React$Component) {
           className: "session-submit",
           type: "submit",
           value: this.props.formType
-        }))));
+        }))), this.renderErrors());
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form-container"
@@ -512,7 +514,7 @@ function (_React$Component) {
           className: "session-submit",
           type: "submit",
           value: this.props.formType
-        }))));
+        }))), this.renderErrors());
       }
     }
   }]);
