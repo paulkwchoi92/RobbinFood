@@ -412,7 +412,7 @@ function (_React$Component) {
       var _this2 = this;
 
       return function (e) {
-        return _this2.setState(_defineProperty({}, field, e.currentTarger.value));
+        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
       };
     }
   }, {
@@ -833,16 +833,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 var login = function login(user) {
   return $.ajax({
-    method: "post",
+    method: 'POST',
     url: '/api/session',
     data: {
-      url: url
+      user: user
     }
   });
 };
 var signup = function signup(user) {
   return $.ajax({
-    method: "post",
+    method: 'POST',
     url: '/api/user',
     data: {
       user: user
@@ -851,7 +851,7 @@ var signup = function signup(user) {
 };
 var logout = function logout() {
   return $.ajax({
-    method: 'delete',
+    method: 'DELETE',
     url: '/api/session'
   });
 };
