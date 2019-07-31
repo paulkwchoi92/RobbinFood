@@ -114,6 +114,7 @@ class SessionForm extends React.Component {
             />
           </div>
         </form>
+        {this.renderErrors()}
       </div>
     );
     } else {
@@ -152,6 +153,7 @@ class SessionForm extends React.Component {
               />
             </div>
           </form>
+          {this.renderErrors()}
         </div>
       );
     }
