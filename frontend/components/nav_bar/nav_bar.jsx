@@ -14,27 +14,60 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <header>
-          <nav className="nvb-ct">
-            <h1 className="header-link-logo">
-              <Link to="/">
-                <FontAwesomeIcon className="logo" icon={faPizzaSlice} />
-                <p>RobbinFood</p>
+        <nav className="nvb-ct">
+          <div className="nvb-out">
+            <div className="nvb-mid">
+              <Link to="/" className="nvb-log-btn">
+                <div clasName="nvb-log-out">
+                  <FontAwesomeIcon className="logo" icon={faPizzaSlice} />
+                  <span className="log-n">RobbinFood</span>
+                </div>
               </Link>
-            </h1>
-            <Link to="/" className="i-l">
-              <p>Investing</p>
-            </Link>
-            <Link to="/" className="cm-l">
-              <p>Cash Management</p>
-            </Link>
-            <GreetingContainer />
-          </nav>
-        </header>
+              <div className="lft-cont">
+                <div className="lft-cont-lft">
+                  <ul className="sec2">
+                    <li>
+                      <Link to="/" className="inv-btn">
+                        <span className="btn-n">Investing</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/" className="csh-mng-btn">
+                        <span className="btn-n">Cash Management</span>
+                        <div>
+                          <span className="cmgs">COMING SOON</span>
+                        </div>
+                      </Link>
+                    </li>
+                    <div clasName="mores">
+                      <div role="button" className="m-d">
+                        <div>MORE</div>
+                        <svg
+                          className="m-arr"
+                          width="8"
+                          height="6"
+                          fill="none"
+                        >
+                          <path d="M1 1L4 4L7 1"
+                            stroke="inherit"
+                          stroke-width="2"></path>
+                        </svg>
+                      </div>
+                      
+                    </div>
+                  </ul>
+                </div>
+                <div className="lft-cont-rgt">
+                  <GreetingContainer />
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
         <Switch>
           <AuthRoute exact path="/login" component={LogInFormContainer} />
           <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-          {/* <Route exact path="/" component={SearchContainer} /> */}
         </Switch>
       </div>
     );

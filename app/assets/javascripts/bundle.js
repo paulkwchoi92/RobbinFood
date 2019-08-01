@@ -323,22 +323,57 @@ function (_React$Component) {
   _createClass(NavBar, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "nvb-ct"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "header-link-logo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nvb-out"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nvb-mid"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
-        to: "/"
+        to: "/",
+        className: "nvb-log-btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        clasName: "nvb-log-out"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         className: "logo",
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faPizzaSlice"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "RobbinFood"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "log-n"
+      }, "RobbinFood"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "lft-cont"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "lft-cont-lft"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "sec2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
         to: "/",
-        className: "i-l"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Investing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+        className: "inv-btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "btn-n"
+      }, "Investing"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
         to: "/",
-        className: "cm-l"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cash Management")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greetings_greetings_container__WEBPACK_IMPORTED_MODULE_6__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+        className: "csh-mng-btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "btn-n"
+      }, "Cash Management"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "cmgs"
+      }, "COMING SOON")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        clasName: "mores"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        role: "button",
+        className: "m-d"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "MORE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "m-arr",
+        width: "8",
+        height: "6",
+        fill: "none"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M1 1L4 4L7 1",
+        stroke: "inherit",
+        "stroke-width": "2"
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "lft-cont-rgt"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greetings_greetings_container__WEBPACK_IMPORTED_MODULE_6__["default"], null)))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
         exact: true,
         path: "/login",
         component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_8__["default"]
