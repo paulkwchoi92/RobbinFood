@@ -10,7 +10,7 @@ const RootNavBar = ({ currentUser }) => {
     <PostLogNav/>
   );
 
-  return currentUser ? newNav() : loggedInNav();
+  return !currentUser ? newNav() : loggedInNav();
 };
 
 export default RootNavBar

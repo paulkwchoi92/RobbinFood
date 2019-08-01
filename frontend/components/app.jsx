@@ -15,9 +15,10 @@ import Snacks from "./extra_features/snacks";
 
 const App = () => (
   <div> 
-    <RootNavBarContainer />
+    
 
     <Switch>
+      <AuthRoute exact path="/" component={RootNavBarContainer} />
       <Route exact path="/snacks" component={Snacks} />
       <Route exact path="/blog" component={Blog} />
       <Route exact path="/help" component={Help} />
@@ -26,6 +27,7 @@ const App = () => (
       <Route exact path="/cashmng" component={CashManagement} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      
     </Switch>
   </div>
 )
