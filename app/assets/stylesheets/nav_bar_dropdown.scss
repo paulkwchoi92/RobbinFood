@@ -1,0 +1,41 @@
+.mores:hover .drpdownfnc {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s;
+}
+.mores:hover .m-dbord {
+  border-bottom: 4px solid #21ce99;
+  padding-top: 4px;
+  cursor: pointer;
+}
+.drpdown {
+  visibility: hidden;
+  background-color: white;
+  opacity: 0;
+  position: absolute;
+  width: 214px;
+  left: calc(50% + -107px);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.07);
+  border-radius: 2px;
+  transform: translateY(-2em);
+  z-index: -1;
+  // transition: all 0.3s ease-in-out 0s,visibility 0s linear 0.,3s, z-index -s linear 0.01s;
+}
+
+.dpdcont {
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  display: block;
+  font-size: 14px;
+  height: 47px;
+  line-height: 47px;
+}
+
+.dpdcont:hover {
+  background-color: lightblue;
+  text-decoration: underline;
+}
