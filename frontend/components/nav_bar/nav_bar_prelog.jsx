@@ -44,16 +44,14 @@ class PreLogNav extends React.Component {
                         <path
                           d="M1 1L4 4L7 1"
                           stroke="inherit"
-                          stroke-width="2"
+                          strokeWidth="2"
                         />
                       </svg>
                     </div>
                     <RootFeatBox />
                   </div>
                 </div>
-                <div className="lft-cont-rgt">
                   <GreetingContainer />
-                </div>
               </div>
             </div>
           </div>
