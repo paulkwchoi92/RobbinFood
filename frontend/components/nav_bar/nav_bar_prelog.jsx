@@ -1,9 +1,9 @@
 import React from "react";
-import { Provider } from "react-redux";
+
 import { faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
+import {  Link} from "react-router-dom";
 
 
 import GreetingContainer from "../greetings/greetings_container";

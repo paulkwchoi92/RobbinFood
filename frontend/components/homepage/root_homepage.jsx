@@ -1,16 +1,16 @@
 import React from 'react'
-import PreLogHome from './nav_bar_prelog';
-import PostLogHome from './nav_bar_postlog'
+import PreLogHome from './prelog_homepage';
+import PostLogHome from './postlog_homepage';
 
 const RootHomePage = ({ currentUser, logout }) => {
   const newHome = () => (
-    <PreLogNav />
+    <PreLogHome />
   );
   const loggedHome = () => (
-    <PostLogNav currentUser={currentUser} logout={logout} />
+    <PostLogHome currentUser={currentUser} logout={logout} />
   );
 
   return !currentUser ? newHome() : loggedHome();
 };
 
-export default RootNavBar
+export default RootHomePage
