@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
+  
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
@@ -103,6 +103,7 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update("password")}
                 className="login-input"
+                
               />
             </label>
             <br />
@@ -158,6 +159,8 @@ class SessionForm extends React.Component {
       );
     }
   }
+
+  
 }
 
 export default SessionForm;

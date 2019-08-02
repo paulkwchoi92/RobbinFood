@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    <nav className="login-signup">
-      <Link to="/login" className="login-button">Login</Link>
-      &nbsp;&nbsp;
+    <div className="lft-cont-rgt" >
+      <Link to="/login" className="login-button">
+        <span className='li-txt'>Login</span>
+      </Link>
       <Link to="/signup" className="signup-button">Sign up!</Link>
-    </nav>
+    </div>
   );
   const personalGreeting = () => (
     <hgroup className="header-group">

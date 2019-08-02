@@ -1,9 +1,81 @@
 .nvb-ct {
-   display: flex;
-   position: fixed;
-   background: yellow;
-   height: 72px;
+  -webkit-box-align: center;
   align-items: center;
-  margin: 0 auto;
+  background: white;
+  display: flex;
+  height: 72px;
+  position: fixed;
+  top: 0;
+  transition: background 250ms ease-out;
+  width: 100vw;
+  z-index: 2;
+}
+.nvb-out {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.nvb-mid {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  height: 100%;
   width: 100vw;
 }
+.nvb-log-btn {
+  font-weight: 500;
+  text-decoration: none;
+  -webkit-box-align: center;
+  align-items: center;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  text-decoration-color: black;
+  text-decoration-style: solid;
+  -webkit-box-pack: justify;
+  height: 48px;
+  width: 154px;
+  font-family: "Lato", sans-serif;
+}
+
+.nvb-log-btn:hover {
+  color: rgb(32, 194, 132);
+  text-decoration: underline;
+}
+
+.nvb-log-btn:hover .nvb-log-out {
+  color: rgb(32, 194, 132);
+  text-decoration: underline;
+}
+.nvb-log-out {
+  -webkit-box-align: center;
+  align-items: center;
+  color: black;
+  display: flex;
+  fill: black;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-right: 48px;
+  transition: fill 200ms ease-out;
+}
+
+.log-n {
+  color: currentColor;
+  font-size: 20px;
+  font-weight: 400px;
+  margin-left: 5px;
+  letter-spacing: -0.97;
+}
+
+.lft-cont {
+  display: flex;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  height: 100%;
+}
+
+
