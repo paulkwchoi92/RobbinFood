@@ -18,10 +18,18 @@ import RootFeatBox from "../extra_features/root_feat_box";
 import Snacks from "../extra_features/snacks";
 
 class PostLogNav extends React.Component {
+  constructor(props) {
+    super(props)
+    this.logout = this.props.logout
+    debugger
+  }
   render() {
     return (
       <div>
-       hi
+      <hgroup className="header-group">
+        <h2 className="header-name">Hi, {this.props.currentUser.first_name} {this.props.currentUser.last_name}!</h2>
+        <button className="header-button" onClick={this.logout}>Log Out</button>
+        </hgroup>
       </div>
     );
   }
