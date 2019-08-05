@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.logIn = logIn;
   // window.logOut = logOut;
   // window.signUp = signUp;
-  // window.getState = store.getState;
+  window.getState = store.getState;
   // window.dispatch = store.dispatch;
   // window.fetchBenches = fetchBenches;
 });
