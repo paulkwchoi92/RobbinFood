@@ -31,13 +31,17 @@ class SessionForm extends React.Component {
   
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user)
+      .then(() => {
+        debugger
+        return(this.props.history.push('/'))
+      });;
   }
 
   renderErrors() {
     return (
       <ul>
-        {this.props.errors.map((error, i) => (
+        {Object.values(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>

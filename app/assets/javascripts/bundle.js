@@ -131,6 +131,7 @@ var signup = function signup(user) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
+      debugger;
       return dispatch(receiveErrors(err.responseJSON));
     });
   };
@@ -564,7 +565,7 @@ function (_React$Component) {
   _createClass(PostLogHome, [{
     key: "render",
     value: function render() {
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "homecont"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "homeoutl"
@@ -576,13 +577,27 @@ function (_React$Component) {
         className: "toptext"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "tti"
-      }, "Practice Investing Free")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Practice", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "tti2"
+      }, "Investing Free"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "midtext"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mt"
+      }, "Invest in stocks, ETFs, options, and cryptocurrencies, all commission-free, right from your phone or desktop.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ltsu"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "ltsuin"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/signup",
+        className: "signup-button"
+      }, "Sign up!")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "imagebox"
-      }))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "imgbo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://cdn.robinhood.com/assets-about/6b2e66f81aef0f0d7dbeef37392e0eca.png",
+        className: "rbimg"
+      }))))));
     }
   }]);
 
@@ -653,7 +668,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "tti"
       }, "Practice", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        clasName: "tti2"
+        className: "tti2"
       }, "Investing Free"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "midtext"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1185,14 +1200,20 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user);
+      this.props.processForm(user).then(function () {
+        debugger;
+        return _this3.props.history.push('/');
+      });
+      ;
     }
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, Object.values(this.props.errors).map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: "error-".concat(i)
         }, error);
@@ -1625,11 +1646,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state);
+  Object.freeze(state); // debugger
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:
-      return action.errors;
+      // const newState = Object.assign({}, action.errors)
+      return Object.assign({}, action.errors);
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return [];
@@ -1652,10 +1674,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 
-
-var _nullUser = Object.freeze({
+var _nullUser = {
   id: null
-});
+};
 
 var sessionReducer = function sessionReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullUser;
@@ -1762,8 +1783,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }), root); // window.logIn = logIn;
   // window.logOut = logOut;
   // window.signUp = signUp;
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+
+  window.getState = store.getState; // window.dispatch = store.dispatch;
   // window.fetchBenches = fetchBenches;
 });
 
@@ -41056,7 +41077,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

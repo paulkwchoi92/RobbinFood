@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   validates :email, :password_digest, :session_token, presence: true
-  validates  :first_name, :last_name, :dob, :portfolio_value, presence: true 
+  validates  :first_name, :last_name, :dob, presence: true 
 
   attr_reader :password 
 
@@ -34,6 +34,7 @@ class User < ApplicationRecord
   end
 
   def ensure_portfolio_value
-    self.portfolio_value = 100000
+    self.portfolio_value ||= 100000
+  
   end
 end

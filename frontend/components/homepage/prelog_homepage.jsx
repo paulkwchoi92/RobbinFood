@@ -17,7 +17,7 @@ class PreLogHome extends React.Component {
             <div className="toptext">
                 <h1 className="tti">
                   Practice<br/>
-               <span clasName="tti2">Investing Free</span></h1>
+               <span className="tti2">Investing Free</span></h1>
             </div>
             <div className="midtext">
                 <span className="mt">Invest in stocks, ETFs, options, and

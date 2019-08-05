@@ -5,10 +5,11 @@ import {
 
 export default (state = [], action) => {
   Object.freeze(state);
- 
+  // debugger
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
-      return action.errors;
+      // const newState = Object.assign({}, action.errors)
+      return Object.assign({}, action.errors);
     case RECEIVE_CURRENT_USER:
       return [];
     default:
