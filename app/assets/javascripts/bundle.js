@@ -1223,7 +1223,7 @@ function (_React$Component) {
     key: "demoLogin",
     value: function demoLogin(e) {
       e.preventDefault();
-      this.props.login({
+      this.props.processForm({
         email: 'demo@demo.com',
         password: 'longpassword'
       });
