@@ -14,7 +14,7 @@ class Api::WatchlistsController < ApplicationController
       @watchlist.delete
       render json: {id: @watchlist.id}
     else 
-      render json: {} status: "notfound"
+      render json: {}, status: "notfound"
     end
   end
 
