@@ -7,7 +7,7 @@ export const fetchStock = symbol => (
   })
 );
 
-export const getIntradayChart = symbol => (
+export const getIntradayData = symbol => (
   $.ajax({
     method: "GET",
     url: `https://intraday.worldtradingdata.com/api/v1/intraday`,
@@ -20,11 +20,11 @@ export const getIntradayChart = symbol => (
   })
 );
 
-export const getHistoricalChart = symbol => {
+export const getHistoryData = symbol => {
   const dateEnd = moment().subtract(5, 'years').format("YYYY-MM-DD");
   return $.ajax({
     method: "GET",
-    url: `https://www.worldtradingdata.com/api/v1/history`,
+    url: `https://api.worldtradingdata.com/api/v1/history`,
     data: {
       symbol: symbol,
       date_from: dateEnd,
@@ -33,10 +33,10 @@ export const getHistoricalChart = symbol => {
   });
 };
 
-export const getInfo = symbol => {
+export const getStockInfo = symbol => {
   return $.ajax({
     method: "GET",
-    url: `https://www.worldtradingdata.com/api/v1/stock`,
+    url: `https://api.worldtradingdata.com/api/v1/stock`,
     data: {
       symbol: symbol,
       api_token: zWGOqwDCoe0BBKe3FN1SM3x1ahCMbEs47EywsN8rpHTEByE7dMrezhsqBv4A
@@ -44,31 +44,6 @@ export const getInfo = symbol => {
   }).then(info => info.data[0]);
 };
 
-export const getNews = name => {
-  if (name) {
-    return $.ajax({
-      method: "GET",
-      url: `https://newsapi.org/v2/everything`,
-      data: {
-        q: name,
-        language: "en",
-        apiKey: zWGOqwDCoe0BBKe3FN1SM3x1ahCMbEs47EywsN8rpHTEByE7dMrezhsqBv4A,
-        pageSize: 5
-      }
-    });
-  } else {
-    return $.ajax({
-      method: "GET",
-      url: `https://newsapi.org/v2/top-headlines`,
-      data: {
-        category: "business",
-        country: "us",
-        apiKey: zWGOqwDCoe0BBKe3FN1SM3x1ahCMbEs47EywsN8rpHTEByE7dMrezhsqBv4A,
-        pageSize: 5
-      }
-    });
-  }
-};
 
 
 export const getSearch = () => (
