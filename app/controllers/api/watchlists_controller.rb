@@ -12,9 +12,9 @@ class Api::WatchlistsController < ApplicationController
     @watchlist = Watchlist.find(watchlist_params)
     if @watchlist 
       @watchlist.delete
-      render json: {id: @waatchlist.id}
+      render json: {id: @watchlist.id}
     else 
-      render json: {}. status: "notfound"
+      render json: {} status: "notfound"
     end
   end
 
