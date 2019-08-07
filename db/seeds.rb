@@ -9,11 +9,13 @@
 
 
 
-user1 = User.create( email: "demo@demo.com", password:"longpassword", first_name: "Demo", last_name:"user", dob:"09-24-1992")
+
+  Stock.destroy_all
+  User.destroy_all
+
+  User.create!(email: "demo@demo.com", password:"longpassword", first_name: "Demo", last_name:"user")
 
 
-
-  User.create(email: "demo@demo.com", password:"longpassword", first_name: "Demo", last_name:"user", dob:"09-24-1992")
   File.open("entry_data.txt").each do |line|
     stock = JSON.parse(line)
     stock["employees"] = stock["employees"].delete(",").to_i if stock["employees"]

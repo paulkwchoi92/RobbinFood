@@ -1,4 +1,4 @@
-import React from "react";
+\import React from "react";
 
 import { withRouter } from "react-router-dom";
 
@@ -15,9 +15,10 @@ class SessionForm extends React.Component {
           password: "",
           first_name: "",
           last_name: "",
-          dob: ""
+         
         });
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -47,6 +48,11 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
+
+  demoLogin(e) {
+    e.preventDefault();
+    this.props.login({ email: 'demo@demo.com', password: 'longpassword' });
+  }
   renderOtherFields() {
     return (
       <div>
@@ -68,15 +74,7 @@ class SessionForm extends React.Component {
             className="login-input"
           />
         </label>
-        <label>
-          Date Of Birth
-          <input
-            type="date"
-            // value={this.state.dob}
-            onChange={this.update("dob")}
-            className="login-input"
-          />
-        </label>
+        
       </div>
     );
   }
@@ -159,6 +157,7 @@ class SessionForm extends React.Component {
             </div>
           </form>
           {this.renderErrors()}
+          <button onClick={this.demoLogin} className="sessionForm-btn">Demo Login</button>
         </div>
       );
     }
