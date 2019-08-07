@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_160632) do
+ActiveRecord::Schema.define(version: 2019_08_07_155512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "stocks", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "symbol", null: false
+    t.string "description"
+    t.string "ceo"
+    t.integer "num_of_emps"
+    t.string "hq"
+    t.integer "founded"
+    t.float "div_yield"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_stocks_on_name"
+    t.index ["symbol"], name: "index_stocks_on_symbol", unique: true
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "symbol", null: false
+    t.string "transaction_type", null: false
+    t.float "stock_price", null: false
+    t.integer "num_shares", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["symbol"], name: "index_transactions_on_symbol"
+    t.index ["user_id"], name: "index_transactions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -22,9 +49,21 @@ ActiveRecord::Schema.define(version: 2019_07_31_160632) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.date "dob", null: false
-    t.float "portfolio_value", default: 100000.0, null: false
+    t.float "buying_power", default: 100000.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "portfolio_value"
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["session_token"], name: "index_users_on_session_token"
+  end
+
+  create_table "watchlists", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "symbol", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["symbol"], name: "index_watchlists_on_symbol"
+    t.index ["user_id"], name: "index_watchlists_on_user_id"
   end
 
 end
