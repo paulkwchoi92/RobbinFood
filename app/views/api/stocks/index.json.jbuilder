@@ -1,0 +1,13 @@
+    
+json = {
+
+}
+
+@stocks.each do |stock|
+  json[stock.symbol] = {
+    symbol: stock.symbol,
+    name: stock.name
+  }
+end
+
+json
