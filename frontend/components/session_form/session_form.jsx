@@ -1,4 +1,4 @@
-\import React from "react";
+import React from "react";
 
 import { withRouter } from "react-router-dom";
 
@@ -118,6 +118,7 @@ class SessionForm extends React.Component {
           </div>
         </form>
         {this.renderErrors()}
+        <button onClick={this.demoLogin} className="sessionForm-btn">Demo Login</button>
       </div>
     );
     } else {
@@ -157,7 +158,7 @@ class SessionForm extends React.Component {
             </div>
           </form>
           {this.renderErrors()}
-          <button onClick={this.demoLogin} className="sessionForm-btn">Demo Login</button>
+          
         </div>
       );
     }
