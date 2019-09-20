@@ -1,6 +1,6 @@
 import moment from "moment";
 
-export const fetchStock = symbol => (
+export const searchStock = symbol => (
   $.ajax({
     method: "GET",
     url: `api/stocks/${symbol}`
@@ -41,7 +41,7 @@ export const getStockInfo = symbol => {
       symbol: symbol,
       api_token: zWGOqwDCoe0BBKe3FN1SM3x1ahCMbEs47EywsN8rpHTEByE7dMrezhsqBv4A
     }
-  }).then(info => info.data[0]);
+  })
 };
 
 
@@ -53,20 +53,3 @@ export const getSearch = () => (
   })
 );
 
-export const watchStock = (id, symbol) => (
-  $.ajax({
-    method: "POST",
-    url: `api/stock_watches`,
-    data: {
-      stock_watch: { user_id: id, symbol }
-    }
-  })
-);
-
-
-export const deleteWatch = id => (
-  $.ajax({
-    method: "DELETE",
-    url: `api/stock_watches/${id}`
-  })
-);
