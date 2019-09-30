@@ -26,10 +26,26 @@ class PostLogNav extends React.Component {
   render() {
     return (
       <div>
-      <hgroup className="header-group">
-        <h2 className="header-name">Hi, {this.props.currentUser.first_name} {this.props.currentUser.last_name}!</h2>
-        <button className="header-button" onClick={this.logout}>Log Out</button>
-        </hgroup>
+        <div>
+          <nav className="nvb-ct">
+            <div className="nvb-out">
+              <div className="nvb-mid">
+                <Link to="/" className="nvb-log-btn">
+                  <div className="nvb-log-out">
+                    <FontAwesomeIcon className="logo" icon={faPizzaSlice} />
+                    <span className="log-n">RobbinFood</span>
+                  </div>
+                </Link>
+                <div className="lft-cont">
+                  <div className="lft-cont-lft">
+
+                  </div><h2 className="header-name">Hi, {this.props.currentUser.first_name} {this.props.currentUser.last_name}!</h2>
+                  <button className="header-button" onClick={this.logout}>Log Out</button>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
       </div>
     );
   }
