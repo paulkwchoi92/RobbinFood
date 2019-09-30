@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :transactions
   has_many :watchlists
 
-  after_initialize :ensure_session_token , :ensure_portfolio_value
+  after_initialize :ensure_session_token , :ensure_portfolio_value, :ensure_buying_power
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email) 
@@ -61,6 +61,9 @@ class User < ApplicationRecord
 
   def ensure_portfolio_value
     self.portfolio_value ||= self.buying_power
+  end
+  def ensure_buying_power
+    self.buying_power ||= 100000
   
   end
 end

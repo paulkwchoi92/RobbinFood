@@ -41,7 +41,11 @@ export const getStockInfo = symbol => {
       symbol: symbol,
       api_token: zWGOqwDCoe0BBKe3FN1SM3x1ahCMbEs47EywsN8rpHTEByE7dMrezhsqBv4A
     }
+<<<<<<< HEAD
   })
+=======
+  }).then(info => info.data[0]);
+>>>>>>> 4f8b015da59f212c7278b25d51c8d7e21683f308
 };
 
 
@@ -53,3 +57,23 @@ export const getSearch = () => (
   })
 );
 
+<<<<<<< HEAD
+=======
+export const watchStock = (id, symbol) => (
+  $.ajax({
+    method: "POST",
+    url: `api/stock_watches`,
+    data: {
+      stock_watch: { user_id: id, symbol }
+    }
+  })
+);
+
+
+export const deleteWatch = id => (
+  $.ajax({
+    method: "DELETE",
+    url: `api/stock_watches/${id}`
+  })
+);
+>>>>>>> 4f8b015da59f212c7278b25d51c8d7e21683f308
