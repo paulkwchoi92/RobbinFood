@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 import React from "react";
-=======
-import React from 'react';
->>>>>>> 4f8b015da59f212c7278b25d51c8d7e21683f308
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4f8b015da59f212c7278b25d51c8d7e21683f308
 import SignUpFormContainer from "./session_form/signup_form_container";
 import LogInFormContainer from "./session_form/login_form_container";
 import CashManagement from "./extra_features/cash_mng";
