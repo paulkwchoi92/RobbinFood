@@ -66,7 +66,7 @@ class SessionForm extends React.Component {
     for (let j = 0; j < password.length; j++) {
       setTimeout(() => {
         this.setState({ password: this.state.password + password[j] });
-      }, email.length * typeSpeed + j * typeSpeed);
+      }, (email.length * typeSpeed) + j * typeSpeed);
     }
     setTimeout(() => {
       this.props.processForm(this.state);

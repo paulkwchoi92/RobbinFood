@@ -1,0 +1,20 @@
+/.bundle
+slice_of_state.json.jbuilder
+/EXTRA_STUFF/
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+/node_modules
+/yarn-error.log
+/public/assets
+.byebug_history
+node_modules/
+bundle.js
+bundle.js.map
+# Ignore master key for decrypting credentials and more.
+/config/master.key

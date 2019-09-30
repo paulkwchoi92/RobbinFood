@@ -159,13 +159,13 @@ var logout = function logout() {
 /*!*******************************************!*\
   !*** ./frontend/actions/stock_actions.js ***!
   \*******************************************/
-/*! exports provided: RECEIVE_ONE_STOCK, RECEIVE_MANY_STOKCS, RECEIVE_STOCK_ERRORS, receiveOneStocker, receiveManySotkcs, receiveStockErrors */
+/*! exports provided: RECEIVE_ONE_STOCK, RECEIVE_MANY_STOCKS, RECEIVE_STOCK_ERRORS, receiveOneStocker, receiveManySotkcs, receiveStockErrors */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ONE_STOCK", function() { return RECEIVE_ONE_STOCK; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_MANY_STOKCS", function() { return RECEIVE_MANY_STOKCS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_MANY_STOCKS", function() { return RECEIVE_MANY_STOCKS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_STOCK_ERRORS", function() { return RECEIVE_STOCK_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveOneStocker", function() { return receiveOneStocker; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveManySotkcs", function() { return receiveManySotkcs; });
@@ -173,7 +173,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_stock_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/stock_api_util */ "./frontend/util/stock_api_util.js");
 
 var RECEIVE_ONE_STOCK = "RECEIVE_ONE_STOCK";
-var RECEIVE_MANY_STOKCS = "RECEIVE_MANY_STOCKS";
+var RECEIVE_MANY_STOCKS = "RECEIVE_MANY_STOCKS";
 var RECEIVE_STOCK_ERRORS = "RECEIVE_STOCK_ERRORS";
 var receiveOneStocker = function receiveOneStocker(stock) {
   return {
@@ -1157,11 +1157,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   return {
     errors: errors.session,
-    formType: 'demo',
-    demoUser: {
-      email: "demo@demo.com",
-      password: "longpassword"
-    }
+    formType: 'demo'
   };
 };
 
@@ -1715,13 +1711,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _user_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user_reducer */ "./frontend/reducers/user_reducer.js");
 /* harmony import */ var _stocks_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./stocks_reducer */ "./frontend/reducers/stocks_reducer.js");
-/* harmony import */ var _stocks_reducer__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_stocks_reducer__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _user_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  stocks: _stocks_reducer__WEBPACK_IMPORTED_MODULE_2___default.a
+  stocks: _stocks_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 }));
 
 /***/ }),
@@ -1877,10 +1872,28 @@ var stockErrorReducer = function stockErrorReducer() {
 /*!*********************************************!*\
   !*** ./frontend/reducers/stocks_reducer.js ***!
   \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_stock_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/stock_actions */ "./frontend/actions/stock_actions.js");
 
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions_stock_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ONE_STOCK"]:
+      return Object.assign({}, state, action.stock);
+
+    case _actions_stock_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_MANY_STOCKS"]:
+      return Object.assign({}, state, action.stock);
+
+    default:
+      return state;
+  }
+});
 
 /***/ }),
 
