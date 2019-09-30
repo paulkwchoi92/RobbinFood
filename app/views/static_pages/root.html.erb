@@ -2,8 +2,11 @@
 <% if logged_in? %>
   <script id="bootstrap-current-user" type="text/javascript">
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
-  		user: current_user).html_safe %>
+      user: current_user).html_safe %>
   </script>
 <% end %>
+<script type="text/javascript">
+  window.log_in_image = "<%= image_url('log_in.png') %>"
+</script>
 
 <main id="root"></main>
