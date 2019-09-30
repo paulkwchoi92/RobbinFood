@@ -506,12 +506,12 @@ var Greeting = function Greeting(_ref) {
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "li-txt"
     }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      to: "/signup",
-      className: "signup-button"
-    }, "Sign up!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/demologin",
       className: "login-button"
-    }, " Demo Log In"));
+    }, " Demo LogIn"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/signup",
+      className: "signup-button"
+    }, "Sign up!"));
   };
 
   var personalGreeting = function personalGreeting() {

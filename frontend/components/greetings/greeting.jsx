@@ -9,8 +9,8 @@ const Greeting = ({ currentUser, logout }) => {
       <Link to="/login" className="login-button">
         <span className='li-txt'>Login</span>
       </Link>
+      <Link to="/demologin" className="login-button"> Demo LogIn</Link>
       <Link to="/signup" className="signup-button">Sign up!</Link>
-      <Link to="/demologin" className="login-button"> Demo Log In</Link>
     </div>
   );
   const personalGreeting = () => (
