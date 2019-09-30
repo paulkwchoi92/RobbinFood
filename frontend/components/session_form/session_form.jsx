@@ -27,6 +27,13 @@ class SessionForm extends React.Component {
         [field]: e.currentTarget.value
       });
   }
+  componentDidMount() {
+    if (this.props.type === "demo") {
+      setTimeout(() => {
+        this.demoLogin(this.props.demo);
+      }, 500);
+    }
+  }
 
   handleSubmit(e) {
   
@@ -34,7 +41,7 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
       .then(() => {
-        debugger
+        // debugger
         return(this.props.history.push('/'))
       });;
   }
@@ -49,9 +56,23 @@ class SessionForm extends React.Component {
     );
   }
 
-  demoLogin(e) {
-    e.preventDefault();
-    this.props.processForm({ email: 'demo@demo.com', password: 'longpassword' });
+  demoLogin() {
+    const email = 'deomo@demo.com'
+    const password = "longpassword"
+    const typeSpeed = 60
+    for (let i = 0; i < email.length; i++){
+      setTimeout(() => {
+        this.setState({email: this.state.email + email[i]})
+      }, i * typeSpeed)
+    }
+    for (let j = 0; j < email.length; j++) {
+      setTimeout(() => {
+        this.setState({ email: this.state.password + password[j] })
+      }, (email.length * typeSpeed) + i * typeSpeed)
+    }
+    setTimeout(() => {
+      this.props.processForm(this.state)
+    }, (email.length * typeSpeed) + (password.length * typeSpeed) + typeSpeed)
   }
   renderOtherFields() {
     return (
