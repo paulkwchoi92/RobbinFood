@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.props.formType === "login"
+    this.props.formType === "login" || this.props.formType === "demo"
       ? (this.state = {
           email: "",
           password: ""
@@ -14,8 +14,7 @@ class SessionForm extends React.Component {
           email: "",
           password: "",
           first_name: "",
-          last_name: "",
-         
+          last_name: ""
         });
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
@@ -28,7 +27,7 @@ class SessionForm extends React.Component {
       });
   }
   componentDidMount() {
-    if (this.props.type === "demo") {
+    if (this.props.formType === "demo") {
       setTimeout(() => {
         this.demoLogin(this.props.demo);
       }, 500);
@@ -36,14 +35,12 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-  
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
-      .then(() => {
-        // debugger
-        return(this.props.history.push('/'))
-      });;
+    this.props.processForm(user).then(() => {
+      // debugger
+      return this.props.history.push("/");
+    });
   }
 
   renderErrors() {
@@ -57,22 +54,23 @@ class SessionForm extends React.Component {
   }
 
   demoLogin() {
-    const email = 'deomo@demo.com'
-    const password = "longpassword"
-    const typeSpeed = 60
-    for (let i = 0; i < email.length; i++){
+    const email = "demo@demo.com";
+    const password = "longpassword";
+    const typeSpeed = 60;
+    // debugger
+    for (let i = 0; i < email.length; i++) {
       setTimeout(() => {
-        this.setState({email: this.state.email + email[i]})
-      }, i * typeSpeed)
+        this.setState({ email: this.state.email + email[i] });
+      }, i * typeSpeed);
     }
-    for (let j = 0; j < email.length; j++) {
+    for (let j = 0; j < password.length; j++) {
       setTimeout(() => {
-        this.setState({ email: this.state.password + password[j] })
-      }, (email.length * typeSpeed) + i * typeSpeed)
+        this.setState({ password: this.state.password + password[j] });
+      }, email.length * typeSpeed + j * typeSpeed);
     }
     setTimeout(() => {
-      this.props.processForm(this.state)
-    }, (email.length * typeSpeed) + (password.length * typeSpeed) + typeSpeed)
+      this.props.processForm(this.state);
+    }, email.length * typeSpeed + password.length * typeSpeed + typeSpeed);
   }
   renderOtherFields() {
     return (
@@ -95,65 +93,23 @@ class SessionForm extends React.Component {
             className="login-input"
           />
         </label>
-        
       </div>
     );
   }
 
   render() {
-    if (this.props.formType === "login"){
-    return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to RobbinFood
-          <br />
-          <div className="login-form">
-            <br />
-
-            <label>
-              Email
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                className="login-input"
-              />
-            </label>
-            <label>
-              Password:
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="login-input"
-                
-              />
-            </label>
-            <br />
-
-            <input
-              className="session-submit"
-              type="submit"
-              value={this.props.formType}
-            />
-          </div>
-        </form>
-        {this.renderErrors()}
-        <button onClick={this.demoLogin} className="sessionForm-btn">Demo Login</button>
-      </div>
-    );
-    } else {
+    if (this.props.formType === "login" || this.props.formType === "demo") {
       return (
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
             Welcome to RobbinFood
-          <br />
+            <br />
             <div className="login-form">
               <br />
-              {this.renderOtherFields()}
+
               <label>
-                Email 
-              <input
+                Email
+                <input
                   type="text"
                   value={this.state.email}
                   onChange={this.update("email")}
@@ -162,7 +118,7 @@ class SessionForm extends React.Component {
               </label>
               <label>
                 Password:
-              <input
+                <input
                   type="password"
                   value={this.state.password}
                   onChange={this.update("password")}
@@ -179,13 +135,52 @@ class SessionForm extends React.Component {
             </div>
           </form>
           {this.renderErrors()}
-          
+          <button onClick={this.demoLogin} className="sessionForm-btn">
+            Demo Login
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div className="login-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            Welcome to RobbinFood
+            <br />
+            <div className="login-form">
+              <br />
+              {this.renderOtherFields()}
+              <label>
+                Email
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  className="login-input"
+                />
+              </label>
+              <label>
+                Password:
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  className="login-input"
+                />
+              </label>
+              <br />
+
+              <input
+                className="session-submit"
+                type="submit"
+                value={this.props.formType}
+              />
+            </div>
+          </form>
+          {this.renderErrors()}
         </div>
       );
     }
   }
-
-  
 }
 
 export default SessionForm;

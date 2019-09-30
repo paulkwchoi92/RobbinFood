@@ -219,6 +219,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _extra_features_snacks__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./extra_features/snacks */ "./frontend/components/extra_features/snacks.jsx");
 /* harmony import */ var _session_form_session_formv2_container_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./session_form/session_formv2_container.jsx */ "./frontend/components/session_form/session_formv2_container.jsx");
 /* harmony import */ var _body_body__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./body/body */ "./frontend/components/body/body.jsx");
+/* harmony import */ var _session_form_demo_login_container__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./session_form/demo_login_container */ "./frontend/components/session_form/demo_login_container.js");
+
 
 
 
@@ -262,6 +264,10 @@ var App = function App() {
     exact: true,
     path: "/cashmng",
     component: _extra_features_cash_mng__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["AuthRoute"], {
+    exact: true,
+    path: "/demologin",
+    component: _session_form_demo_login_container__WEBPACK_IMPORTED_MODULE_13__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["AuthRoute"], {
     exact: true,
     path: "/login",
@@ -502,7 +508,10 @@ var Greeting = function Greeting(_ref) {
     }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/signup",
       className: "signup-button"
-    }, "Sign up!"));
+    }, "Sign up!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/demologin",
+      className: "login-button"
+    }, " Demo Log In"));
   };
 
   var personalGreeting = function personalGreeting() {
@@ -1128,6 +1137,46 @@ var Root = function Root(_ref) {
 
 /***/ }),
 
+/***/ "./frontend/components/session_form/demo_login_container.js":
+/*!******************************************************************!*\
+  !*** ./frontend/components/session_form/demo_login_container.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _session_form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./session_form */ "./frontend/components/session_form/session_form.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var errors = _ref.errors;
+  return {
+    errors: errors.session,
+    formType: 'demo',
+    demoUser: {
+      email: "demo@demo.com",
+      password: "longpassword"
+    }
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    processForm: function processForm(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_session_form__WEBPACK_IMPORTED_MODULE_0__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/session_form/login_form_container.jsx":
 /*!*******************************************************************!*\
   !*** ./frontend/components/session_form/login_form_container.jsx ***!
@@ -1215,7 +1264,7 @@ function (_React$Component) {
     _classCallCheck(this, SessionForm);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SessionForm).call(this, props));
-    _this.props.formType === "login" ? _this.state = {
+    _this.props.formType === "login" || _this.props.formType === "demo" ? _this.state = {
       email: "",
       password: ""
     } : _this.state = {
@@ -1239,17 +1288,27 @@ function (_React$Component) {
       };
     }
   }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this3 = this;
+
+      if (this.props.formType === "demo") {
+        setTimeout(function () {
+          _this3.demoLogin(_this3.props.demo);
+        }, 500);
+      }
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this3 = this;
+      var _this4 = this;
 
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user).then(function () {
-        debugger;
-        return _this3.props.history.push('/');
+        // debugger
+        return _this4.props.history.push("/");
       });
-      ;
     }
   }, {
     key: "renderErrors",
@@ -1262,12 +1321,40 @@ function (_React$Component) {
     }
   }, {
     key: "demoLogin",
-    value: function demoLogin(e) {
-      e.preventDefault();
-      this.props.processForm({
-        email: 'demo@demo.com',
-        password: 'longpassword'
-      });
+    value: function demoLogin() {
+      var _this5 = this;
+
+      var email = "demo@demo.com";
+      var password = "longpassword";
+      var typeSpeed = 60; // debugger
+
+      var _loop = function _loop(i) {
+        setTimeout(function () {
+          _this5.setState({
+            email: _this5.state.email + email[i]
+          });
+        }, i * typeSpeed);
+      };
+
+      for (var i = 0; i < email.length; i++) {
+        _loop(i);
+      }
+
+      var _loop2 = function _loop2(j) {
+        setTimeout(function () {
+          _this5.setState({
+            password: _this5.state.password + password[j]
+          });
+        }, email.length * typeSpeed + j * typeSpeed);
+      };
+
+      for (var j = 0; j < password.length; j++) {
+        _loop2(j);
+      }
+
+      setTimeout(function () {
+        _this5.props.processForm(_this5.state);
+      }, email.length * typeSpeed + password.length * typeSpeed + typeSpeed);
     }
   }, {
     key: "renderOtherFields",
@@ -1287,7 +1374,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (this.props.formType === "login") {
+      if (this.props.formType === "login" || this.props.formType === "demo") {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
