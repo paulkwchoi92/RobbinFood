@@ -10,6 +10,7 @@ const Greeting = ({ currentUser, logout }) => {
         <span className='li-txt'>Login</span>
       </Link>
       <Link to="/signup" className="signup-button">Sign up!</Link>
+      <Link to="/demologin" className="login-button"> Demo Log In</Link>
     </div>
   );
   const personalGreeting = () => (
