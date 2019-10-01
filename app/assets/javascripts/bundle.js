@@ -1135,147 +1135,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/nav_bar/search_bar.jsx":
-/*!****************************************************!*\
-  !*** ./frontend/components/nav_bar/search_bar.jsx ***!
-  \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var SearchBar =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(SearchBar, _Component);
-
-  function SearchBar(props) {
-    var _this;
-
-    _classCallCheck(this, SearchBar);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchBar).call(this, props));
-    _this.state = {
-      search: "",
-      results: [],
-      display: false
-    };
-    return _this;
-  }
-
-  _createClass(SearchBar, [{
-    key: "handleChange",
-    value: function handleChange(field) {
-      var _this2 = this;
-
-      return function (e) {
-        return _this2.setState(_defineProperty({}, field, e.target.value));
-      };
-    }
-  }, {
-    key: "renderSearchResult",
-    value: function renderSearchResult() {
-      var _this$state = this.state,
-          results = _this$state.results,
-          search = _this$state.search;
-      return search.length > 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "search-result-title"
-      }, " Stocks"), results.map(function (ele, idx) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: idx,
-          className: "resultbox"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "search-symbol"
-        }, ele.symbol), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "serach-name"
-        }, ele.name));
-      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "search-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "search-input"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        id: "search-magnifier",
-        width: "18px",
-        height: "18px",
-        viewBox: "0 0 18 18"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
-        transform: "translate(-11.000000, -11.000000)"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        d: "M23.0733726,24.4447312 C21.8075531,25.4199921 20.2215106,26 18.5,26 C14.3578644,26 11,22.6421356 11,18.5 C11,14.3578644 14.3578644,11 18.5,11 C22.6421356,11 26,14.3578644 26,18.5 C26,20.2215106 25.4199921,21.8075531 24.4447312,23.0733726 L28.1425948,26.7712362 L26.7712362,28.1425948 L23.0733726,24.4447312 Z M18.5,24 C21.5375661,24 24,21.5375661 24,18.5 C24,15.4624339 21.5375661,13 18.5,13 C15.4624339,13 13,15.4624339 13,18.5 C13,21.5375661 15.4624339,24 18.5,24 Z",
-        id: "Combined-Shape"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        placeholder: "Search",
-        autocomplete: "off",
-        autoCorrect: "off",
-        spellCheck: "false",
-        autoapitalize: "none",
-        onChange: this.handleChange("search")
-      })), this.renderSearchResult());
-    }
-  }]);
-
-  return SearchBar;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(SearchBar));
-
-/***/ }),
-
 /***/ "./frontend/components/nav_bar/search_bar_container.js":
 /*!*************************************************************!*\
   !*** ./frontend/components/nav_bar/search_bar_container.js ***!
   \*************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _search_bar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search_bar */ "./frontend/components/nav_bar/search_bar.jsx");
-
-
-
-var mapStateToProps = function mapStateToProps(state) {
-  debugger;
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_search_bar__WEBPACK_IMPORTED_MODULE_1__["default"]));
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/kilwoungchoi/Desktop/MyFirstFullStack/frontend/components/nav_bar/search_bar_container.js: Unexpected token (9:2)\n\n\u001b[0m \u001b[90m  7 | \u001b[39m    state\u001b[33m:\u001b[39m entities\u001b[33m.\u001b[39mstock\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  8 | \u001b[39m    search\u001b[33m:\u001b[39m query \u001b[33m=>\u001b[39m \u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 | \u001b[39m  }\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m 11 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m\u001b[36mconst\u001b[39m mapDispatchToProps \u001b[33m=\u001b[39m dispatch \u001b[33m=>\u001b[39m ({\u001b[0m\n    at Object.raise (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:6325:17)\n    at Object.unexpected (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:7642:16)\n    at Object.parseExprAtom (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8841:20)\n    at Object.parseExprAtom (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:3601:20)\n    at Object.parseExprSubscripts (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseFunctionBody (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:9406:24)\n    at Object.parseArrowExpression (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:9365:10)\n    at Object.parseExprAtom (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8715:18)\n    at Object.parseExprAtom (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:3601:20)\n    at Object.parseExprSubscripts (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseObjectProperty (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:9281:101)\n    at Object.parseObjPropValue (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:9306:101)\n    at Object.parseObjectMember (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:9230:10)\n    at Object.parseObj (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:9154:25)\n    at Object.parseExprAtom (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8784:28)\n    at Object.parseExprAtom (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:3601:20)\n    at Object.parseExprSubscripts (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseExpression (/Users/kilwoungchoi/Desktop/MyFirstFullStack/node_modules/@babel/parser/lib/index.js:8135:23)");
 
 /***/ }),
 
@@ -1339,9 +1206,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
-    },
-    fetchAllStocks: function fetchAllStocks() {
-      return dispatch(Object(_actions_stock_actions__WEBPACK_IMPORTED_MODULE_3__["fetchAllStocks"])());
     }
   };
 };
@@ -1385,9 +1249,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["login"])(user));
-    },
-    fetchAllStocks: function fetchAllStocks() {
-      return dispatch(Object(_actions_stock_actions__WEBPACK_IMPORTED_MODULE_5__["fetchAllStocks"])());
     }
   };
 };
@@ -1484,8 +1345,6 @@ function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user).then(function () {
-        _this4.props.fetchAllStocks();
-
         return _this4.props.history.push("/");
       });
     }
@@ -1533,9 +1392,6 @@ function (_React$Component) {
 
       setTimeout(function () {
         _this5.props.processForm(_this5.state);
-      }, email.length * typeSpeed + password.length * typeSpeed + typeSpeed);
-      setTimeout(function () {
-        _this5.props.fetchAllStocks();
       }, email.length * typeSpeed + password.length * typeSpeed + typeSpeed);
     }
   }, {
@@ -1871,9 +1727,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["signup"])(user));
-    },
-    fetchAllStocks: function fetchAllStocks() {
-      return dispatch(Object(_actions_stock_actions__WEBPACK_IMPORTED_MODULE_5__["fetchAllStocks"])());
     }
   };
 };
@@ -2071,6 +1924,9 @@ __webpack_require__.r(__webpack_exports__);
       return Object.assign({}, state, action.stock);
 
     case _actions_stock_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_MANY_STOCKS"]:
+      return Object.assign({}, state, action.stocks);
+
+    case _actions_stock_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_STOCKS"]:
       return Object.assign({}, state, action.stocks);
 
     default:
@@ -2321,7 +2177,7 @@ var searchStock = function searchStock(symbol) {
 var fetchAllStocks = function fetchAllStocks() {
   return $.ajax({
     method: "GET",
-    url: "api/stocks/index"
+    url: "api/stocks"
   });
 };
 var getIntradayData = function getIntradayData(symbol) {

@@ -8,7 +8,7 @@ export const searchStock = symbol =>
 export const fetchAllStocks = () =>
   $.ajax({
     method: "GET",
-    url: `api/stocks/index`
+    url: `api/stocks`
   })
 
 export const getIntradayData = symbol =>

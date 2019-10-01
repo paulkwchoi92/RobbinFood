@@ -38,7 +38,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => {
-      this.props.fetchAllStocks()
       return this.props.history.push("/");
     });
   }
@@ -69,9 +68,6 @@ class SessionForm extends React.Component {
     }
     setTimeout(() => {
       this.props.processForm(this.state);
-    }, email.length * typeSpeed + password.length * typeSpeed + typeSpeed);
-    setTimeout(() => {
-      this.props.fetchAllStocks();
     }, email.length * typeSpeed + password.length * typeSpeed + typeSpeed);
   }
   renderOtherFields() {

@@ -27,10 +27,10 @@ export const receiveAllStocks = stocks => ({
   stocks
 })
 
-export const fetchAllStocks = () => dispatch => (
-  StockAPIUtil.fetchAllStocks().then(stocks => 
+export const fetchAllStocks = () => dispatch => {
+  return StockAPIUtil.fetchAllStocks().then(stocks => 
     dispatch(receiveAllStocks(stocks))),
    err => ( dispatch(receiveStockErrors(err)))
-)
+  }
 
 

@@ -9,7 +9,9 @@ class SearchBar extends Component {
       display: false
     };
   }
-
+  componentDidMount() {
+    this.props.fetchAllStocks()
+  }
   handleChange(field) {
     return e => this.setState({ [field]: e.target.value });
 

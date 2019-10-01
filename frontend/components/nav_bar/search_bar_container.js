@@ -1,11 +1,16 @@
 import { connect } from 'react-redux';
+import { fetchAllStocks } from '../../actions/stock_actions'
 
 import SearchBar from './search_bar'
-const mapStateToProps = state => {
-  debugger
+const mapStateToProps = ({entities})=> {
+  return { 
+    state: entities.stock,
+    search: query => 
+  }
 }
 
 const mapDispatchToProps = dispatch => ({
+  fetchAllStocks: () => dispatch(fetchAllStocks())
 
 });
 
