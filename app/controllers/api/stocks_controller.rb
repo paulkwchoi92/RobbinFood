@@ -13,7 +13,7 @@ class Api::StocksController < ApplicationController
     @stocks = Stock.all 
     # debugger
     # puts(@stocks)
-    render json: @stocks
+    render "api/stocks/index"
   end
   private
 

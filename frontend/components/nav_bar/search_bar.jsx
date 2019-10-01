@@ -8,26 +8,35 @@ class SearchBar extends Component {
       results: [],
       display: false
     };
+    debugger;
   }
   componentDidMount() {
-    this.props.fetchAllStocks()
+    this.props.fetchAllStocks();
   }
   handleChange(field) {
-    return e => this.setState({ [field]: e.target.value });
-
+    return e =>
+      this.setState({
+        [field]: e.target.value,
+        results: this.props.search(e.target.value)
+      });
   }
 
   renderSearchResult() {
     const { results, search } = this.state;
+    debugger
     return search.length > 0 ? (
       <div>
         <div className="search-result-title"> Stocks</div>
-        {results.map((ele, idx) => (
-          <div key={idx} className="resultbox">
-            <div className="search-symbol">{ele.symbol}</div>
-            <div className="serach-name">{ele.name}</div>
-          </div>
-        ))}
+        {results ? (
+          results.map((ele, idx) => (
+            <div key={idx} className="resultbox">
+              <div className="search-symbol">{ele.symbol}</div>
+              <div className="serach-name">{ele.name}</div>
+            </div>
+          ))
+        ) : (
+          <div />
+        )}
       </div>
     ) : (
       <div />
