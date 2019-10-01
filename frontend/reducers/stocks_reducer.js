@@ -5,7 +5,7 @@ export default (state = {}, action) => {
     case RECEIVE_ONE_STOCK:
       return Object.assign({}, state, action.stock);
     case RECEIVE_MANY_STOCKS:
-      return Object.assign({}, state, action.stock)
+      return Object.assign({}, state, action.stocks)
     default:
       return state;
   }
