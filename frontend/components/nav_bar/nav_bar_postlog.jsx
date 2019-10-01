@@ -2,10 +2,11 @@ import React from "react";
 import { Provider } from "react-redux";
 import { faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { withRouter } from 'react-router-dom'
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 
 import { AuthRoute, ProtectedRoute } from "../../util/route_util";
+import SearchBar from "./search_bar_container";
 
 class PostLogNav extends React.Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class PostLogNav extends React.Component {
                     <span className="log-n">RobbinFood</span>
                   </div>
                 </Link>
+                <SearchBar/>
                 <div className="lft-cont">
                   <div className="lft-cont-lft"></div>
                   <h2 className="header-name">
