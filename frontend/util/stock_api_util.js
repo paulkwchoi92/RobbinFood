@@ -1,10 +1,15 @@
-import moment from "moment";
 
 export const searchStock = symbol =>
   $.ajax({
     method: "GET",
     url: `api/stocks/${symbol}`
   });
+
+export const fetchAllStocks = () =>
+  $.ajax({
+    method: "GET",
+    url: `api/stocks`
+  })
 
 export const getIntradayData = symbol =>
   $.ajax({

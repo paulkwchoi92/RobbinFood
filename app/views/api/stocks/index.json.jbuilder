@@ -1,13 +1,5 @@
-    
-json = {
-
-}
-
 @stocks.each do |stock|
-  json[stock.symbol] = {
-    symbol: stock.symbol,
-    name: stock.name
-  }
+  json.set! stock.symbol do
+    json.extract! stock, :id, :name, :symbol 
+  end 
 end
-
-json

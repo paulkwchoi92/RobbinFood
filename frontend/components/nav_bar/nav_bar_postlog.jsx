@@ -2,21 +2,20 @@ import React from "react";
 import { Provider } from "react-redux";
 import { faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { withRouter } from 'react-router-dom'
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 
 import { AuthRoute, ProtectedRoute } from "../../util/route_util";
-
+import SearchBar from "./search_bar_container";
 
 class PostLogNav extends React.Component {
   constructor(props) {
-    super(props)
-    this.logout = this.props.logout
-   
+    super(props);
+    this.logout = this.props.logout;
   }
 
   handleKeyPress(e) {
-    if (e.key == 'Enter') {
+    if (e.key == "Enter") {
       this.props.history.push(`/stocks/${this.state.results[0].symbol}`);
     }
   }
@@ -33,11 +32,16 @@ class PostLogNav extends React.Component {
                     <span className="log-n">RobbinFood</span>
                   </div>
                 </Link>
+                <SearchBar/>
                 <div className="lft-cont">
-                  <div className="lft-cont-lft">
-
-                  </div><h2 className="header-name">Hi, {this.props.currentUser.first_name} {this.props.currentUser.last_name}!</h2>
-                  <button className="header-button" onClick={this.logout}>Log Out</button>
+                  <div className="lft-cont-lft"></div>
+                  <h2 className="header-name">
+                    Hi, {this.props.currentUser.first_name}{" "}
+                    {this.props.currentUser.last_name}!
+                  </h2>
+                  <button className="header-button" onClick={this.logout}>
+                    Log Out
+                  </button>
                 </div>
               </div>
             </div>
