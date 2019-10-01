@@ -38,7 +38,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => {
-      // debugger
       return this.props.history.push("/");
     });
   }
@@ -57,7 +56,6 @@ class SessionForm extends React.Component {
     const email = "demo@demo.com";
     const password = "longpassword";
     const typeSpeed = 60;
-    // debugger
     for (let i = 0; i < email.length; i++) {
       setTimeout(() => {
         this.setState({ email: this.state.email + email[i] });
@@ -66,7 +64,7 @@ class SessionForm extends React.Component {
     for (let j = 0; j < password.length; j++) {
       setTimeout(() => {
         this.setState({ password: this.state.password + password[j] });
-      }, (email.length * typeSpeed) + j * typeSpeed);
+      }, email.length * typeSpeed + j * typeSpeed);
     }
     setTimeout(() => {
       this.props.processForm(this.state);
@@ -76,7 +74,7 @@ class SessionForm extends React.Component {
     return (
       <div>
         <label>
-          First Name
+          <div className="input-label">First Name</div>
           <input
             type="text"
             value={this.state.first_name}
@@ -85,7 +83,7 @@ class SessionForm extends React.Component {
           />
         </label>
         <label>
-          Last Name
+          <div className="input-label">Last Name</div>
           <input
             type="text"
             value={this.state.last_name}
@@ -98,88 +96,57 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    if (this.props.formType === "login" || this.props.formType === "demo") {
-      return (
-        <div className="login-form-container">
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            Welcome to RobbinFood
-            <br />
-            <div className="login-form">
+    return (
+      <div className="login-form-container">
+        <div className="session-image">
+          <img src={window.log_in_image} />
+        </div>
+        <div className="input-form-container">
+          <div className="login-form">
+            <form onSubmit={this.handleSubmit} className="login-form-box">
+              <div className="login-title">Welcome to RobbinFood</div>
               <br />
-
-              <label>
-                Email
-                <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  className="login-input"
-                />
-              </label>
-              <label>
-                Password:
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  className="login-input"
-                />
-              </label>
               <br />
-
+              <div className="input-top">
+                {this.props.formType === "signup" ? (
+                  this.renderOtherFields()
+                ) : (
+                  <div />
+                )}
+                <label>
+                  <div className="input-label">Email</div>
+                  <input
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.update("email")}
+                    className="login-input"
+                  />
+                </label>
+                <label>
+                  <div className="input-label">Password</div>
+                  
+                  <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    className="login-input"
+                  />
+                </label>
+                <br />
+              </div>
+              <div className="button-container">
               <input
                 className="session-submit"
                 type="submit"
                 value={this.props.formType}
-              />
-            </div>
-          </form>
-          {this.renderErrors()}
-          <button onClick={this.demoLogin} className="sessionForm-btn">
-            Demo Login
-          </button>
-        </div>
-      );
-    } else {
-      return (
-        <div className="login-form-container">
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            Welcome to RobbinFood
-            <br />
-            <div className="login-form">
-              <br />
-              {this.renderOtherFields()}
-              <label>
-                Email
-                <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  className="login-input"
                 />
-              </label>
-              <label>
-                Password:
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  className="login-input"
-                />
-              </label>
-              <br />
-
-              <input
-                className="session-submit"
-                type="submit"
-                value={this.props.formType}
-              />
-            </div>
-          </form>
+              </div>
+            </form>
+          </div>
           {this.renderErrors()}
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
