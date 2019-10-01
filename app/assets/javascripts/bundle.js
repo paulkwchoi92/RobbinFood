@@ -131,7 +131,7 @@ var signup = function signup(user) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
-      debugger;
+      ;
       return dispatch(receiveErrors(err.responseJSON));
     });
   };
@@ -839,16 +839,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/route_util */ "./frontend/util/route_util.jsx");
-/* harmony import */ var _greetings_greetings_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../greetings/greetings_container */ "./frontend/components/greetings/greetings_container.js");
-/* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
-/* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
-/* harmony import */ var _extra_features_cash_mng__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../extra_features/cash_mng */ "./frontend/components/extra_features/cash_mng.jsx");
-/* harmony import */ var _extra_features_blog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../extra_features/blog */ "./frontend/components/extra_features/blog.jsx");
-/* harmony import */ var _extra_features_careers__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../extra_features/careers */ "./frontend/components/extra_features/careers.jsx");
-/* harmony import */ var _extra_features_help__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../extra_features/help */ "./frontend/components/extra_features/help.jsx");
-/* harmony import */ var _extra_features_investing__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../extra_features/investing */ "./frontend/components/extra_features/investing.jsx");
-/* harmony import */ var _extra_features_root_feat_box__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../extra_features/root_feat_box */ "./frontend/components/extra_features/root_feat_box.jsx");
-/* harmony import */ var _extra_features_snacks__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../extra_features/snacks */ "./frontend/components/extra_features/snacks.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -874,16 +864,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
-
-
-
-
-
-
-
-
-
 var PostLogNav =
 /*#__PURE__*/
 function (_React$Component) {
@@ -900,6 +880,13 @@ function (_React$Component) {
   }
 
   _createClass(PostLogNav, [{
+    key: "handleKeyPress",
+    value: function handleKeyPress(e) {
+      if (e.key == 'Enter') {
+        this.props.history.push("/stocks/".concat(this.state.results[0].symbol));
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
@@ -934,7 +921,7 @@ function (_React$Component) {
   return PostLogNav;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (PostLogNav);
+/* harmony default export */ __webpack_exports__["default"] = (withRouter(PostLogNav));
 
 /***/ }),
 
@@ -1320,7 +1307,6 @@ function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user).then(function () {
-        // debugger
         return _this4.props.history.push("/");
       });
     }
@@ -1340,7 +1326,7 @@ function (_React$Component) {
 
       var email = "demo@demo.com";
       var password = "longpassword";
-      var typeSpeed = 60; // debugger
+      var typeSpeed = 60;
 
       var _loop = function _loop(i) {
         setTimeout(function () {
@@ -1793,7 +1779,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state); // debugger
+  Object.freeze(state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:

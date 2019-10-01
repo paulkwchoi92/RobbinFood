@@ -38,7 +38,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => {
-      // debugger
       return this.props.history.push("/");
     });
   }
@@ -57,7 +56,6 @@ class SessionForm extends React.Component {
     const email = "demo@demo.com";
     const password = "longpassword";
     const typeSpeed = 60;
-    // debugger
     for (let i = 0; i < email.length; i++) {
       setTimeout(() => {
         this.setState({ email: this.state.email + email[i] });
