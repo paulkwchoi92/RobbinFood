@@ -11,7 +11,7 @@ class Api::TransactionsController < ApplicationController
       else
         render json: "insufficient funds"
       end
-    else  
+    end
   end
 
   private 
