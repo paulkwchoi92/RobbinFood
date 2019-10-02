@@ -1182,22 +1182,16 @@ function (_Component) {
       return function (e) {
         var _this2$setState;
 
-        var results = _this2.props.search(e.target.value); // debugger;
-
+        var results = _this2.props.search(e.target.value);
 
         _this2.setState((_this2$setState = {}, _defineProperty(_this2$setState, field, e.target.value), _defineProperty(_this2$setState, "results", results), _defineProperty(_this2$setState, "display", true), _this2$setState));
-      }; // return e =>
-      //   this.setState({
-      //     [field]: e.target.value,
-      //     results: results
-      //   });
+      };
     }
   }, {
     key: "handleClick",
     value: function handleClick(e) {
       var _this3 = this;
 
-      // debugger;
       var link = e.currentTarget.id;
       this.setState({
         search: "",
@@ -1215,8 +1209,7 @@ function (_Component) {
       var _this$state = this.state,
           results = _this$state.results,
           search = _this$state.search,
-          display = _this$state.display; // debugger
-
+          display = _this$state.display;
       return search.length > 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-result-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

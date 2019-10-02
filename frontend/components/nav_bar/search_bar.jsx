@@ -17,22 +17,15 @@ class SearchBar extends Component {
   handleChange(field) {
     return e => {
       const results = this.props.search(e.target.value);
-      // debugger;
       this.setState({
         [field]: e.target.value,
         results: results,
         display: true
       });
     };
-    // return e =>
-    //   this.setState({
-    //     [field]: e.target.value,
-    //     results: results
-    //   });
   }
   handleClick(e) {
-    // debugger;
-    const link = e.currentTarget.id
+    const link = e.currentTarget.id;
     this.setState(
       {
         search: "",
@@ -46,7 +39,6 @@ class SearchBar extends Component {
   }
   renderSearchResult() {
     const { results, search, display } = this.state;
-    // debugger
     return search.length > 0 ? (
       <div className="search-result-container">
         <div className="search-result-title"> Stocks</div>
