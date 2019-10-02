@@ -90,7 +90,7 @@
 /*!******************************************!*\
   !*** ./frontend/actions/news_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_TOP_NEWS, RECEIVE_SPECIFIC_NEWS, RECEIVE_NEWS_ERROR, receiveTopNews, receiveSpecificNews, receiveNewsErrors, fetchTopNews */
+/*! exports provided: RECEIVE_TOP_NEWS, RECEIVE_SPECIFIC_NEWS, RECEIVE_NEWS_ERROR, receiveTopNews, receiveSpecificNews, receiveNewsErrors, fetchTopNews, fetchCompanyNews */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -102,6 +102,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSpecificNews", function() { return receiveSpecificNews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveNewsErrors", function() { return receiveNewsErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTopNews", function() { return fetchTopNews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCompanyNews", function() { return fetchCompanyNews; });
 /* harmony import */ var _util_news_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/news_api_util */ "./frontend/util/news_api_util.js");
 var RECEIVE_TOP_NEWS = "RECEIVE_TOP_NEWS";
 var RECEIVE_SPECIFIC_NEWS = "RECEIVE_SPECIFIC_NEWS";
@@ -134,6 +135,23 @@ var fetchTopNews = function fetchTopNews() {
     };
   };
 };
+var fetchCompanyNews = name = function (_name) {
+  function name(_x) {
+    return _name.apply(this, arguments);
+  }
+
+  name.toString = function () {
+    return _name.toString();
+  };
+
+  return name;
+}(function (dispatch) {
+  return _util_news_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCompanyNews"](name).then(function (news) {
+    return dispatch(receiveSpecificNews(news));
+  }), function (err) {
+    return disptach(receiveNewsErrors(err));
+  };
+});
 
 /***/ }),
 
