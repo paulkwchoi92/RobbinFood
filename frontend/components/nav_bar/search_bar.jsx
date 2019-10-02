@@ -31,15 +31,16 @@ class SearchBar extends Component {
     //   });
   }
   handleClick(e) {
-    debugger;
+    // debugger;
+    const link = e.currentTarget.id
     this.setState(
       {
+        search: "",
         display: false,
-        results: [],
-        search: ""
+        results: []
       },
       () => {
-        this.props.history.push(`stocks/${e.currentTarget.id}`);
+        this.props.history.push(`/stocks/${link}`);
       }
     );
   }
@@ -82,10 +83,11 @@ class SearchBar extends Component {
                 className="inputbar"
                 type="text"
                 placeholder="Search"
-                autocomplete="off"
+                autoComplete="off"
                 autoCorrect="off"
                 spellCheck="false"
                 autoapitalize="none"
+                value={this.state.search}
                 onChange={this.handleChange("search")}
               />
             </div>

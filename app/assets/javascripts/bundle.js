@@ -1197,13 +1197,14 @@ function (_Component) {
     value: function handleClick(e) {
       var _this3 = this;
 
-      debugger;
+      // debugger;
+      var link = e.currentTarget.id;
       this.setState({
+        search: "",
         display: false,
-        results: [],
-        search: ""
+        results: []
       }, function () {
-        _this3.props.history.push("stocks/".concat(e.currentTarget.id));
+        _this3.props.history.push("/stocks/".concat(link));
       });
     }
   }, {
@@ -1250,10 +1251,11 @@ function (_Component) {
         className: "inputbar",
         type: "text",
         placeholder: "Search",
-        autocomplete: "off",
+        autoComplete: "off",
         autoCorrect: "off",
         spellCheck: "false",
         autoapitalize: "none",
+        value: this.state.search,
         onChange: this.handleChange("search")
       })), this.renderSearchResult())));
     }
