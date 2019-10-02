@@ -86,6 +86,42 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/news_actions.js":
+/*!******************************************!*\
+  !*** ./frontend/actions/news_actions.js ***!
+  \******************************************/
+/*! exports provided: RECEIVE_TOP_NEWS, RECEIVE_SPECIFIC_NEWS, receiveTopNews, receiveSpecificNews, fetchTopNews */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_TOP_NEWS", function() { return RECEIVE_TOP_NEWS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SPECIFIC_NEWS", function() { return RECEIVE_SPECIFIC_NEWS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveTopNews", function() { return receiveTopNews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSpecificNews", function() { return receiveSpecificNews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTopNews", function() { return fetchTopNews; });
+var RECEIVE_TOP_NEWS = "RECEIVE_TOP_NEWS";
+var RECEIVE_SPECIFIC_NEWS = "RECEIVE_SPECIFIC_NEWS";
+var receiveTopNews = function receiveTopNews(news) {
+  return {
+    type: RECEIVE_TOP_NEWS,
+    news: news
+  };
+};
+var receiveSpecificNews = function receiveSpecificNews(news) {
+  return {
+    type: RECEIVE_SPECIFIC_NEWS,
+    news: news
+  };
+};
+var fetchTopNews = function fetchTopNews() {
+  return function (dispatch) {
+    return;
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -2034,7 +2070,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_news_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/news_actions */ "./frontend/actions/news_actions.js");
 
 
 
@@ -2045,7 +2081,12 @@ var newsReducer = function newsReducer() {
   Object.freeze(state);
 
   switch (action.type) {
-    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
+    case _actions_news_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_TOP_NEWS"]:
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+        news: action.news
+      });
+
+    case _actions_news_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_SPECIFIC_NEWS"]:
       return lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
         news: action.news
       });
