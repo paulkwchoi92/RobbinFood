@@ -2064,13 +2064,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./session_errors_reducer */ "./frontend/reducers/session_errors_reducer.js");
 /* harmony import */ var _stock_errors_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./stock_errors_reducer */ "./frontend/reducers/stock_errors_reducer.js");
+/* harmony import */ var _news_errors_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./news_errors_reducer */ "./frontend/reducers/news_errors_reducer.js");
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  stocks: _stock_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  stocks: _stock_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  news: _news_errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 }));
+
+/***/ }),
+
+/***/ "./frontend/reducers/news_errors_reducer.js":
+/*!**************************************************!*\
+  !*** ./frontend/reducers/news_errors_reducer.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_news_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/news_actions */ "./frontend/actions/news_actions.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_news_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_NEWS_ERROR"]:
+      // const newState = Object.assign({}, action.errors)
+      return Object.assign({}, action.errors);
+
+    default:
+      return state;
+  }
+});
 
 /***/ }),
 
