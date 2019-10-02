@@ -1,4 +1,6 @@
-export const getNews = () => {
+import {keys} from "../../config"
+
+export const fetchTopNews = () => {
   {
     return $.ajax({
       method: "GET",
@@ -6,7 +8,7 @@ export const getNews = () => {
       data: {
         category: "business",
         country: "us",
-        apiKey: window.newsAPIKey,
+        apiKey: keys.newsAPIKey,
         pageSize: 5
       }
     });
@@ -21,7 +23,7 @@ export const fetchCompanyNews = name => {
       data: {
         q: name,
         language: "en",
-        apiKey: window.newsAPIKey,
+        apiKey: keys.newsAPIKey,
         pageSize: 5
       }
     });

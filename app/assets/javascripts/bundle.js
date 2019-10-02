@@ -90,18 +90,23 @@
 /*!******************************************!*\
   !*** ./frontend/actions/news_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_TOP_NEWS, RECEIVE_SPECIFIC_NEWS, receiveTopNews, receiveSpecificNews, fetchTopNews */
+/*! exports provided: RECEIVE_TOP_NEWS, RECEIVE_SPECIFIC_NEWS, RECEIVE_NEWS_ERROR, receiveTopNews, receiveSpecificNews, receiveNewsErrors, fetchTopNews */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_TOP_NEWS", function() { return RECEIVE_TOP_NEWS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SPECIFIC_NEWS", function() { return RECEIVE_SPECIFIC_NEWS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_NEWS_ERROR", function() { return RECEIVE_NEWS_ERROR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveTopNews", function() { return receiveTopNews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSpecificNews", function() { return receiveSpecificNews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveNewsErrors", function() { return receiveNewsErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTopNews", function() { return fetchTopNews; });
+/* harmony import */ var _util_news_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/news_api_util */ "./frontend/util/news_api_util.js");
 var RECEIVE_TOP_NEWS = "RECEIVE_TOP_NEWS";
 var RECEIVE_SPECIFIC_NEWS = "RECEIVE_SPECIFIC_NEWS";
+var RECEIVE_NEWS_ERROR = "RECEIVE_NEWS_ERROR";
+
 var receiveTopNews = function receiveTopNews(news) {
   return {
     type: RECEIVE_TOP_NEWS,
@@ -114,9 +119,19 @@ var receiveSpecificNews = function receiveSpecificNews(news) {
     news: news
   };
 };
+var receiveNewsErrors = function receiveNewsErrors(errors) {
+  return {
+    type: RECEIVE_NEWS_ERROR,
+    error: error
+  };
+};
 var fetchTopNews = function fetchTopNews() {
   return function (dispatch) {
-    return;
+    return _util_news_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchTopNews"]().then(function (news) {
+      return dispatch(receiveTopNews(news));
+    }), function (err) {
+      return dispatch(receiveNewsErrors(err));
+    };
   };
 };
 
@@ -2373,6 +2388,50 @@ var configureStore = function configureStore() {
 
 /***/ }),
 
+/***/ "./frontend/util/news_api_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/news_api_util.js ***!
+  \****************************************/
+/*! exports provided: fetchTopNews, fetchCompanyNews */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTopNews", function() { return fetchTopNews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCompanyNews", function() { return fetchCompanyNews; });
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../../config'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
+var fetchTopNews = function fetchTopNews() {
+  {
+    return $.ajax({
+      method: "GET",
+      url: "https://newsapi.org/v2/top-headlines",
+      data: {
+        category: "business",
+        country: "us",
+        apiKey: !(function webpackMissingModule() { var e = new Error("Cannot find module '../../config'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).newsAPIKey,
+        pageSize: 5
+      }
+    });
+  }
+};
+var fetchCompanyNews = function fetchCompanyNews(name) {
+  {
+    return $.ajax({
+      method: "GET",
+      url: "https://newsapi.org/v2/everything",
+      data: {
+        q: name,
+        language: "en",
+        apiKey: !(function webpackMissingModule() { var e = new Error("Cannot find module '../../config'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).newsAPIKey,
+        pageSize: 5
+      }
+    });
+  }
+};
+
+/***/ }),
+
 /***/ "./frontend/util/route_util.jsx":
 /*!**************************************!*\
   !*** ./frontend/util/route_util.jsx ***!
@@ -2446,24 +2505,17 @@ var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withR
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "searchStocks", function() { return searchStocks; });
 var searchStocks = function searchStocks(stocks, searchword) {
-  // debugger
   var search = searchword.toUpperCase();
   var res = [];
-  var stocksArr = Object.keys(stocks); // const searchKeys = stocksArr.filter(key => key.startsWith(search)).slice(0, 6)
-  // const check = searchKeys.map(ele => stocks.ele)
-  // debugger
-
+  var stocksArr = Object.keys(stocks);
   stocksArr.forEach(function (ele) {
     if (res.length === 6) return res;
 
     if (ele.startsWith(search)) {
-      // debugger;
       res.push(stocks[ele]);
-    } // debugger
-
-  }); // debugger
-
-  return res; // return stocksArr.length 
+    }
+  });
+  return res;
 };
 
 /***/ }),
