@@ -17,7 +17,7 @@ import DemoLogInContainer from "./session_form/demo_login_container";
 const App = () => (
   <div>
     <Switch>
-      <Route exact path="/" component={Body} />
+      <Route path="/" component={Body} />
 
       <Route exact path="/snacks" component={Snacks} />
       <Route exact path="/blog" component={Blog} />

@@ -257,7 +257,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    exact: true,
     path: "/",
     component: _body_body__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -1139,9 +1138,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1165,8 +1164,8 @@ function (_Component) {
       search: "",
       results: [],
       display: false
-    }; // debugger;
-
+    };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1186,7 +1185,7 @@ function (_Component) {
         var results = _this2.props.search(e.target.value); // debugger;
 
 
-        _this2.setState((_this2$setState = {}, _defineProperty(_this2$setState, field, e.target.value), _defineProperty(_this2$setState, "results", results), _this2$setState));
+        _this2.setState((_this2$setState = {}, _defineProperty(_this2$setState, field, e.target.value), _defineProperty(_this2$setState, "results", results), _defineProperty(_this2$setState, "display", true), _this2$setState));
       }; // return e =>
       //   this.setState({
       //     [field]: e.target.value,
@@ -1194,20 +1193,39 @@ function (_Component) {
       //   });
     }
   }, {
+    key: "handleClick",
+    value: function handleClick(e) {
+      var _this3 = this;
+
+      debugger;
+      this.setState({
+        display: false,
+        results: [],
+        search: ""
+      }, function () {
+        _this3.props.history.push("stocks/".concat(e.currentTarget.id));
+      });
+    }
+  }, {
     key: "renderSearchResult",
     value: function renderSearchResult() {
+      var _this4 = this;
+
       var _this$state = this.state,
           results = _this$state.results,
-          search = _this$state.search; // debugger
+          search = _this$state.search,
+          display = _this$state.display; // debugger
 
       return search.length > 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-result-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-result-title"
-      }, " Stocks"), results.length > 0 ? results.map(function (ele, idx) {
+      }, " Stocks"), results.length && display === true > 0 ? results.map(function (ele, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: idx,
-          className: "resultbox"
+          className: "resultbox",
+          id: ele.symbol,
+          onClick: _this4.handleClick
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "search-symbol"
         }, ele.symbol), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1227,7 +1245,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fas fa-search magnifier"
+        className: "fas fa-search magnifier"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "inputbar",
         type: "text",
