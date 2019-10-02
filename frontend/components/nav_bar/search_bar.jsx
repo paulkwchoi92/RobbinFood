@@ -8,7 +8,7 @@ class SearchBar extends Component {
       results: [],
       display: false
     };
-    debugger;
+    // debugger;
   }
   componentDidMount() {
     this.props.fetchAllStocks();
@@ -23,7 +23,7 @@ class SearchBar extends Component {
 
   renderSearchResult() {
     const { results, search } = this.state;
-    debugger
+    // debugger
     return search.length > 0 ? (
       <div>
         <div className="search-result-title"> Stocks</div>
