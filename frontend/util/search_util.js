@@ -1,19 +1,13 @@
-
-
-export const searchStocks =  (stocks, searchword) => {
-  // debugger
-  const search = searchword.toUpperCase()
-  let res = [] 
-  const stocksArr = Object.keys(stocks)
+export const searchStocks = (stocks, searchword) => {
+  const search = searchword.toUpperCase();
+  let res = [];
+  const stocksArr = Object.keys(stocks);
   stocksArr.forEach(ele => {
-    if (res.length === 6) return res
-    // debugger
+    if (res.length === 6) return res;
     if (ele.startsWith(search)) {
-      // debugger;
-      return res.concat([stocks[ele]])
+      res.push(stocks[ele]);
     }
-  } )
-  debugger
-  return res
-}
+  });
 
+  return res;
+};

@@ -1,0 +1,40 @@
+.search-container {
+  flex-basis: 480px;
+  min-width: 160px;
+  margin-left: 250px;
+  transition: color 150ms;
+}
+.search-middle {
+  height: 36px;
+  position: relative;
+  width: 100%;
+  margin-top: 7px;
+}
+
+.search-inner {
+  border: 1px solid;
+  border-radius: 4px;
+  position: absolute;
+  width: 80%;
+  height: 30px;
+}
+
+.serach-input{
+ display: flex;
+ align-items: flex-start;
+}
+
+.inputbar{
+  box-shadow: none;
+    cursor: default;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.magnifier{
+  weight: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+}

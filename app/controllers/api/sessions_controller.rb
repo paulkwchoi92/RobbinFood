@@ -1,11 +1,12 @@
 class Api::SessionsController < ApplicationController
   def create #fix5
-    # debugger
     @user = User.find_by_credentials(
       params[:user][:email],
       params[:user][:password])
-    if @user
-    login(@user)
+      if @user
+        # debugger
+        login(@user)
+        @watchlists = @user.watchlists
     render "api/users/show"
     else
       render json: ["Invalid username/password combination"], status: 401
