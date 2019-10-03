@@ -14,11 +14,12 @@ import Snacks from "./extra_features/snacks";
 import SessionFormV2Container from "./session_form/session_formv2_container.jsx";
 import Body from "./body/body";
 import DemoLogInContainer from "./session_form/demo_login_container";
+import RootNavBar from "./nav_bar/nav_bar_root_container";
 const App = () => (
   <div>
     <Switch>
       <Route exact path="/" component={Body} />
-
+      {/* <Route path="/" component={RootNavBar} /> */}
       <Route exact path="/snacks" component={Snacks} />
       <Route exact path="/blog" component={Blog} />
       <Route exact path="/help" component={Help} />
