@@ -1,7 +1,7 @@
 import React from "react";
 import WatchListsContainer from '../watchlists/watchlist_container'
 import { Link } from "react-router-dom";
-
+import TopNewsContainer from '../news/top_news_container'
 class PostLogHome extends React.Component {
   render() {
     return (
@@ -12,11 +12,12 @@ class PostLogHome extends React.Component {
           </div>
           <div className="ptlog-home-lft">
             <div className="watchlists-outer">
-              <WatchListsContainer/>
+              <WatchListsContainer />
+              {/* <TopNewsContainer /> */}
               </div>
           </div>
        </div>
-      
+       
       </div>
     );
   }

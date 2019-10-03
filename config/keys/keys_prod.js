@@ -1,4 +1,4 @@
 module.exports = {
-  newsApi: process.env.NewsApiKey
+  newsApiKey: process.env.NewsApiKey
   
 };

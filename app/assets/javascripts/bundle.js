@@ -86,6 +86,32 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./config/keys/keys.js":
+/*!*****************************!*\
+  !*** ./config/keys/keys.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./keys_dev.js */ "./config/keys/keys_dev.js");
+}
+
+/***/ }),
+
+/***/ "./config/keys/keys_dev.js":
+/*!*********************************!*\
+  !*** ./config/keys/keys_dev.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+  newsApiKey: "bb67bedddb454b0bae6d54e125e65d2e"
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/news_actions.js":
 /*!******************************************!*\
   !*** ./frontend/actions/news_actions.js ***!
@@ -129,7 +155,9 @@ var receiveNewsErrors = function receiveNewsErrors(errors) {
 var fetchTopNews = function fetchTopNews() {
   return function (dispatch) {
     return _util_news_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchTopNews"]().then(function (news) {
-      return dispatch(receiveTopNews(news));
+      // debugger
+      dispatch(receiveTopNews(news.articles));
+      return news;
     }), function (err) {
       return dispatch(receiveNewsErrors(err));
     };
@@ -309,6 +337,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_form_session_formv2_container_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./session_form/session_formv2_container.jsx */ "./frontend/components/session_form/session_formv2_container.jsx");
 /* harmony import */ var _body_body__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./body/body */ "./frontend/components/body/body.jsx");
 /* harmony import */ var _session_form_demo_login_container__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./session_form/demo_login_container */ "./frontend/components/session_form/demo_login_container.js");
+/* harmony import */ var _nav_bar_nav_bar_root_container__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./nav_bar/nav_bar_root_container */ "./frontend/components/nav_bar/nav_bar_root_container.js");
+
 
 
 
@@ -326,6 +356,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
     path: "/",
     component: _body_body__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -669,6 +700,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _watchlists_watchlist_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../watchlists/watchlist_container */ "./frontend/components/watchlists/watchlist_container.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _news_top_news_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../news/top_news_container */ "./frontend/components/news/top_news_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -686,6 +718,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1367,6 +1400,136 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_search_bar__WEBPACK_IMPORTED_MODULE_3__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/news/news.jsx":
+/*!*******************************************!*\
+  !*** ./frontend/components/news/news.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var News =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(News, _React$Component);
+
+  function News(props) {
+    var _this;
+
+    _classCallCheck(this, News);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(News).call(this, props));
+    _this.state = {
+      articles: []
+    };
+    return _this;
+  }
+
+  _createClass(News, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      if (this.props.type === "topnews") {
+        this.props.fetchNews(); //  debugger
+      }
+    }
+  }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      this.setState({
+        articles: nextProps.articles
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      debugger;
+      return this.state.articles ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "news-container"
+      }, this.state.articles.map(function (ele, idx) {
+        var date = new Date(ele.publishedAt);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "news-container-inner"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: ele.url
+        }, ele.source.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "news-source"
+        }, ele.source.id) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "news-source"
+        }, ele.source.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "news-date"
+        }, " ", date.toDateString()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: ele.urlToImage
+        })));
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+    }
+  }]);
+
+  return News;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (News);
+
+/***/ }),
+
+/***/ "./frontend/components/news/top_news_container.js":
+/*!********************************************************!*\
+  !*** ./frontend/components/news/top_news_container.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _news__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./news */ "./frontend/components/news/news.jsx");
+/* harmony import */ var _actions_news_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/news_actions */ "./frontend/actions/news_actions.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  // debugger
+  return {
+    type: "topnews",
+    articles: state.entities.news.news
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchNews: function fetchNews() {
+      return dispatch(Object(_actions_news_actions__WEBPACK_IMPORTED_MODULE_2__["fetchTopNews"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_news__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -2160,7 +2323,7 @@ var newsReducer = function newsReducer() {
   }
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (usersReducer);
+/* harmony default export */ __webpack_exports__["default"] = (newsReducer);
 
 /***/ }),
 
@@ -2448,7 +2611,8 @@ var configureStore = function configureStore() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTopNews", function() { return fetchTopNews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCompanyNews", function() { return fetchCompanyNews; });
-!(function webpackMissingModule() { var e = new Error("Cannot find module '../../config'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+var keys = __webpack_require__(/*! ../../config/keys/keys */ "./config/keys/keys.js"); // console.log(keys)
+
 
 var fetchTopNews = function fetchTopNews() {
   {
@@ -2458,8 +2622,8 @@ var fetchTopNews = function fetchTopNews() {
       data: {
         category: "business",
         country: "us",
-        apiKey: !(function webpackMissingModule() { var e = new Error("Cannot find module '../../config'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).newsAPIKey,
-        pageSize: 5
+        apiKey: "bb67bedddb454b0bae6d54e125e65d2e",
+        pageSize: 15
       }
     });
   }
@@ -2472,7 +2636,7 @@ var fetchCompanyNews = function fetchCompanyNews(name) {
       data: {
         q: name,
         language: "en",
-        apiKey: !(function webpackMissingModule() { var e = new Error("Cannot find module '../../config'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).newsAPIKey,
+        apiKey: keys.newsAPIKey,
         pageSize: 5
       }
     });

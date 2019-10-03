@@ -1,5 +1,5 @@
-import {keys} from "../../config"
-
+const keys = require("../../config/keys/keys")
+// console.log(keys)
 export const fetchTopNews = () => {
   {
     return $.ajax({
@@ -8,8 +8,8 @@ export const fetchTopNews = () => {
       data: {
         category: "business",
         country: "us",
-        apiKey: keys.newsAPIKey,
-        pageSize: 5
+        apiKey: "bb67bedddb454b0bae6d54e125e65d2e",
+        pageSize: 15
       }
     });
   }

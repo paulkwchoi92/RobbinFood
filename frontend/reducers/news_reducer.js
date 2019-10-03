@@ -15,4 +15,4 @@ const newsReducer = (state = {}, action) => {
   }
 };
 
-export default usersReducer
+export default newsReducer

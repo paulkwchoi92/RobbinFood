@@ -4,14 +4,15 @@ import { connect } from 'react-redux'
 import News from "./news"
 import { fetchCompanyNews } from '../../actions/news_actions'
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+const mapStateToProps = (state) => {
   return {
-    currentUser: users[session.id]
+    type: "companynews"
+
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: (name ) => dispatch(fetchCompanyNews(name))
+  fetchNews: (name ) => dispatch(fetchCompanyNews(name))
 });
 
 
