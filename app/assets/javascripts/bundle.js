@@ -2215,9 +2215,15 @@ function (_React$Component) {
   _inherits(StockShow, _React$Component);
 
   function StockShow(props) {
+    var _this;
+
     _classCallCheck(this, StockShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(StockShow).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(StockShow).call(this, props));
+    _this.state = {
+      currentStockInfo: ""
+    };
+    return _this;
   }
 
   _createClass(StockShow, [{
@@ -2225,6 +2231,13 @@ function (_React$Component) {
     value: function componentWillMount() {
       // debugger 
       this.props.fetchStock(this.props.match.params.symbol);
+    }
+  }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      this.setState({
+        currentStockInfo: nextProps.currentStock
+      });
     }
   }, {
     key: "render",
@@ -2258,9 +2271,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps(state) {
+var mapStateToProps = function mapStateToProps(_ref) {
+  var session = _ref.session,
+      entities = _ref.entities;
   // debugger
-  return {};
+  var currentStock = entities.stocks.currentStock ? entities.stocks.currentStock : null;
+  return {
+    currentStock: currentStock,
+    currentUserId: session.id
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -2555,6 +2574,7 @@ var _nullUser = {
 var sessionReducer = function sessionReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullUser;
   var action = arguments.length > 1 ? arguments[1] : undefined;
+  // debugger
   Object.freeze(state);
 
   switch (action.type) {
@@ -2619,11 +2639,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  debugger;
 
+  // debugger 
   switch (action.type) {
     case _actions_stock_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ONE_STOCK"]:
-      return Object.assign({}, state, action.stock);
+      return Object.assign({}, state, {
+        currentStock: action.stock
+      });
 
     case _actions_stock_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_MANY_STOCKS"]:
       return Object.assign({}, state, action.stocks);
