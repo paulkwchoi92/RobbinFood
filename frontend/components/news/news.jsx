@@ -13,7 +13,8 @@ class News extends React.Component {
       this.props.fetchNews();
       //  debugger
     } else {
-      this.props.fetchNews();
+      // debugger
+      this.props.fetchNews(this.props.match.params.symbol);
     }
   }
 

@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import StockShow from "./stocks_show";
 import { fetchStock } from "../../actions/stock_actions";
 const mapStateToProps = state => {
-  debugger
+  // debugger
   return {};
 };
 

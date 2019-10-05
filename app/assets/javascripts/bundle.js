@@ -165,6 +165,7 @@ var fetchTopNews = function fetchTopNews() {
 };
 var fetchCompanyNews = function fetchCompanyNews(name) {
   return function (dispatch) {
+    debugger;
     return _util_news_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCompanyNews"](name).then(function (news) {
       return dispatch(receiveSpecificNews(news));
     }), function (err) {
@@ -1501,7 +1502,8 @@ function (_React$Component) {
       if (this.props.type === "topnews") {
         this.props.fetchNews(); //  debugger
       } else {
-        this.props.fetchNews();
+        // debugger
+        this.props.fetchNews(this.props.match.params.symbol);
       }
     }
   }, {
@@ -2228,7 +2230,7 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_root_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "stocks-show-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_news_company_new_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
     }
   }]);
 
@@ -2256,7 +2258,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
+  // debugger
   return {};
 };
 

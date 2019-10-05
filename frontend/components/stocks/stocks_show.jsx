@@ -17,7 +17,13 @@ class StockShow extends React.Component {
       <div>
           <RootNavBar/>
         <div className="stocks-show-container">
-          <CompanyNewsContainer />
+        </div>
+        <div>
+
+        </div>
+        <div>
+          {/* <CompanyNewsContainer /> */}
+
         </div>
       </div>
     );

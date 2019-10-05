@@ -28,6 +28,7 @@ export const fetchTopNews = () => dispatch => {
   );
 };
 export const fetchCompanyNews = (name) => dispatch => {
+  debugger
   return (
     NewsApiUtil.fetchCompanyNews(name).then(news =>
       dispatch(receiveSpecificNews(news))
