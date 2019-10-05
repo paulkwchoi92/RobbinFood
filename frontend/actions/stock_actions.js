@@ -33,7 +33,8 @@ export const fetchAllStocks = () => dispatch => {
    err => ( dispatch(receiveStockErrors(err)))
   }
 
-export const fetchStock = (symbol) => dispatch => {
+export const fetchStock = symbol => dispatch => {
+  // debugger
   return StockAPIUtil.fetchStock(symbol).then(stock => 
     dispatch(receiveOneStock(stock))),
   err => ( dispatch(receiveStockErrors(err)))

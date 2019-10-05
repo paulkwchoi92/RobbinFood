@@ -163,23 +163,15 @@ var fetchTopNews = function fetchTopNews() {
     };
   };
 };
-var fetchCompanyNews = name = function (_name) {
-  function name(_x) {
-    return _name.apply(this, arguments);
-  }
-
-  name.toString = function () {
-    return _name.toString();
+var fetchCompanyNews = function fetchCompanyNews(name) {
+  return function (dispatch) {
+    return _util_news_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCompanyNews"](name).then(function (news) {
+      return dispatch(receiveSpecificNews(news));
+    }), function (err) {
+      return disptach(receiveNewsErrors(err));
+    };
   };
-
-  return name;
-}(function (dispatch) {
-  return _util_news_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCompanyNews"](name).then(function (news) {
-    return dispatch(receiveSpecificNews(news));
-  }), function (err) {
-    return disptach(receiveNewsErrors(err));
-  };
-});
+};
 
 /***/ }),
 
@@ -313,6 +305,7 @@ var fetchAllStocks = function fetchAllStocks() {
 };
 var fetchStock = function fetchStock(symbol) {
   return function (dispatch) {
+    // debugger
     return _util_stock_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchStock"](symbol).then(function (stock) {
       return dispatch(receiveOneStock(stock));
     }), function (err) {
@@ -2227,12 +2220,13 @@ function (_React$Component) {
   _createClass(StockShow, [{
     key: "componentWillMount",
     value: function componentWillMount() {
+      // debugger 
       this.props.fetchStock(this.props.match.params.symbol);
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_root_container__WEBPACK_IMPORTED_MODULE_3__["NavRootBar"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_root_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "stocks-show-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_news_company_new_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
     }
@@ -2256,24 +2250,25 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _stocks_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stocks_show */ "./frontend/components/stocks/stocks_show.jsx");
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_stock_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/stock_actions */ "./frontend/actions/stock_actions.js");
 
 
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  debugger;
   return {};
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchStock: function fetchStock(symbol) {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["fetchStock"])(symbol));
+      return dispatch(Object(_actions_stock_actions__WEBPACK_IMPORTED_MODULE_2__["fetchStock"])(symbol));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(_stocks_show__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_stocks_show__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 

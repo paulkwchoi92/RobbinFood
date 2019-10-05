@@ -27,11 +27,11 @@ export const fetchTopNews = () => dispatch => {
     err => dispatch(receiveNewsErrors(err))
   );
 };
-export const fetchCompanyNews = (name = dispatch => {
+export const fetchCompanyNews = (name) => dispatch => {
   return (
     NewsApiUtil.fetchCompanyNews(name).then(news =>
       dispatch(receiveSpecificNews(news))
     ),
     err => disptach(receiveNewsErrors(err))
   );
-});
+};
