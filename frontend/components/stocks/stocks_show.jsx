@@ -7,7 +7,9 @@ class StockShow extends React.Component {
     super(props);
   }
 
-  componentWillMount() {}
+  componentWillMount() {
+    this.props.fetchStock(this.props.match.params.symbol)
+  }
 
   render() {
     return (

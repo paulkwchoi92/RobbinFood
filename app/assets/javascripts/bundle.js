@@ -257,7 +257,7 @@ var logout = function logout() {
 /*!*******************************************!*\
   !*** ./frontend/actions/stock_actions.js ***!
   \*******************************************/
-/*! exports provided: RECEIVE_ONE_STOCK, RECEIVE_MANY_STOCKS, RECEIVE_STOCK_ERRORS, RECEIVE_ALL_STOCKS, receiveOneStock, receiveManyStocks, receiveStockErrors, receiveAllStocks, fetchAllStocks */
+/*! exports provided: RECEIVE_ONE_STOCK, RECEIVE_MANY_STOCKS, RECEIVE_STOCK_ERRORS, RECEIVE_ALL_STOCKS, receiveOneStock, receiveManyStocks, receiveStockErrors, receiveAllStocks, fetchAllStocks, fetchStock */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -271,6 +271,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveStockErrors", function() { return receiveStockErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllStocks", function() { return receiveAllStocks; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllStocks", function() { return fetchAllStocks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchStock", function() { return fetchStock; });
 /* harmony import */ var _util_stock_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/stock_api_util */ "./frontend/util/stock_api_util.js");
 
 var RECEIVE_ONE_STOCK = "RECEIVE_ONE_STOCK";
@@ -305,6 +306,15 @@ var fetchAllStocks = function fetchAllStocks() {
   return function (dispatch) {
     return _util_stock_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllStocks"]().then(function (stocks) {
       return dispatch(receiveAllStocks(stocks));
+    }), function (err) {
+      return dispatch(receiveStockErrors(err));
+    };
+  };
+};
+var fetchStock = function fetchStock(symbol) {
+  return function (dispatch) {
+    return _util_stock_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchStock"](symbol).then(function (stock) {
+      return dispatch(receiveOneStock(stock));
     }), function (err) {
       return dispatch(receiveStockErrors(err));
     };
@@ -2216,7 +2226,9 @@ function (_React$Component) {
 
   _createClass(StockShow, [{
     key: "componentWillMount",
-    value: function componentWillMount() {}
+    value: function componentWillMount() {
+      this.props.fetchStock(this.props.match.params.symbol);
+    }
   }, {
     key: "render",
     value: function render() {
@@ -2237,13 +2249,15 @@ function (_React$Component) {
 /*!*************************************************************!*\
   !*** ./frontend/components/stocks/stocks_show_container.js ***!
   \*************************************************************/
-/*! no exports provided */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _stocks_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stocks_show */ "./frontend/components/stocks/stocks_show.jsx");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
 
 
 
@@ -2253,21 +2267,13 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    fetchStock: function (_fetchStock) {
-      function fetchStock(_x) {
-        return _fetchStock.apply(this, arguments);
-      }
-
-      fetchStock.toString = function () {
-        return _fetchStock.toString();
-      };
-
-      return fetchStock;
-    }(function (symbol) {
-      return dispatch(fetchStock(symbol));
-    })
+    fetchStock: function fetchStock(symbol) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["fetchStock"])(symbol));
+    }
   };
 };
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(_stocks_show__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -2925,12 +2931,12 @@ var logout = function logout() {
 /*!*****************************************!*\
   !*** ./frontend/util/stock_api_util.js ***!
   \*****************************************/
-/*! exports provided: searchStock, fetchAllStocks, getIntradayData, getHistoryData, getStockInfo, getSearch, watchStock, deleteWatch */
+/*! exports provided: fetchStock, fetchAllStocks, getIntradayData, getHistoryData, getStockInfo, getSearch, watchStock, deleteWatch */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "searchStock", function() { return searchStock; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchStock", function() { return fetchStock; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllStocks", function() { return fetchAllStocks; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getIntradayData", function() { return getIntradayData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHistoryData", function() { return getHistoryData; });
@@ -2938,7 +2944,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearch", function() { return getSearch; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "watchStock", function() { return watchStock; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteWatch", function() { return deleteWatch; });
-var searchStock = function searchStock(symbol) {
+var fetchStock = function fetchStock(symbol) {
   return $.ajax({
     method: "GET",
     url: "api/stocks/".concat(symbol)

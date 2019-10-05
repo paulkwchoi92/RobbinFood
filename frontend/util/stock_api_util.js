@@ -1,5 +1,5 @@
 
-export const searchStock = symbol =>
+export const fetchStock = symbol =>
   $.ajax({
     method: "GET",
     url: `api/stocks/${symbol}`
