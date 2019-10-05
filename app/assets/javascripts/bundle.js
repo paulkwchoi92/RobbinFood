@@ -165,9 +165,9 @@ var fetchTopNews = function fetchTopNews() {
 };
 var fetchCompanyNews = function fetchCompanyNews(name) {
   return function (dispatch) {
-    debugger;
     return _util_news_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCompanyNews"](name).then(function (news) {
-      return dispatch(receiveSpecificNews(news));
+      // debugger
+      dispatch(receiveSpecificNews(news));
     }), function (err) {
       return disptach(receiveNewsErrors(err));
     };
@@ -308,7 +308,8 @@ var fetchStock = function fetchStock(symbol) {
   return function (dispatch) {
     // debugger
     return _util_stock_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchStock"](symbol).then(function (stock) {
-      return dispatch(receiveOneStock(stock));
+      // debugger
+      dispatch(receiveOneStock(stock));
     }), function (err) {
       return dispatch(receiveStockErrors(err));
     };
@@ -2618,6 +2619,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
+  debugger;
 
   switch (action.type) {
     case _actions_stock_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ONE_STOCK"]:

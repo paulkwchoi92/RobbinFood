@@ -1,9 +1,10 @@
 class Api::StocksController < ApplicationController
   def show
-    @stock = Stock.find_by(id: params[:id])
+    @stock = Stock.find_by(symbol: params[:id])
     # debugger
     # debugger
     if @stock
+      # render json: "api/stocks/show"
       render json: @stock
     else
       render json: {}, status: :not_found

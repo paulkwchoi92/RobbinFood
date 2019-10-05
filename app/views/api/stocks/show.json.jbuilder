@@ -1,3 +1,4 @@
-# @stock.attributes.each do |key, value|
-#   json.set!(key, value)
-# end  # bringing out all attritubtes
+@stock.attributes.each do |key, value|
+  # debugger
+  json.set!(key, value)
+end  # bringing out all attritubtes
