@@ -1,24 +1,24 @@
-import React from 'react'
-import CompanyNewsContainer from '../news/company_new_container'
-import {withRouter} from 'react-router-dom'
+import React from "react";
+import CompanyNewsContainer from "../news/company_new_container";
+import { withRouter } from "react-router-dom";
+import { NavRootBar} from '../nav_bar/nav_bar_root_container'
 class StockShow extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
-  componentWillMount() {
-    
-  }
+  componentWillMount() {}
 
   render() {
     return (
-      <div className="stocks-show-container">
-
-        
-        <CompanyNewsContainer />
+      <div>
+          <NavRootBar/>
+        <div className="stocks-show-container">
+          <CompanyNewsContainer />
+        </div>
       </div>
-    )
+    );
   }
 }
 
-export default withRouter(StockShow)
+export default withRouter(StockShow);

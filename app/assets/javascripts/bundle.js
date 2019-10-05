@@ -338,6 +338,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _body_body__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./body/body */ "./frontend/components/body/body.jsx");
 /* harmony import */ var _session_form_demo_login_container__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./session_form/demo_login_container */ "./frontend/components/session_form/demo_login_container.js");
 /* harmony import */ var _nav_bar_nav_bar_root_container__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./nav_bar/nav_bar_root_container */ "./frontend/components/nav_bar/nav_bar_root_container.js");
+/* harmony import */ var _stocks_stocks_show_container__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./stocks/stocks_show_container */ "./frontend/components/stocks/stocks_show_container.js");
+/* harmony import */ var _stocks_stocks_show_container__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_stocks_stocks_show_container__WEBPACK_IMPORTED_MODULE_15__);
+
 
 
 
@@ -359,6 +362,9 @@ var App = function App() {
     exact: true,
     path: "/",
     component: _body_body__WEBPACK_IMPORTED_MODULE_12__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/stocks/:symbol",
+    component: _stocks_stocks_show_container__WEBPACK_IMPORTED_MODULE_15___default.a
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/snacks",
@@ -2124,6 +2130,17 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_session_form__WEBPACK_IMPORTED_MODULE_4__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/stocks/stocks_show_container.js":
+/*!*************************************************************!*\
+  !*** ./frontend/components/stocks/stocks_show_container.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
@@ -41976,7 +41993,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
