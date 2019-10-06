@@ -24,7 +24,17 @@ class StocksTransaction extends React.Component {
     );
   }
   renderEstimatedCost() {
-    return <div>{this.state.numOfShares * this.props.marketPrice}</div>;
+    return this.state.switch === "false" ? (
+      <div>
+        <div>Estimated Cost</div>
+        <div>{this.state.numOfShares * this.props.marketPrice}</div>
+      </div>
+    ) : (
+      <div>
+        <div>Estimated Credit</div>
+        <div>{this.state.numOfShares * this.props.marketPrice}</div>
+      </div>
+    );
   }
 
   renderReviewButton() {
