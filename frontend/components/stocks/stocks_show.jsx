@@ -26,7 +26,7 @@ class StockShow extends React.Component {
       <div>
           <RootNavBar/>
           <StockShowDetail details={this.state.currentStockInfo}/>
-
+          {/* missing market cap, hightoday, and avg volume */}
         <div>
           {/* <CompanyNewsContainer company={this.state.currentStockInfo.name}/> */}
 
