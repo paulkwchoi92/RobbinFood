@@ -1,6 +1,7 @@
 import React from "react";
 import CompanyNewsContainer from "../news/company_new_container";
 import { withRouter } from "react-router-dom";
+import StockShowDetail from './stock_show_detail'
 import RootNavBar from "../nav_bar/nav_bar_root_container";
 class StockShow extends React.Component {
   constructor(props) {
@@ -21,18 +22,17 @@ class StockShow extends React.Component {
 
   render() {
     return (
+      this.state.currentStockInfo ? (
       <div>
           <RootNavBar/>
-        <div className="stocks-show-container">
-        </div>
-        <div>
+          <StockShowDetail details={this.state.currentStockInfo}/>
 
-        </div>
         <div>
           {/* <CompanyNewsContainer /> */}
 
         </div>
-      </div>
+        </div>
+      ) : ( <div/>)
     );
   }
 }
