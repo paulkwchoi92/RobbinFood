@@ -1430,8 +1430,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  // debugger
+  var news = state.entities.news.news ? state.entities.news.news.articles : null;
   return {
-    type: "companynews"
+    type: "companynews",
+    articles: news
   };
 };
 
@@ -1504,12 +1507,13 @@ function (_React$Component) {
         this.props.fetchNews(); //  debugger
       } else {
         // debugger
-        this.props.fetchNews(this.props.match.params.symbol);
+        this.props.fetchNews(this.props.company);
       }
     }
   }, {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
+      // debugger
       this.setState({
         articles: nextProps.articles
       });
@@ -2217,7 +2221,7 @@ function (_React$Component) {
   _createClass(StockShowDetail, [{
     key: "render",
     value: function render() {
-      debugger;
+      // debugger;
       var details = this.props.details;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "stock-show-container"
@@ -2225,9 +2229,61 @@ function (_React$Component) {
         className: "stock-show-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Abouty")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "stock-show-description"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, details.description ? details.description : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "-")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "stock-info-container"
-      }));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stock-info-top"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stock-info-sections"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "stock-info-headers"
+      }, "CEO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        classname: "stock-info-inf"
+      }, details.ceo ? details.ceo : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "-"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stock-info-sections"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "stock-info-headers"
+      }, "Employees"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        classname: "stock-info-inf"
+      }, details.employees ? details.employees : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "-"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stock-info-sections"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "stock-info-headers"
+      }, "Headquarters"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        classname: "stock-info-inf"
+      }, details.headquarters ? details.ceo : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "-"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stock-info-sections"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "stock-info-headers"
+      }, "Founded"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        classname: "stock-info-inf"
+      }, details.founded ? details.founded : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "-")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stock-info-bottom"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stock-info-sections"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "stock-info-headers"
+      }, "Market Cap"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        classname: "stock-info-inf"
+      }, "-")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stock-info-sections"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "stock-info-headers"
+      }, "Dividend Yield"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        classname: "stock-info-inf"
+      }, details.dividend_yield ? details.dividend_yield : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "-"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stock-info-sections"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "stock-info-headers"
+      }, "High Today"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        classname: "stock-info-inf"
+      }, "-")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stock-info-sections"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "stock-info-headers"
+      }, "Average Volume"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        classname: "stock-info-inf"
+      }, "-")))));
     }
   }]);
 
@@ -2880,7 +2936,7 @@ var fetchCompanyNews = function fetchCompanyNews(name) {
       data: {
         q: name,
         language: "en",
-        apiKey: keys.newsAPIKey,
+        apiKey: "bb67bedddb454b0bae6d54e125e65d2e",
         pageSize: 5
       }
     });

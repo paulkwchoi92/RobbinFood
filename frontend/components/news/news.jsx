@@ -14,11 +14,12 @@ class News extends React.Component {
       //  debugger
     } else {
       // debugger
-      this.props.fetchNews(this.props.match.params.symbol);
+      this.props.fetchNews(this.props.company);
     }
   }
 
   componentWillReceiveProps(nextProps) {
+    // debugger
     this.setState({ articles: nextProps.articles });
   }
   render() {

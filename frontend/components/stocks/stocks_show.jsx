@@ -28,7 +28,7 @@ class StockShow extends React.Component {
           <StockShowDetail details={this.state.currentStockInfo}/>
 
         <div>
-          {/* <CompanyNewsContainer /> */}
+          {/* <CompanyNewsContainer company={this.state.currentStockInfo.name}/> */}
 
         </div>
         </div>
