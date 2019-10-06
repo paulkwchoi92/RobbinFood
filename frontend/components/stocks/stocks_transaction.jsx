@@ -13,12 +13,20 @@ class StocksTransaction extends React.Component {
   renderEstimatedCost() {
     return (<div>{this.state.numOfShares * this.props.marketPrice}</div>)
   }
-
+  
   renderReviewButton() {
-    return 
+    return (
+      <div>
+        <button>Review Order</button>
+      </div>
+    )
   }
   renderErrors() {
-    return
+    return (
+      <div className="transaction-error-container">
+        <div className="transaction-error-header"></div>
+      </div>
+    )
   }
 
   render
