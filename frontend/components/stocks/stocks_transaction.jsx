@@ -27,9 +27,19 @@ class StocksTransaction extends React.Component {
           <i class="fas fa-exclamation-circle"></i>
           Error
         </div>
-        <div className="transaction-error-msg">
-          {this.state.error}
-        </div>
+        <div className="transaction-error-msg">{this.state.error}</div>
+      </div>
+    );
+  }
+
+  renderWatchlistButton() {
+    return this.props.inWatchList ? (
+      <div className="watchlist-button-container">
+        <button className="watchlist-button">Add to Watchlist</button>
+      </div>
+    ) : (
+      <div className="watchlist-button-container">
+        <button className="watchlist-button">Remove from Watchlist</button>
       </div>
     );
   }
