@@ -9,6 +9,20 @@ class StocksTransaction extends React.Component {
       error: ""
     };
   }
+
+  //------- ALL RENDERS
+  renderHeaders() {
+    return this.props.owned ? (
+      <div>
+        <div>Buy {this.props.ticker}</div>
+        <div>Sell {this.props.ticker}</div>
+      </div>
+    ) : (
+      <div>
+        <div>Buy {this.props.ticker}</div>
+      </div>
+    );
+  }
   renderEstimatedCost() {
     return <div>{this.state.numOfShares * this.props.marketPrice}</div>;
   }
@@ -43,8 +57,6 @@ class StocksTransaction extends React.Component {
       </div>
     );
   }
-
-  render;
 
   render() {
     return <div></div>;
