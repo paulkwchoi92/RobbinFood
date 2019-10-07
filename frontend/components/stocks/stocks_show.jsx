@@ -52,6 +52,7 @@ class StockShow extends React.Component {
         ticker={this.props.match.params.symbol} 
         inWatchList={this.state.watchLists.includes(this.props.match.params.symbol)} 
         ownedShares={this.state.ownedStocks[this.props.match.params.symbol]}
+        buyingPower={this.props.buyingPower}
         */}
         <div>
           {/* <CompanyNewsContainer company={this.state.currentStockInfo.name}/> */}

@@ -2436,10 +2436,12 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var currentStock = entities.stocks.currentStock ? entities.stocks.currentStock : null;
   var watchLists = entities.users.watchlists ? entities.users.watchlists : null;
   var ownedStocks = entities.users.ownedStocks ? entities.users.ownedStocks : null;
+  var buyingPower = entities.users.user.buying_power ? entities.users.user.buying_power : null;
   return {
     currentStock: currentStock,
     currentUserId: session.id,
     watchLists: watchLists,
+    buyingPower: buyingPower,
     ownedStocks: ownedStocks
   };
 };
