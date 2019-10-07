@@ -12,7 +12,7 @@ class StocksTransaction extends React.Component {
 
   //------- ALL RENDERS
   renderHeaders() {
-    return this.props.owned ? (
+    return this.props.ownedShares ? (
       <div>
         <div>Buy {this.props.ticker}</div>
         <div>Sell {this.props.ticker}</div>
@@ -56,7 +56,7 @@ class StocksTransaction extends React.Component {
     );
   }
 
-  renderWatchlistButton() {
+  renderWatchlistButton() { // shows if not in owned
     return this.props.inWatchList ? (
       <div className="watchlist-button-container">
         <button className="watchlist-button">Add to Watchlist</button>
