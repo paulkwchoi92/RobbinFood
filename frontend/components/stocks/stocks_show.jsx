@@ -14,6 +14,7 @@ class StockShow extends React.Component {
   componentWillMount() {
     // debugger 
     this.props.fetchStock(this.props.match.params.symbol)
+    this.props.fetchUser(this.props.currentUserId)
   }
 
   componentWillReceiveProps(nextProps) {

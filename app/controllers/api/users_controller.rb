@@ -15,6 +15,18 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    debugger
+    @user = User.find_by(id: params[:id])
+    debugger
+    if @user
+        # debugger
+        login(@user)
+        @watchlists = @user.watchlists
+        @ownedStocks =@user.owned_stocks
+    render "api/users/show"
+    end
+  end
 
   def index
     @users = User.all
