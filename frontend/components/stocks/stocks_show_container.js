@@ -5,9 +5,13 @@ import { fetchUser } from "../../actions/session_actions"
 const mapStateToProps = ({ session, entities }) => {
   // debugger
   let currentStock = entities.stocks.currentStock ? entities.stocks.currentStock : null
+  let watchLists = entities.users.watchlists ? entities.users.watchlists : null 
+  let ownedStocks = entities.users.ownedStocks ? entities.users.ownedStocks : null
   return {
     currentStock: currentStock,
-    currentUserId: session.id 
+    currentUserId: session.id,
+    watchLists: watchLists,
+    ownedStocks: ownedStocks 
   };
 };
 

@@ -248,7 +248,7 @@ var logout = function logout() {
 };
 var fetchUser = function fetchUser(id) {
   return function (dispatch) {
-    debugger;
+    // debugger 
     return _util_user_api_util__WEBPACK_IMPORTED_MODULE_1__["fetchUserDetail"](id).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
@@ -2358,7 +2358,9 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(StockShow).call(this, props));
     _this.state = {
-      currentStockInfo: ""
+      currentStockInfo: "",
+      watchLists: [],
+      ownedStocks: null
     };
     return _this;
   }
@@ -2366,21 +2368,29 @@ function (_React$Component) {
   _createClass(StockShow, [{
     key: "componentWillMount",
     value: function componentWillMount() {
-      // debugger 
+      // debugger
       this.props.fetchStock(this.props.match.params.symbol);
       this.props.fetchUser(this.props.currentUserId);
     }
   }, {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      this.setState({
-        currentStockInfo: nextProps.currentStock
-      });
+      if (nextProps.ownedStocks) {
+        this.setState({
+          currentStockInfo: nextProps.currentStock,
+          watchLists: nextProps.watchLists,
+          ownedStocks: nextProps.ownedStocks
+        });
+      }
     }
+  }, {
+    key: "insideWatchLists",
+    value: function insideWatchLists(symbol) {}
   }, {
     key: "render",
     value: function render() {
-      return this.state.currentStockInfo ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_root_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_stock_show_detail__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      debugger;
+      return this.state.watchLists ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_root_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_stock_show_detail__WEBPACK_IMPORTED_MODULE_3__["default"], {
         details: this.state.currentStockInfo
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
     }
@@ -2416,9 +2426,13 @@ var mapStateToProps = function mapStateToProps(_ref) {
       entities = _ref.entities;
   // debugger
   var currentStock = entities.stocks.currentStock ? entities.stocks.currentStock : null;
+  var watchLists = entities.users.watchlists ? entities.users.watchlists : null;
+  var ownedStocks = entities.users.ownedStocks ? entities.users.ownedStocks : null;
   return {
     currentStock: currentStock,
-    currentUserId: session.id
+    currentUserId: session.id,
+    watchLists: watchLists,
+    ownedStocks: ownedStocks
   };
 };
 

@@ -16,15 +16,17 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    debugger
+    # debugger
     @user = User.find_by(id: params[:id])
-    debugger
+    # debugger
     if @user
-        # debugger
-        login(@user)
-        @watchlists = @user.watchlists
-        @ownedStocks =@user.owned_stocks
+      login(@user)
+      @watchlists = @user.watchlists
+      @ownedStocks =@user.owned_stocks
+      # debugger
     render "api/users/show"
+    else
+      render json: ["Invalid username/password combination"], status: 401
     end
   end
 
