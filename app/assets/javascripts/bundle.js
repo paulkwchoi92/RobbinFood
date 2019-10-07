@@ -2386,7 +2386,10 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      debugger;
+      if (prevProps.match.params.symbol !== this.props.match.params.symbol) {
+        this.props.fetchStock(this.props.match.params.symbol);
+        this.props.fetchUser(this.props.currentUserId);
+      }
     }
   }, {
     key: "insideWatchLists",

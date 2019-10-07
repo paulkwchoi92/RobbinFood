@@ -31,7 +31,10 @@ class StockShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    debugger
+    if (prevProps.match.params.symbol !== this.props.match.params.symbol) {
+      this.props.fetchStock(this.props.match.params.symbol);
+      this.props.fetchUser(this.props.currentUserId);
+    }
   }
 
 
