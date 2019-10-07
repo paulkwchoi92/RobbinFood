@@ -30,10 +30,16 @@ class StockShow extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    debugger
+  }
+
+
+
   insideWatchLists(symbol) {}
 
   render() {
-    debugger;
+    // debugger;
     return this.state.watchLists ? (
       <div>
         <RootNavBar />
@@ -42,7 +48,7 @@ class StockShow extends React.Component {
         {/* <StockTransactionContainer 
         ticker={this.props.match.params.symbol} 
         inWatchList={this.state.watchLists.includes(this.props.match.params.symbol)} 
-        ownedShares={this.state.ownedStocks[this.props.match.parmas]}
+        ownedShares={this.state.ownedStocks[this.props.match.params.symbol]}
         */}
         <div>
           {/* <CompanyNewsContainer company={this.state.currentStockInfo.name}/> */}
