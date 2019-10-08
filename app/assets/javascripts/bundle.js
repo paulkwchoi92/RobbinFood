@@ -2397,7 +2397,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
+      // debugger;
       return this.state.watchLists && this.state.currentStockInfo ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_root_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_stock_show_detail__WEBPACK_IMPORTED_MODULE_3__["default"], {
         details: this.state.currentStockInfo
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
@@ -2437,14 +2437,14 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var watchLists = entities.users.watchlists ? entities.users.watchlists : null;
   var ownedStocks = entities.users.ownedStocks ? entities.users.ownedStocks : null;
   var buyingPower = entities.users.user ? entities.users.user.buying_power : null;
-  var singleDay = entities.stocks.singleDay ? entities.stocks.singleDay : null;
+  var charts = entities.stocks.charts ? entities.stocks.charts : null;
   return {
     currentStock: currentStock,
     currentUserId: session.id,
     watchLists: watchLists,
     buyingPower: buyingPower,
     ownedStocks: ownedStocks,
-    singleDayChart: singleDay
+    charts: charts
   };
 };
 
@@ -2814,7 +2814,7 @@ __webpack_require__.r(__webpack_exports__);
     case _actions_stock_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ONE_STOCK"]:
       return Object.assign({}, state, {
         currentStock: action.stock.stock,
-        singleDay: action.stock.singleDay
+        charts: action.stock.charts
       });
 
     case _actions_stock_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_MANY_STOCKS"]:
