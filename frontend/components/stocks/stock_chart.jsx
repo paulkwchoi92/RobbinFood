@@ -14,8 +14,35 @@ class StockChart extends React.Components {
     this.state = { currentSelection: "1d" };
   }
 
+  selectionParser(str) { 
+    switch (str) {
+      case "1d":
+        return "oneday"
+      case "1w":
+        return "oneweek"
+      case "1m":
+        return "onemonth"
+      case "3m":
+        return "threemonths"
+      case "1y":
+        return "oneyear"
+      case "5y":
+        return "fiveyears"
+      default:
+        return
+    }
+  }
+
   render() {
-    const choice = this.state.currentSelection;
+    const {currentSelection} = this.state
+    const choice = this.selectionParser(this.state.currentSelection);
+    let data = this.props.charts[choice]
+    let start, end, currentStocks;
+    const value = currentSelection === "1d" ? "open" : "close"
+    if (data) {
+      currentStocks = data.filter(ele => ele[value])
+    }
+    
     return (
       <div>
         <div id="stock-chart">
