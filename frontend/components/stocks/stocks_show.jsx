@@ -3,7 +3,7 @@ import CompanyNewsContainer from "../news/company_new_container";
 import { withRouter } from "react-router-dom";
 import StockShowDetail from "./stock_show_detail";
 import RootNavBar from "../nav_bar/nav_bar_root_container";
-
+import StockChart from "./stock_chart";
 class StockShow extends React.Component {
   constructor(props) {
     super(props);
@@ -41,13 +41,19 @@ class StockShow extends React.Component {
 
   render() {
     // debugger;
-    return this.state.watchLists && this.state.currentStockInfo ? (
+    return this.state.watchLists && this.state.currentStockInfo && this.props.charts ? (
       <div>
         <RootNavBar />
+        <StockChart
+          prevClose={this.props.stockinfo.data["0"].close_yesterday}
+          name={this.props.stockinfo.data["0"].name}
+          charts={this.props.charts}
+        />
         <StockShowDetail details={this.state.currentStockInfo} />
         {/* missing market cap, hightoday, and avg volume */}
         {/* <StockTransactionContainer 
         ticker={this.props.match.params.symbol} 
+        currentPrice= {this.props.stockinfo.data["0"].price}
         inWatchList={this.state.watchLists.includes(this.props.match.params.symbol)} 
         ownedShares={this.state.ownedStocks[this.props.match.params.symbol]}
         buyingPower={this.props.buyingPower}

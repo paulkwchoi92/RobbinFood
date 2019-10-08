@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatMoney } from "../../utils/utils";
+import { formatMoney } from "../../util/chart_util"
 
 export default ({ active, payload, value, prev, coordinate }) => {
   let stockValue;

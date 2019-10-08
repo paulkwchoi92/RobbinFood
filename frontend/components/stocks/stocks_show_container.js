@@ -9,13 +9,15 @@ const mapStateToProps = ({ session, entities }) => {
   let ownedStocks = entities.users.ownedStocks ? entities.users.ownedStocks : null
   let buyingPower = entities.users.user ? entities.users.user.buying_power : null
   let charts = entities.stocks.charts ? entities.stocks.charts : null
+  let stockInfo = entities.stocks.stockinfo ? entities.stocks.stockinfo : null
   return {
     currentStock: currentStock,
     currentUserId: session.id,
     watchLists: watchLists,
     buyingPower: buyingPower,
     ownedStocks: ownedStocks,
-    charts: charts
+    charts: charts,
+    stockinfo: stockInfo
   };
 };
 
