@@ -4,6 +4,10 @@ import { formatMoney } from "../../util/chart_util"
 class StockShowDetail extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showMore: false,
+      readMore: false
+    }
   }
 
   numParser(num) {
@@ -14,12 +18,17 @@ class StockShowDetail extends React.Component {
       return `${(num / 1000000).toFixed(2)}M`;
     }
   }
+  toggleState(field) {
+    return () => {
+      this.setState({ [field]: !this.state[field] });
+    };
+  }
 
   render() {
     // debugger;
-    debugger
+    // debugger
     const { details, details2 } = this.props;
-    stockDetails = { 
+    let stockDetails = { 
       "CEO": details.ceo, 
       "Employees": details.employees,
       "Headquarters": details.headquarters,
@@ -33,62 +42,30 @@ class StockShowDetail extends React.Component {
       "52 Week High": formatMoney(details2["52_week_high"]),
       "52 Week Low": formatMoney(details2["52_week_low"])
     };
-      
+    let descriptionParts = []
+    let midPoint = details.description.length / 2
+    descriptionParts.push(details.description.slice(0, midPoint))
+    descriptionParts.push(details.description.slice(midPoint, details.description.length - 1))
     return (
       <div className="stock-show-container">
-        <div className="stock-show-header">
+        <header>
           <h2>About</h2>
-        </div>
-        <div className="stock-show-description">
-          {details.description ? details.description : <p>-</p>}
-        </div>
-        <div className="stock-info-container">
-          <div className="stock-info-top">
-            <div className="stock-info-sections">
-              <h3 className="stock-info-headers">CEO</h3>
-              <div classname="stock-info-inf">
-                {details.ceo ? details.ceo : <p>-</p>}
+          <button onClick={this.toggleState("showMore")}>{this.state.showMore ? "Show Less" : "Show More"}</button>
+        </header>
+        <h3>
+          {descriptionParts[0]}
+          <span className={this.state.readMore ? "" : "hidden"}>{descriptionParts[1]}</span>
+          <button onClick={this.toggleState("readMore")}>{this.state.readMore ? "Read Less" : "Read More"}</button>
+        </h3>
+        <div className={this.state.showMore ? "grid long" : "grid"}>
+          {Object.keys(stockDetails).map(key => {
+            return (
+              <div key={key} className="grid-item">
+                <div className="grid-head">{key}</div>
+                <div className="grid-value">{stockDetails[key] ? stockDetails[key] : <p>-</p>}</div>
               </div>
-            </div>
-            <div className="stock-info-sections">
-              <h3 className="stock-info-headers">Employees</h3>
-              <div classname="stock-info-inf">
-                {details.employees ? details.employees : <p>-</p>}
-              </div>
-            </div>
-            <div className="stock-info-sections">
-              <h3 className="stock-info-headers">Headquarters</h3>
-              <div classname="stock-info-inf">
-                {details.headquarters ? details.ceo : <p>-</p>}
-              </div>
-            </div>
-            <div className="stock-info-sections">
-              <h3 className="stock-info-headers">Founded</h3>
-              <div classname="stock-info-inf">
-                {details.founded ? details.founded : <p>-</p>}
-              </div>
-            </div>
-          </div>
-          <div className="stock-info-bottom">
-            <div className="stock-info-sections">
-              <h3 className="stock-info-headers">Market Cap</h3>
-              <div classname="stock-info-inf">{details2.market_cap ? details2.market_cap : <p>-</p>}</div>
-            </div>
-            <div className="stock-info-sections">
-              <h3 className="stock-info-headers">Dividend Yield</h3>
-              <div classname="stock-info-inf">
-                {details.dividend_yield ? details.dividend_yield : <p>-</p>}
-              </div>
-            </div>
-            <div className="stock-info-sections">
-              <h3 className="stock-info-headers">High Today</h3>
-              <div classname="stock-info-inf">{details2.day_high ? details2.day_high : <p>-</p>}</div>
-            </div>
-            <div className="stock-info-sections">
-              <h3 className="stock-info-headers">Average Volume</h3>
-              <div classname="stock-info-inf">{details2.volume_avg ? details2.volume_avg : <p>-</p>}</div>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </div>
     );

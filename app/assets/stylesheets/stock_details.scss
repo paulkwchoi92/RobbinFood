@@ -1,3 +1,39 @@
+$rh_green: #21ce99;
+$rh_highlight: #1ae9aa;
+$rh_lightergrey: #fafafa;
+$rh_lgrey: #f4f4f5;
+$rh_grey: #cbcbcd;
+$rh_darkgrey: #7d8c8e;
+$med_font: 16px;
+$rh_fonts: "DIN", sans-serif;
+
+
+.stock-show-container{
+  header{
+    width: 676px;
+    padding-bottom: 16px;
+    margin: 0;
+    border-bottom: 1px solid $rh_lgrey;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 48px;
+    button{
+      color: $rh_green;
+    }
+    button:hover{
+      color: $rh_highlight;
+    }
+  }
+  h3{
+    max-width: 570px;
+    line-height: 22px;
+    letter-spacing: 0;
+    font-size: 16px;
+    font-weight: 100;
+    margin: 24px 0; 
+  }
+}
 .grid{
   padding-top: 18px;
   display: flex;
