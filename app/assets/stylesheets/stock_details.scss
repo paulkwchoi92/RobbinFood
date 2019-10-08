@@ -1,0 +1,40 @@
+.grid{
+  padding-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 678.66px;
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.hidden{
+  display: none;
+}
+
+.long{
+  max-height: 1000px;
+}
+
+.grid-item{
+    margin: 0 6px 12px;
+    flex-basis: calc(25% - 9px);
+}
+
+.grid-head{
+  font-weight: 900;
+}
+
+.grid-value{
+  font-weight: 100;
+  letter-spacing: .25px;
+  line-height: 19px;
+  font-size: 13px;
+}
+
+.grid > *:nth-child(4n + 1){
+  margin-left: 0;
+}
+
+.grid > *:nth-child(4n) {
+  margin-right: 0;
+}

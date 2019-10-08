@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import StockShowDetail from "./stock_show_detail";
 import RootNavBar from "../nav_bar/nav_bar_root_container";
 import StockChart from "./stock_chart";
+import Loader from "../loader"
 class StockShow extends React.Component {
   constructor(props) {
     super(props);
@@ -40,16 +41,29 @@ class StockShow extends React.Component {
   insideWatchLists(symbol) {}
 
   render() {
-    // debugger;
+    
+    if (!this.props.charts ||
+      !this.props.stockinfo ||
+      !this.props.currentStock) {
+      return <Loader id={"loading-center"} />
+      }
+    if (this.state.currentStockInfo.symbol !== this.props.match.params.symbol) {
+      // debugger
+      return <Loader id={"loading-center"} />
+    }
+
     return this.state.watchLists && this.state.currentStockInfo && this.props.charts ? (
       <div>
-        <RootNavBar />
+        <div className="fixed stocks_show_nav">
+          <RootNavBar />
+        </div>
+        <main className="main-page">
         <StockChart
           prevClose={this.props.stockinfo.data["0"].close_yesterday}
           name={this.props.stockinfo.data["0"].name}
           charts={this.props.charts}
         />
-        <StockShowDetail details={this.state.currentStockInfo} />
+          <StockShowDetail details={this.state.currentStockInfo} details2={this.props.stockinfo.data["0"]}/>
         {/* missing market cap, hightoday, and avg volume */}
         {/* <StockTransactionContainer 
         ticker={this.props.match.params.symbol} 
@@ -60,10 +74,11 @@ class StockShow extends React.Component {
         */}
         <div>
           {/* <CompanyNewsContainer company={this.state.currentStockInfo.name}/> */}
-        </div>
+          </div>
+        </main>
       </div>
     ) : (
-      <div />
+      <Loader id={'loading-center'} />
     );
   }
 }

@@ -5,6 +5,7 @@ export default ({ active, payload, value, prev, coordinate }) => {
   let stockValue;
   value = parseFloat(value);
   prev = parseFloat(prev);
+  // debugger
   if (active && payload && payload[0]) {
     stockValue = payload[0].value;
   } else {
@@ -14,6 +15,7 @@ export default ({ active, payload, value, prev, coordinate }) => {
   const showDiff = diff.toFixed(2);
   let percent = prev === 0 ? 0 : (diff / prev) * 100;
   const showPercent = percent.toFixed(2);
+  // debugger
   return (
     <div>
       <h1>{formatMoney(stockValue)}</h1>
@@ -24,7 +26,7 @@ export default ({ active, payload, value, prev, coordinate }) => {
         id="chart-time"
         style={{ left: coordinate.x - 32 }}>
         <span>
-          {`${payload && payload[0] ? payload[0].payload.label : ""}`}
+          {`${payload && payload[0] ? payload[0].payload.date : ""}`}
         </span>
       </div>
     </div>
