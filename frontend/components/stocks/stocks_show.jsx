@@ -37,13 +37,11 @@ class StockShow extends React.Component {
     }
   }
 
-
-
   insideWatchLists(symbol) {}
 
   render() {
     // debugger;
-    return this.state.watchLists ? (
+    return this.state.watchLists && this.state.currentStockInfo ? (
       <div>
         <RootNavBar />
         <StockShowDetail details={this.state.currentStockInfo} />
