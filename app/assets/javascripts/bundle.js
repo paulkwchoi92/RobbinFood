@@ -2397,7 +2397,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // debugger;
+      debugger;
       return this.state.watchLists && this.state.currentStockInfo ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_root_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_stock_show_detail__WEBPACK_IMPORTED_MODULE_3__["default"], {
         details: this.state.currentStockInfo
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);

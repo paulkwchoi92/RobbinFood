@@ -4,13 +4,13 @@ class Api::StocksController < ApplicationController
   def show
     @stock = Stock.find_by(symbol: params[:id])
     symbol = params[:id]
+    # debugger
     # daycharturl = "https://intraday.worldtradingdata.com/api/v1/intraday?symbol=#{symbol}&range=1&interval=1&api_token=zWGOqwDCoe0BBKe3FN1SM3x1ahCMbEs47EywsN8rpHTEByE7dMrezhsqBv4A"
     # @singleDay = RestClient.get(daycharturl)
-    # debugger
-    if @stock 
-      render json: {stock: @stock, singleDay: @singleDay}
     # if @singleDay && @stock
     #   render json: {stock: @stock, singleDay: @singleDay}
+    if @stock 
+      render json: {stock: @stock, singleDay: @singleDay}
     else
       render json: {}, status: :not_found
     end

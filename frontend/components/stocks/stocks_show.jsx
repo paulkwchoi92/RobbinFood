@@ -40,7 +40,7 @@ class StockShow extends React.Component {
   insideWatchLists(symbol) {}
 
   render() {
-    // debugger;
+    debugger;
     return this.state.watchLists && this.state.currentStockInfo ? (
       <div>
         <RootNavBar />
