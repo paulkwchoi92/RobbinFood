@@ -25,8 +25,6 @@ class StockShowDetail extends React.Component {
   }
 
   render() {
-    // debugger;
-    // debugger
     const { details, details2 } = this.props;
     let stockDetails = { 
       "CEO": details.ceo, 

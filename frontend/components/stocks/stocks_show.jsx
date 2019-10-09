@@ -64,8 +64,8 @@ class StockShow extends React.Component {
           charts={this.props.charts}
         />
           <StockShowDetail details={this.state.currentStockInfo} details2={this.props.stockinfo.data["0"]}/>
-        {/* missing market cap, hightoday, and avg volume */}
         {/* <StockTransactionContainer 
+        userId = {this.props.currentUserId}
         ticker={this.props.match.params.symbol} 
         currentPrice= {this.props.stockinfo.data["0"].price}
         inWatchList={this.state.watchLists.includes(this.props.match.params.symbol)} 

@@ -10,6 +10,24 @@ class StocksTransaction extends React.Component {
     };
   }
 
+  handleSubmit(e) {
+    if (!this.props.user) {
+      this.props.history.push("/signup");
+    }
+    e.preventDefault();
+    this.setState({ transacting: true });
+    this.props.makeTransaction({
+      user_id: this.props.user.id,
+      symbol: this.props.ticker,
+      transaction_type: this.state.buySell === "Buy" ? "purchase" : "sale",
+      stock_price: this.props.price,
+      num_shares: this.state.numShares,
+    }).always(() => {
+      this.setState({ numShares: 0 });
+      this.setState({ transacting: false });
+    });
+  }
+
   //------- ALL RENDERS
   renderHeaders() {
     return this.props.ownedShares ? (
