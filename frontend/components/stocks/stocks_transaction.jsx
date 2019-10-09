@@ -6,8 +6,33 @@ class StocksTransaction extends React.Component {
     this.state = {
       switch: false,
       numOfShares: 0,
-      error: ""
+      error: "",
+      watching: this.props.inWatchList,
+      formType: "buy"
     };
+  }
+
+  handleChange(field) {
+    return e => {
+      this.setState({ [field]: e.target.value });
+    };
+  }
+
+  handleWatch(e) {
+    e.preventDefault();
+    stockParams = {
+      user_id: this.props.userId,
+      symbol: this.props.ticker
+    };
+    if (this.props.inWatchList) {
+      this.setState({ watching: !this.state.watching }, () => {
+        this.props.watchStock(stockParams);
+      });
+    } else {
+      this.setState({ watching: !this.state.watching }, () => {
+        this.props.removeWatch(stockParams);
+      });
+    }
   }
 
   handleSubmit(e) {
@@ -16,16 +41,18 @@ class StocksTransaction extends React.Component {
     }
     e.preventDefault();
     this.setState({ transacting: true });
-    this.props.makeTransaction({
-      user_id: this.props.user.id,
-      symbol: this.props.ticker,
-      transaction_type: this.state.buySell === "Buy" ? "purchase" : "sale",
-      stock_price: this.props.price,
-      num_shares: this.state.numShares,
-    }).always(() => {
-      this.setState({ numShares: 0 });
-      this.setState({ transacting: false });
-    });
+    this.props
+      .makeTransaction({
+        user_id: this.props.userId,
+        symbol: this.props.ticker,
+        transaction_type: this.state.form === "Buy" ? "purchase" : "sale",
+        stock_price: this.props.currentPrice,
+        num_shares: this.state.numOfShares
+      })
+      .always(() => {
+        this.setState({ numShares: 0 });
+        this.setState({ transacting: false });
+      });
   }
 
   //------- ALL RENDERS
@@ -37,7 +64,7 @@ class StocksTransaction extends React.Component {
       </div>
     ) : (
       <div>
-        <div>Buy {this.props.ticker}</div>
+        <div className="toggle-button selected">Buy {this.props.ticker}</div>
       </div>
     );
   }
@@ -55,13 +82,6 @@ class StocksTransaction extends React.Component {
     );
   }
 
-  renderReviewButton() {
-    return (
-      <div>
-        <button>Review Order</button>
-      </div>
-    );
-  }
   renderErrors() {
     return (
       <div className="transaction-error-container">
@@ -74,19 +94,29 @@ class StocksTransaction extends React.Component {
     );
   }
 
-  renderWatchlistButton() { // shows if not in owned
-    return this.props.inWatchList ? (
-      <div className="watchlist-button-container">
-        <button className="watchlist-button">Add to Watchlist</button>
-      </div>
+  renderWatchlistButton() {
+    // shows if not in owned
+    return this.state.watching ? (
+      <button className="watchlist-button" onClick={this.handleWatch}>
+        Add to Watchlist
+      </button>
     ) : (
-      <div className="watchlist-button-container">
-        <button className="watchlist-button">Remove from Watchlist</button>
-      </div>
+      <button className="watchlist-button" onClick={this.handleWatch}>
+        Remove from Watchlist
+      </button>
     );
   }
 
   render() {
-    return <div></div>;
+    return <div>
+      <form className="transaction-form">
+        <header className="transaction-header">
+
+        </header>
+
+      </form>
+
+      {this.renderWatchlistButton}
+    </div>;
   }
 }
