@@ -14,6 +14,7 @@ class StockShow extends React.Component {
       watchLists: [],
       ownedStocks: null
     };
+    this.insideWatchLists = this.insideWatchLists.bind(this);
   }
 
   componentWillMount() {
@@ -39,9 +40,17 @@ class StockShow extends React.Component {
     }
   }
 
-  insideWatchLists(symbol) {}
+  insideWatchLists(symbol) {
+    // debugger
+    this.state.watchLists.forEach(ele => {
+      // debugger;
+      if (ele.symbol === symbol) return true;
+    });
+    return false 
+  }
 
   render() {
+    // debugger
     if (
       !this.props.charts ||
       !this.props.stockinfo ||
@@ -53,7 +62,17 @@ class StockShow extends React.Component {
       // debugger
       return <Loader id={"loading-center"} />;
     }
-    // this.state.watchLists && this.state.currentStockInfo && this.props.charts ?
+    let watchcheck = false 
+    let watchid 
+    if (this.state.watchLists) {
+      this.state.watchLists.forEach(ele => {
+        if (ele.symbol === this.props.match.params.symbol) {
+          watchcheck = true
+          watchid = ele.id
+        }
+      })
+    }
+    // debugger
     return this.state.watchLists &&
       this.state.currentStockInfo &&
       this.props.charts ? (
@@ -79,12 +98,11 @@ class StockShow extends React.Component {
                 userId={this.props.currentUserId}
                 ticker={this.props.match.params.symbol}
                 currentPrice={this.props.stockinfo.data["0"].price}
-                inWatchList={this.state.watchLists.includes(
-                  this.props.match.params.symbol
-                )}
+                inWatchList={watchcheck}
                 ownedShares={
                   this.state.ownedStocks[this.props.match.params.symbol]
                 }
+                watchId={watchid}
                 buyingPower={this.props.buyingPower}
               />
             </div>

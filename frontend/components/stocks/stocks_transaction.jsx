@@ -25,17 +25,19 @@ class StocksTransaction extends React.Component {
 
   handleWatch(e) {
     e.preventDefault();
-    let stockParams = {
+    let watchlists = {
       user_id: this.props.userId,
       symbol: this.props.ticker
     };
+
+    
     if (!this.state.watching) {
       this.setState({ watching: !this.state.watching }, () => {
-        this.props.watchStock(stockParams);
+        this.props.watchStock(watchlists);
       });
     } else {
       this.setState({ watching: !this.state.watching }, () => {
-        this.props.removeWatch(stockParams);
+        this.props.removeWatch( this.props.watchId);
       });
     }
   }

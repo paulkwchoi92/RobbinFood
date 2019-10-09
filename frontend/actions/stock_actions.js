@@ -73,8 +73,12 @@ export const makeTransaction = transaction => dispatch => {
     ({ responseJSON }) => dispatch(receiveErrors(responseJSON)));
 };
 
-export const watchStock = (id, symbol) => dispatch => {
-  return StockAPIUtil.watchStock(id, symbol).then(watch => dispatch(receiveWatch(watch)));
+// export const watchStock = (id, symbol) => dispatch => {
+//   return StockAPIUtil.watchStock(id, symbol).then(watch => dispatch(receiveWatch(watch)));
+// };
+
+export const watchStock = watchlist => dispatch => {
+  return StockAPIUtil.watchStock(watchlist).then(watch => dispatch(receiveWatch(watch)));
 };
 
 export const removeWatch = id => dispatch => {

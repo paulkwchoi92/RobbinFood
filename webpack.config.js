@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: './frontend/robbinfood.jsx',
+  entry:  './frontend/robbinfood.jsx',
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: 'bundle.js',
@@ -15,7 +15,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           query: {
-            presets: ['@babel/env', '@babel/react']
+            presets: [["@babel/env", {
+              "modules": false
+            }], '@babel/env', '@babel/react']
           }
         },
       }

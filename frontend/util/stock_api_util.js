@@ -1,4 +1,3 @@
-
 export const fetchStock = symbol =>
   $.ajax({
     method: "GET",
@@ -6,18 +5,25 @@ export const fetchStock = symbol =>
   });
 
 export const fetchAllStocks = () =>
-$.ajax({
-  method: "GET",
-  url: `api/stocks`
-})
+  $.ajax({
+    method: "GET",
+    url: `api/stocks`
+  });
 
-export const watchStock = (id, symbol) =>
+// export const watchStock = (id, symbol) =>
+//   $.ajax({
+//     method: "POST",
+//     url: `api/watchlists`,
+//     data: {
+//       watchlist: { user_id: id, symbol }
+//     }
+//   });
+
+export const watchStock = watchlist =>
   $.ajax({
     method: "POST",
     url: `api/watchlists`,
-    data: {
-      watchlist: { user_id: id, symbol }
-    }
+    data: { watchlist }
   });
 
 export const deleteWatch = id =>
@@ -26,13 +32,12 @@ export const deleteWatch = id =>
     url: `api/watchlists/${id}`
   });
 
-export const makeTransaction = transaction => (
+export const makeTransaction = transaction =>
   $.ajax({
     method: "POST",
     url: `api/transactions/`,
     data: { transaction }
-  })
-);
+  });
 // export const getIntradayData = symbol =>
 //   $.ajax({
 //     method: "GET",

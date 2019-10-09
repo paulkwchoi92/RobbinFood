@@ -1,16 +1,19 @@
 class Api::WatchlistsController < ApplicationController
   def create
-    debugger
+    # debugger
     @watchlist = Watchlist.new(watchlist_params)
+    # debugger
     if @watchlist.save 
-      render :show 
+      render json: @watchlist
     else 
       render json: @watchlist.errors.full_messages, status: "invalid watchlist"
     end 
   end 
 
   def destroy
-    @watchlist = Watchlist.find(watchlist_params)
+    # debugger
+    @watchlist = Watchlist.find( params[:id])
+    # debugger
     if @watchlist 
       @watchlist.delete
       render json: {id: @watchlist.id}
