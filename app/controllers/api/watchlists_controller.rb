@@ -1,5 +1,6 @@
 class Api::WatchlistsController < ApplicationController
   def create
+    debugger
     @watchlist = Watchlist.new(watchlist_params)
     if @watchlist.save 
       render :show 

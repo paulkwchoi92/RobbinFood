@@ -1,3 +1,11 @@
+$rh_green: #21ce99;
+$rh_highlight: #1ae9aa;
+$rh_lightergrey: #fafafa;
+$rh_lgrey: #f4f4f5;
+$rh_grey: #cbcbcd;
+$rh_darkgrey: #7d8c8e;
+$med_font: 16px;
+$rh_fonts: "DIN", sans-serif;
 .fixed {
   position: fixed;
 }
@@ -7,14 +15,14 @@
   z-index: 1;
 }
 
-.main-page{
+.main-page {
   width: 1024px;
   padding-top: 64px;
   margin: 0 auto;
   display: flex;
 }
 
-.watchlist-button{
+.watchlist-button {
   margin: 24px 24px 0;
   padding: 0 40px;
   width: 227px;
@@ -23,7 +31,91 @@
   border-radius: 4px;
   color: $rh_green;
 }
-.watchlist-button:hover{
+.watchlist-button:hover {
   color: $rh_highlight;
   border-color: $rh_highlight;
+}
+
+.estimated-cost {
+  height: 48px;
+  padding-right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-form {
+  position: relative;
+  padding: 0 24px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.01), 0 3px 24px rgba(48, 51, 51, 0.09);
+  font-weight: 600;
+  font-size: 14px;
+  header {
+    height: 52px;
+    display: flex;
+    padding: 4px 24px 0;
+    margin: 0 -24px;
+    border-bottom: 1px solid $rh_lgrey;
+  }
+  label {
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  input {
+    background: $rh_lgrey;
+    text-align: right;
+    padding: 0 16px;
+    height: 36px;
+    width: 82px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: 0;
+    border: 1px solid $rh_lgrey;
+    transition: border-color 200ms;
+  }
+  input:hover {
+    border-color: $rh_grey;
+    background: white;
+  }
+  input:focus {
+    border-color: $rh_green;
+    background: white;
+  }
+}
+
+.toggle-button {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 12px 0 0;
+  box-sizing: border-box;
+}
+
+.selected {
+  color: $rh_green;
+  border-bottom: 2px solid $rh_green;
+}
+
+.toggle-button:first-child {
+  margin-right: 12px;
+}
+
+#info-div {
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stocks-transaction-container {
+  padding-top: 40px;
+  width: 287px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

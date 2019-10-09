@@ -4,7 +4,8 @@ import { withRouter } from "react-router-dom";
 import StockShowDetail from "./stock_show_detail";
 import RootNavBar from "../nav_bar/nav_bar_root_container";
 import StockChart from "./stock_chart";
-import Loader from "../loader"
+import Loader from "../loader";
+import StockTransactionContainer from "./transaction_container";
 class StockShow extends React.Component {
   constructor(props) {
     super(props);
@@ -41,44 +42,60 @@ class StockShow extends React.Component {
   insideWatchLists(symbol) {}
 
   render() {
-    
-    if (!this.props.charts ||
+    if (
+      !this.props.charts ||
       !this.props.stockinfo ||
-      !this.props.currentStock) {
-      return <Loader id={"loading-center"} />
-      }
+      !this.props.currentStock
+    ) {
+      return <Loader id={"loading-center"} />;
+    }
     if (this.state.currentStockInfo.symbol !== this.props.match.params.symbol) {
       // debugger
-      return <Loader id={"loading-center"} />
+      return <Loader id={"loading-center"} />;
     }
-
-    return this.state.watchLists && this.state.currentStockInfo && this.props.charts ? (
+    // this.state.watchLists && this.state.currentStockInfo && this.props.charts ?
+    return this.state.watchLists &&
+      this.state.currentStockInfo &&
+      this.props.charts ? (
       <div>
         <div className="fixed stocks_show_nav">
           <RootNavBar />
         </div>
         <main className="main-page">
-        <StockChart
-          prevClose={this.props.stockinfo.data["0"].close_yesterday}
-          name={this.props.stockinfo.data["0"].name}
-          charts={this.props.charts}
-        />
-          <StockShowDetail details={this.state.currentStockInfo} details2={this.props.stockinfo.data["0"]}/>
-        {/* <StockTransactionContainer 
-        userId = {this.props.currentUserId}
-        ticker={this.props.match.params.symbol} 
-        currentPrice= {this.props.stockinfo.data["0"].price}
-        inWatchList={this.state.watchLists.includes(this.props.match.params.symbol)} 
-        ownedShares={this.state.ownedStocks[this.props.match.params.symbol]}
-        buyingPower={this.props.buyingPower}
-        */}
-        <div>
-          {/* <CompanyNewsContainer company={this.state.currentStockInfo.name}/> */}
+          <div>
+            <StockChart
+              prevClose={this.props.stockinfo.data["0"].close_yesterday}
+              name={this.props.stockinfo.data["0"].name}
+              charts={this.props.charts}
+            />
+            <StockShowDetail
+              details={this.state.currentStockInfo}
+              details2={this.props.stockinfo.data["0"]}
+            />
+          </div>
+          <div className="stocks-transaction-container">
+            <div className="fixed">
+              <StockTransactionContainer
+                userId={this.props.currentUserId}
+                ticker={this.props.match.params.symbol}
+                currentPrice={this.props.stockinfo.data["0"].price}
+                inWatchList={this.state.watchLists.includes(
+                  this.props.match.params.symbol
+                )}
+                ownedShares={
+                  this.state.ownedStocks[this.props.match.params.symbol]
+                }
+                buyingPower={this.props.buyingPower}
+              />
+            </div>
+          </div>
+          <div>
+            {/* <CompanyNewsContainer company={this.state.currentStockInfo.name}/> */}
           </div>
         </main>
       </div>
     ) : (
-      <Loader id={'loading-center'} />
+      <Loader id={"loading-center"} />
     );
   }
 }

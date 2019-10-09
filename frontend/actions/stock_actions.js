@@ -69,14 +69,14 @@ export const fetchStock = symbol => dispatch => {
 
 
 export const makeTransaction = transaction => dispatch => {
-  return APIUtil.makeTransaction(transaction).then(transaction => dispatch(receiveTransaction(transaction)),
+  return StockAPIUtil.makeTransaction(transaction).then(transaction => dispatch(receiveTransaction(transaction)),
     ({ responseJSON }) => dispatch(receiveErrors(responseJSON)));
 };
 
 export const watchStock = (id, symbol) => dispatch => {
-  return APIUtil.watchStock(id, symbol).then(watch => dispatch(receiveWatch(watch)));
+  return StockAPIUtil.watchStock(id, symbol).then(watch => dispatch(receiveWatch(watch)));
 };
 
 export const removeWatch = id => dispatch => {
-  return APIUtil.deleteWatch(id).then(({ id }) => dispatch(deleteWatch(id)));
+  return StockAPIUtil.deleteWatch(id).then(({ id }) => dispatch(deleteWatch(id)));
 };

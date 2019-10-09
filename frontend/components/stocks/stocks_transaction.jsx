@@ -1,5 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { formatMoney } from "../../util/chart_util"
+
 class StocksTransaction extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +12,9 @@ class StocksTransaction extends React.Component {
       watching: this.props.inWatchList,
       formType: "buy"
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleWatch = this.handleWatch.bind(this)
   }
 
   handleChange(field) {
@@ -20,11 +25,11 @@ class StocksTransaction extends React.Component {
 
   handleWatch(e) {
     e.preventDefault();
-    stockParams = {
+    let stockParams = {
       user_id: this.props.userId,
       symbol: this.props.ticker
     };
-    if (this.props.inWatchList) {
+    if (!this.state.watching) {
       this.setState({ watching: !this.state.watching }, () => {
         this.props.watchStock(stockParams);
       });
@@ -55,32 +60,12 @@ class StocksTransaction extends React.Component {
       });
   }
 
+  clearErrors() {
+    this.setState({errors: ""})
+  }
+
   //------- ALL RENDERS
-  renderHeaders() {
-    return this.props.ownedShares ? (
-      <div>
-        <div>Buy {this.props.ticker}</div>
-        <div>Sell {this.props.ticker}</div>
-      </div>
-    ) : (
-      <div>
-        <div className="toggle-button selected">Buy {this.props.ticker}</div>
-      </div>
-    );
-  }
-  renderEstimatedCost() {
-    return this.state.switch === "false" ? (
-      <div>
-        <div>Estimated Cost</div>
-        <div>{this.state.numOfShares * this.props.marketPrice}</div>
-      </div>
-    ) : (
-      <div>
-        <div>Estimated Credit</div>
-        <div>{this.state.numOfShares * this.props.marketPrice}</div>
-      </div>
-    );
-  }
+
 
   renderErrors() {
     return (
@@ -96,7 +81,8 @@ class StocksTransaction extends React.Component {
 
   renderWatchlistButton() {
     // shows if not in owned
-    return this.state.watching ? (
+    // debugger
+    return !this.state.watching ? (
       <button className="watchlist-button" onClick={this.handleWatch}>
         Add to Watchlist
       </button>
@@ -108,15 +94,56 @@ class StocksTransaction extends React.Component {
   }
 
   render() {
-    return <div>
-      <form className="transaction-form">
-        <header className="transaction-header">
-
-        </header>
-
-      </form>
-
-      {this.renderWatchlistButton}
-    </div>;
+    return (
+      <div>
+        <form className="transaction-form">
+          <header className="transaction-header">
+            <button type="button" className={this.state.formType === "Buy" ? "toggle-button selected" : "toggle-button"}
+              onClick={() => {
+                this.setState({ formType: "Buy" });
+                this.clearErrors()
+              }}>
+              Buy {this.props.symbol}
+            </button>
+            {this.props.ownedShares ? <button type="button" className={this.state.formType === "Sell" ? "toggle-button selected" : "toggle-button"}
+              onClick={() => {
+                this.setState({ formType: "Sell" });
+                this.clearErrors()
+              }}>Sell {this.props.symbol}</button> : <></>}
+          </header>
+          <label>Shares
+          <input value={this.state.numOfShares} min="0" onChange={this.handleChange("numOfShares")} type="number" placeholder="0" step="1" />
+          </label>
+          <div className={`form-div ${this.props.user ? "bordered" : ""}`}>
+            <span>Market Price</span>
+            {`${formatMoney(this.props.currentPrice)}`}
+          </div>
+        <div className="estimated-cost">
+          <span>
+            Estimated {`${this.state.formType === "Buy" ? "Cost" : "Credit"}`}
+          </span>
+          {`${
+            this.state.numShares > 0
+              ? formatMoney(this.state.numOfShares * this.props.currentPrice)
+              : 0
+            }`}
+          </div>
+          <div style={!this.props.ownedShares ?
+            {} :
+            { display: "none" }}
+            id="info-div">
+            {this.state.formType === "Buy" ?
+              `${formatMoney(this.props.buyingPower)} Buying Power Available` :
+              `${this.props.ownedShares ? this.props.ownedShares : 0} Shares Available`}
+          </div> 
+          <div id="submit-div">
+            <button id="transaction-submit"  onClick={this.handleSubmit}>{`Submit ${this.state.formType}` }</button>
+          </div>
+        </form>
+        {this.props.ownedShares ? <div/> : this.renderWatchlistButton()}
+      </div>
+    );
   }
 }
+
+export default StocksTransaction

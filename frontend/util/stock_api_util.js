@@ -14,16 +14,16 @@ $.ajax({
 export const watchStock = (id, symbol) =>
   $.ajax({
     method: "POST",
-    url: `api/stock_watches`,
+    url: `api/watchlists`,
     data: {
-      stock_watch: { user_id: id, symbol }
+      watchlist: { user_id: id, symbol }
     }
   });
 
 export const deleteWatch = id =>
   $.ajax({
     method: "DELETE",
-    url: `api/stock_watches/${id}`
+    url: `api/watchlists/${id}`
   });
 
 export const makeTransaction = transaction => (

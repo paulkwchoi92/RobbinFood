@@ -1,7 +1,7 @@
 import merge from "lodash/merge";
 
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
-
+import { RECEIVE_WATCH, DELETE_WATCH } from '../actions/stock_actions'
 const usersReducer = (state = {}, action) => {
   // debugger;
   Object.freeze(state);
