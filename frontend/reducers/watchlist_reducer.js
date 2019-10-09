@@ -8,8 +8,14 @@ const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return merge({}, state, {
-        watchlists: action.currentUser.user.watchlists,
+        watchlists: action.currentUser.user.watchlists
       });
+    case RECEIVE_WATCH:
+      return Object.assign({}, state, { [action.watch.id]: action.watch });
+    case DELETE_WATCH:
+      newState = Object.assign({}, state);
+      delete newState[action.id];
+      return newState;
     default:
       return state;
   }

@@ -24,3 +24,4 @@ class Api::WatchlistsController < ApplicationController
     params.require(:watchlist).permit(:user_id, :symbol)
   end
 end
+

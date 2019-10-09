@@ -8,8 +8,10 @@ const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return merge({}, state, {
-        watchlists: action.currentUser.user.watchlists,
+        watchlists: action.currentUser.user.watchlists
       });
+    case RECEIVE_TRANSACTION:
+      return Object.assign({}, state, { [action.transaction.id]: action.transaction });
     default:
       return state;
   }

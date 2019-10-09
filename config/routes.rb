@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     # resources :stocks, param: :symbol, only: [:show, :index]
     resources :stocks
     resources :transactions, only: [:create]
-    # resources :watchlist, only: [:create, :destroy]
+    resources :watchlist, only: [:create, :destroy]
   end
 end

@@ -30,9 +30,9 @@ export const receiveAllStocks = stocks => ({
   stocks
 });
 
-export const receiveTransaction = payload => ({
+export const receiveTransaction = transaction => ({
   type: RECEIVE_TRANSACTION,
-  payload
+  transaction
 });
 
 export const receiveWatch = watch => ({
@@ -69,7 +69,7 @@ export const fetchStock = symbol => dispatch => {
 
 
 export const makeTransaction = transaction => dispatch => {
-  return APIUtil.makeTransaction(transaction).then(payload => dispatch(receiveTransaction(payload)),
+  return APIUtil.makeTransaction(transaction).then(transaction => dispatch(receiveTransaction(transaction)),
     ({ responseJSON }) => dispatch(receiveErrors(responseJSON)));
 };
 
