@@ -10,9 +10,9 @@ class StocksTransaction extends React.Component {
       numOfShares: 0,
       error: "",
       watching: this.props.inWatchList,
-      formType: "buy"
+      formType: "Buy"
     };
-
+    // debugger
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleWatch = this.handleWatch.bind(this)
   }
@@ -43,16 +43,14 @@ class StocksTransaction extends React.Component {
   }
 
   handleSubmit(e) {
-    if (!this.props.user) {
-      this.props.history.push("/signup");
-    }
+    
     e.preventDefault();
     this.setState({ transacting: true });
     this.props
       .makeTransaction({
         user_id: this.props.userId,
         symbol: this.props.ticker,
-        transaction_type: this.state.form === "Buy" ? "purchase" : "sale",
+        transaction_type: this.state.formType === "Buy" ? "buy" : "sell",
         stock_price: this.props.currentPrice,
         num_shares: this.state.numOfShares
       })
@@ -125,14 +123,12 @@ class StocksTransaction extends React.Component {
             Estimated {`${this.state.formType === "Buy" ? "Cost" : "Credit"}`}
           </span>
           {`${
-            this.state.numShares > 0
+            this.state.numOfShares > 0
               ? formatMoney(this.state.numOfShares * this.props.currentPrice)
               : 0
             }`}
           </div>
-          <div style={!this.props.ownedShares ?
-            {} :
-            { display: "none" }}
+          <div 
             id="info-div">
             {this.state.formType === "Buy" ?
               `${formatMoney(this.props.buyingPower)} Buying Power Available` :

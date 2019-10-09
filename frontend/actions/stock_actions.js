@@ -44,6 +44,11 @@ export const deleteWatch = id => ({
   type: DELETE_WATCH,
   id
 });
+export const receiveErrors = errors => ({
+  type: RECEIVE_TRANSACTION_ERRORS,
+  errors
+});
+
 
 //dispatch actions
 
