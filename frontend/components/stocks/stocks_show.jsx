@@ -76,7 +76,7 @@ class StockShow extends React.Component {
     return this.state.watchLists &&
       this.state.currentStockInfo &&
       this.props.charts ? (
-      <div>
+      <div className="stock-show-top">
         <div className="fixed stocks_show_nav">
           <RootNavBar />
         </div>
