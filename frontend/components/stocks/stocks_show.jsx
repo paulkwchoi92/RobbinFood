@@ -46,7 +46,7 @@ class StockShow extends React.Component {
       // debugger;
       if (ele.symbol === symbol) return true;
     });
-    return false 
+    return false;
   }
 
   render() {
@@ -62,15 +62,15 @@ class StockShow extends React.Component {
       // debugger
       return <Loader id={"loading-center"} />;
     }
-    let watchcheck = false 
-    let watchid 
+    let watchcheck = false;
+    let watchid;
     if (this.state.watchLists) {
       this.state.watchLists.forEach(ele => {
         if (ele.symbol === this.props.match.params.symbol) {
-          watchcheck = true
-          watchid = ele.id
+          watchcheck = true;
+          watchid = ele.id;
         }
-      })
+      });
     }
     // debugger
     return this.state.watchLists &&
@@ -91,6 +91,7 @@ class StockShow extends React.Component {
               details={this.state.currentStockInfo}
               details2={this.props.stockinfo.data["0"]}
             />
+            <CompanyNewsContainer company={this.state.currentStockInfo.name} />
           </div>
           <div className="stocks-transaction-container">
             <div className="fixed">
@@ -106,9 +107,6 @@ class StockShow extends React.Component {
                 buyingPower={this.props.buyingPower}
               />
             </div>
-          </div>
-          <div>
-            {/* <CompanyNewsContainer company={this.state.currentStockInfo.name}/> */}
           </div>
         </main>
       </div>

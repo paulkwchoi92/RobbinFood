@@ -43,8 +43,13 @@ class StocksTransaction extends React.Component {
   }
 
   handleSubmit(e) {
-    
     e.preventDefault();
+      if (this.state.formType === "Buy" && ((this.state.numOfShares * this.props.currentPrice) > this.props.buyingPower)){
+        return this.setState({ error: "Not Enough Funds" }) 
+      } else if (this.state.formType === "Sell" && (this.props.ownedShares < this.state.numOfShares)) {
+        debugger
+        return  this.setState({ error: "Not Enough Shares" }) 
+      }
     this.setState({ transacting: true });
     this.props
       .makeTransaction({
@@ -114,7 +119,7 @@ class StocksTransaction extends React.Component {
           <label>Shares
           <input value={this.state.numOfShares} min="0" onChange={this.handleChange("numOfShares")} type="number" placeholder="0" step="1" />
           </label>
-          <div className={`form-div ${this.props.user ? "bordered" : ""}`}>
+          <div className={`form-div ${this.props.ownedShares ? "bordered" : ""}`}>
             <span>Market Price</span>
             {`${formatMoney(this.props.currentPrice)}`}
           </div>
@@ -128,15 +133,18 @@ class StocksTransaction extends React.Component {
               : 0
             }`}
           </div>
+          <div id="error-container" className={this.state.errors > 0 ? "form-div grow" : "form-div"}>
+            {this.state.error}
+          </div>
+          <div id="submit-div">
+            <button id="transaction-submit"  onClick={this.handleSubmit}>{`Submit ${this.state.formType}` }</button>
+          </div>
           <div 
             id="info-div">
             {this.state.formType === "Buy" ?
               `${formatMoney(this.props.buyingPower)} Buying Power Available` :
               `${this.props.ownedShares ? this.props.ownedShares : 0} Shares Available`}
           </div> 
-          <div id="submit-div">
-            <button id="transaction-submit"  onClick={this.handleSubmit}>{`Submit ${this.state.formType}` }</button>
-          </div>
         </form>
         {this.props.ownedShares ? <div/> : this.renderWatchlistButton()}
       </div>
