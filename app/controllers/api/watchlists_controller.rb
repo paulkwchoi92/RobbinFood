@@ -2,14 +2,14 @@ class Api::WatchlistsController < ApplicationController
   def create
     @watchlist = Watchlist.new(watchlist_params)
     if @watchlist.save 
-      render :show 
+      render json: @watchlist
     else 
       render json: @watchlist.errors.full_messages, status: "invalid watchlist"
     end 
   end 
 
   def destroy
-    @watchlist = Watchlist.find(watchlist_params)
+    @watchlist = Watchlist.find( params[:id])
     if @watchlist 
       @watchlist.delete
       render json: {id: @watchlist.id}
@@ -24,3 +24,4 @@ class Api::WatchlistsController < ApplicationController
     params.require(:watchlist).permit(:user_id, :symbol)
   end
 end
+

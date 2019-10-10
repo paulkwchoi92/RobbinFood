@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/session_api_util';
+import * as UserApiUtil from "../util/user_api_util"
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS"
@@ -40,3 +41,9 @@ export const logout = () => dispatch =>(
     dispatch(logoutCurrentUser())
   ))
 );
+
+export const fetchUser = id => dispatch => {
+  return UserApiUtil.fetchUserDetail(id).then(user => (
+    dispatch(receiveCurrentUser(user))
+  ), err => (dispatch(receiveErrors(err.responseJSON))))
+}

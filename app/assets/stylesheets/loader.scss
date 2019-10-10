@@ -1,0 +1,31 @@
+#loading-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#loading-chart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 20%;
+  margin-right: 20%;
+}
+
+.loaderheight{
+  height: 1.5%;
+  width: 100%;
+};
+
+
+.css-pmp369{
+      display: flex;
+    justify-content: center;
+    position: relative;
+}

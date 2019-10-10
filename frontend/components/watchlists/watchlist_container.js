@@ -1,13 +1,17 @@
-import { connect } from 'react-redux';
-import WatchLists from './watchlist'
-const mapStateToProps = ({entities : { users}}) => {
-  // debugger
-  return {
-    watchlists: users.watchlists
-  }
-}
+import Watchlist from "./watchlist";
+import { connect } from "react-redux";
 
-const mapDispatchToProps = dispatch => {
-  return 
-}
- export default connect(mapStateToProps, null)(WatchLists)
+const msp = state => {
+  // debugger
+  let watchList = state.entities.users.watchlists ? state.entities.users.watchlists : null
+  let ownedStocks = state.entities.ownedstocks ? state.entities.ownedstocks : null
+  return {
+    watchedStocks: watchList,
+    ownedStocks: ownedStocks
+  };
+};
+
+export default connect(
+  msp,
+  null
+)(Watchlist);

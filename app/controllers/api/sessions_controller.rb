@@ -4,9 +4,9 @@ class Api::SessionsController < ApplicationController
       params[:user][:email],
       params[:user][:password])
       if @user
-        # debugger
         login(@user)
         @watchlists = @user.watchlists
+        @ownedStocks =@user.owned_stocks
     render "api/users/show"
     else
       render json: ["Invalid username/password combination"], status: 401

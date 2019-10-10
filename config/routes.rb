@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resource :sessions
     # resources :stocks, param: :symbol, only: [:show, :index]
     resources :stocks
-    # resources :transactions, only: [:create]
-    # resources :watchlist, only: [:create, :destroy]
+    resources :transactions, only: [:create]
+    resources :watchlists, only: [:create, :destroy]
   end
 end

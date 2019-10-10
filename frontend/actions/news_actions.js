@@ -20,18 +20,17 @@ export const receiveNewsErrors = errors => ({
 export const fetchTopNews = () => dispatch => {
   return (
     NewsApiUtil.fetchTopNews().then(news => {
-      // debugger
       dispatch(receiveTopNews(news.articles));
       return news;
     }),
     err => dispatch(receiveNewsErrors(err))
   );
 };
-export const fetchCompanyNews = (name = dispatch => {
+export const fetchCompanyNews = (name) => dispatch => {
   return (
-    NewsApiUtil.fetchCompanyNews(name).then(news =>
+    NewsApiUtil.fetchCompanyNews(name).then(news => {
       dispatch(receiveSpecificNews(news))
-    ),
+    }),
     err => disptach(receiveNewsErrors(err))
   );
-});
+};
