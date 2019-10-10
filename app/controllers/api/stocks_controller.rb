@@ -8,7 +8,6 @@ class Api::StocksController < ApplicationController
     three_month_time = (Date.today - 90).strftime("%Y-%m-%d") 
     year_time = (Date.today - 365).strftime("%Y-%m-%d") 
     five_year_time = (Date.today - 1825).strftime("%Y-%m-%d") 
-    # debugger
     stock_trade_info_url = "https://api.worldtradingdata.com/api/v1/stock?symbol=#{symbol}&api_token=zWGOqwDCoe0BBKe3FN1SM3x1ahCMbEs47EywsN8rpHTEByE7dMrezhsqBv4A"
     daycharturl = "https://intraday.worldtradingdata.com/api/v1/intraday?symbol=#{symbol}&range=1&interval=1&sort=asc&api_token=zWGOqwDCoe0BBKe3FN1SM3x1ahCMbEs47EywsN8rpHTEByE7dMrezhsqBv4A"
     weekcharturl = "https://intraday.worldtradingdata.com/api/v1/intraday?symbol=#{symbol}&range=7&interval=5&sort=asc&api_token=zWGOqwDCoe0BBKe3FN1SM3x1ahCMbEs47EywsN8rpHTEByE7dMrezhsqBv4A"
@@ -47,7 +46,6 @@ class Api::StocksController < ApplicationController
 
   def index
     @stocks = Stock.all 
-    # debugger
 
     # puts(@stocks)
     render "api/stocks/index"

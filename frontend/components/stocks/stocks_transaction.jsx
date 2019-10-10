@@ -47,7 +47,7 @@ class StocksTransaction extends React.Component {
       if (this.state.formType === "Buy" && ((this.state.numOfShares * this.props.currentPrice) > this.props.buyingPower)){
         return this.setState({ error: "Not Enough Funds" }) 
       } else if (this.state.formType === "Sell" && (this.props.ownedShares < this.state.numOfShares)) {
-        debugger
+        // debugger
         return  this.setState({ error: "Not Enough Shares" }) 
       }
     this.setState({ transacting: true });

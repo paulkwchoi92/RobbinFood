@@ -4,7 +4,6 @@ class Api::SessionsController < ApplicationController
       params[:user][:email],
       params[:user][:password])
       if @user
-        # debugger
         login(@user)
         @watchlists = @user.watchlists
         @ownedStocks =@user.owned_stocks

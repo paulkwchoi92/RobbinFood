@@ -5,7 +5,6 @@ import News from "./news"
 import { fetchTopNews } from '../../actions/news_actions'
 
 const mapStateToProps = (state) => {
-  // debugger
   return {
     type: "topnews",
     articles: state.entities.news.news

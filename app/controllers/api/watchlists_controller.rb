@@ -1,8 +1,6 @@
 class Api::WatchlistsController < ApplicationController
   def create
-    # debugger
     @watchlist = Watchlist.new(watchlist_params)
-    # debugger
     if @watchlist.save 
       render json: @watchlist
     else 
@@ -11,9 +9,7 @@ class Api::WatchlistsController < ApplicationController
   end 
 
   def destroy
-    # debugger
     @watchlist = Watchlist.find( params[:id])
-    # debugger
     if @watchlist 
       @watchlist.delete
       render json: {id: @watchlist.id}

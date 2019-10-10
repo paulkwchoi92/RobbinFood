@@ -1,0 +1,105 @@
+$rh_green: #21ce99;
+$rh_highlight: #1ae9aa;
+$rh_lightergrey: #fafafa;
+$rh_lgrey: #f4f4f5;
+$rh_grey: #cbcbcd;
+$rh_darkgrey: #7d8c8e;
+$med_font: 16px;
+$rh_fonts: "DIN", sans-serif;
+#watch-button{
+  margin: 24px 24px 0;
+  padding: 0 40px;
+  width: 227px;
+  height: 48px;
+  border: 1px solid $rh_green;
+  border-radius: 4px;
+  color: $rh_green;
+}
+
+#watch-button:hover{
+  color: $rh_highlight;
+  border-color: $rh_highlight;
+}
+
+#watchlist{
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.01), 0 3px 24px rgba(48, 51, 51, 0.09);
+  padding: 0 6px;
+  overflow-y: scroll;
+  height: auto;
+  max-height: 800px;
+  transition: max-height 4s ease;
+  h3{
+    font-weight: 400;
+    line-height: 22px;
+  }
+  .watchlist-header h3{
+    font-weight: 550;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.watchlist-item{
+   font-family: "Lato", sans-serif;
+  text-decoration: none;
+  color: black;
+  width: 227px;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 0 24px;
+  cursor: pointer;
+  svg{
+    cursor:pointer;
+  }
+}
+
+
+
+.watchlist-item:last-child{
+  border-bottom: 1px solid $rh_lgrey;
+}
+
+.watchlist-item:hover{
+  background-color: $rh_lightergrey;
+}
+
+.watchlist-header{
+  height: 52px;
+  width: 227px;
+  border-bottom: 1px solid $rh_lgrey;
+  padding: 4px 24px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+#side-column{
+  padding-top: 40px;
+  width: 287px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#main-page{
+   font-family: "Lato", sans-serif;
+  width: 1024px;
+  padding-top: 64px;
+  margin: 0 auto;
+  display: flex;
+}

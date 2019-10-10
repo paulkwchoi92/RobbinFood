@@ -1,6 +1,5 @@
 class Api::TransactionsController < ApplicationController 
   def create
-    # debugger
     @transaction = Transaction.new(transaction_params)
     @user = User.find(@transaction.user_id);
     dollar_amount = @transaction.stock_price * @transaction.num_shares
@@ -9,7 +8,6 @@ class Api::TransactionsController < ApplicationController
         render json: ["Not enough buying power"], status: :unprocessable_entity
         return
       else
-        # debugger
         @transaction.save
         @user.buying_power -= dollar_amount
       end

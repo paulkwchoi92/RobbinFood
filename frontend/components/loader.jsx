@@ -9,7 +9,6 @@ const override = css`
 `;
 
 export default ({ id }) => {
-  // debugger
   return (
     <div id={id}>
       <div className={"loaderheight"}>

@@ -43,7 +43,6 @@ export const logout = () => dispatch =>(
 );
 
 export const fetchUser = id => dispatch => {
-  // debugger 
   return UserApiUtil.fetchUserDetail(id).then(user => (
     dispatch(receiveCurrentUser(user))
   ), err => (dispatch(receiveErrors(err.responseJSON))))

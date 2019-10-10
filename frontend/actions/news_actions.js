@@ -20,7 +20,6 @@ export const receiveNewsErrors = errors => ({
 export const fetchTopNews = () => dispatch => {
   return (
     NewsApiUtil.fetchTopNews().then(news => {
-      // debugger
       dispatch(receiveTopNews(news.articles));
       return news;
     }),
@@ -30,7 +29,6 @@ export const fetchTopNews = () => dispatch => {
 export const fetchCompanyNews = (name) => dispatch => {
   return (
     NewsApiUtil.fetchCompanyNews(name).then(news => {
-      // debugger
       dispatch(receiveSpecificNews(news))
     }),
     err => disptach(receiveNewsErrors(err))
