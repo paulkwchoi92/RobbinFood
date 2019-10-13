@@ -19,8 +19,9 @@ class Api::UsersController < ApplicationController
     if @user
       login(@user)
       @watchlists = @user.watchlists
-      @ownedStocks =@user.owned_stocks
+      @ownedStocks = @user.owned_stocks
       @transactions = @user.transactions
+
     render "api/users/show"
     else
       render json: ["Invalid username/password combination"], status: 401
@@ -32,6 +33,7 @@ class Api::UsersController < ApplicationController
     render json: @users
   end
 
+ 
 
   private
 
