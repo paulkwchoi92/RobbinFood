@@ -25,6 +25,7 @@ class News extends React.Component {
   }
 
   render() {
+    // debugger
     let news;
     let now;
     if (this.state.articles) {
@@ -37,7 +38,7 @@ class News extends React.Component {
         <header>
           <h2>News</h2>
           <button
-            onClick={() => this.setState({ showMore: !this.state.showmore })}
+            onClick={() => this.setState({ showMore: !this.state.showMore })}
           >
             {this.state.showMore ? "Show Less" : "Show More"}
           </button>
