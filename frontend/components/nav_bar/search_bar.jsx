@@ -31,7 +31,6 @@ class SearchBar extends Component {
   }
 
   handleChange(e) {
-    // debugger
     this.setState({
       search: e.target.value,
       results: this.props.search(e.target.value)

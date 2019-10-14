@@ -2,9 +2,12 @@ import Watchlist from "./watchlist";
 import { connect } from "react-redux";
 
 const msp = state => {
-  // debugger
-  let watchList = state.entities.users.watchlists ? state.entities.users.watchlists : null
-  let ownedStocks = state.entities.ownedstocks ? state.entities.ownedstocks : null
+  let watchList = state.entities.users.watchlists
+    ? state.entities.users.watchlists
+    : null;
+  let ownedStocks = state.entities.ownedstocks
+    ? state.entities.ownedstocks
+    : null;
   return {
     watchedStocks: watchList,
     ownedStocks: ownedStocks

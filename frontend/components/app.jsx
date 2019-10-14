@@ -11,11 +11,11 @@ import Careers from "./extra_features/careers";
 import Help from "./extra_features/help";
 import Investing from "./extra_features/investing";
 import Snacks from "./extra_features/snacks";
-import SessionFormV2Container from "./session_form/session_formv2_container.jsx";
-import Body from "./body/body";
+import Body from "./body/body_container";
 import DemoLogInContainer from "./session_form/demo_login_container";
 import RootNavBar from "./nav_bar/nav_bar_root_container";
 import StocksShowContainer from './stocks/stocks_show_container'
+
 const App = () => (
   <div>
     <Switch>

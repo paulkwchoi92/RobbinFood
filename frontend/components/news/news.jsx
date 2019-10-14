@@ -25,7 +25,6 @@ class News extends React.Component {
   }
 
   render() {
-    // debugger
     let news;
     let now;
     if (this.state.articles) {
