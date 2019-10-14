@@ -17,28 +17,25 @@ class SearchBar extends Component {
   }
 
   componentWillMount() {
-    document.addEventListener('mousedown', this.handleClick, false);
+    document.addEventListener("mousedown", this.handleClick, false);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClick, false);
+    document.removeEventListener("mousedown", this.handleClick, false);
   }
-  
-  // handleChange(field) {
-  //   // debugger;
-  //   return e => {
-  //     const results = this.props.search(e.target.value);
-  //     this.setState({
-  //       [field]: e.target.value,
-  //       results: results,
-  //       display: true
-  //     });
-  //   };
-  // }
-  
+
+  handleKeyPress(e) {
+    if (e.key == "Enter") {
+      this.props.history.push(`/stocks/${this.state.results[0].symbol}`);
+    }
+  }
+
   handleChange(e) {
     // debugger
-    this.setState({ search: e.target.value, results: this.props.search(e.target.value) });
+    this.setState({
+      search: e.target.value,
+      results: this.props.search(e.target.value)
+    });
   }
   handleClick(e) {
     if (this.wrapper.contains(e.target)) {
@@ -65,11 +62,9 @@ class SearchBar extends Component {
         {this.state.results.length === 0 ? (
           <span>We were unable to find any results for your search.</span>
         ) : (
-            ""
-          )}
-        <h3 className={this.state.results.length > 0 ? "" : "hide"}>
-          Stocks
-            </h3>
+          ""
+        )}
+        <h3 className={this.state.results.length > 0 ? "" : "hide"}>Stocks</h3>
         <div className="flex">
           <ul>
             {this.state.results.map(result => (

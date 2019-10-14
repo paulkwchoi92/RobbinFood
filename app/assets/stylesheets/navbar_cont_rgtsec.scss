@@ -6,6 +6,7 @@
   flex-grow: 0;
   flex-shrink: 0;
   font-family: "Lato", sans-serif;
+  padding-right: 10px;
 }
 
 .login-button {
@@ -22,7 +23,7 @@
 }
 
 .login-button:hover {
- color: rgb(32, 194, 132);
+  color: rgb(32, 194, 132);
 }
 
 .li-txt {
@@ -60,7 +61,7 @@
   color: #fff;
 }
 
-.signup-button:hover{
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.16);
+.signup-button:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
   text-decoration: underline;
 }
