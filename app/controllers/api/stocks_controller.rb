@@ -37,6 +37,8 @@ class Api::StocksController < ApplicationController
           oneyear: @year, 
           fiveyears: @fiveyear}, 
         stockinfo: @stockinfo}
+
+        
     # if @stock 
     #   render json: {stock: @stock, singleDay: @singleDay}
     else

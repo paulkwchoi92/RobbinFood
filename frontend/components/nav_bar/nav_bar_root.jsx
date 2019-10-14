@@ -2,7 +2,7 @@ import React from 'react'
 import PreLogNav from './nav_bar_prelog';
 import PostLogNav from './nav_bar_postlog'
 
-const RootNavBar = ({ currentUser, logout }) => {
+const RootNavBar = ({ currentUser, logout, checker }) => {
   const newNav = () => (
     <PreLogNav />
   );
@@ -10,7 +10,7 @@ const RootNavBar = ({ currentUser, logout }) => {
     <PostLogNav currentUser={currentUser} logout={logout}/>
   );
 
-  return !currentUser ? newNav() : loggedInNav();
+  return !checker ? newNav() : loggedInNav();
 };
 
 export default RootNavBar

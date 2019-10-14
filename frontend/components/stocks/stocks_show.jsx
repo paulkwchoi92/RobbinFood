@@ -18,7 +18,6 @@ class StockShow extends React.Component {
   }
 
   componentWillMount() {
-    // debugger
     this.props.fetchStock(this.props.match.params.symbol);
     this.props.fetchUser(this.props.currentUserId);
   }
@@ -41,16 +40,13 @@ class StockShow extends React.Component {
   }
 
   insideWatchLists(symbol) {
-    // debugger
     this.state.watchLists.forEach(ele => {
-      // debugger;
       if (ele.symbol === symbol) return true;
     });
     return false;
   }
 
   render() {
-    // debugger
     if (
       !this.props.charts ||
       !this.props.stockinfo ||
@@ -59,7 +55,6 @@ class StockShow extends React.Component {
       return <Loader id={"loading-center"} />;
     }
     if (this.state.currentStockInfo.symbol !== this.props.match.params.symbol) {
-      // debugger
       return <Loader id={"loading-center"} />;
     }
     let watchcheck = false;
@@ -72,7 +67,7 @@ class StockShow extends React.Component {
         }
       });
     }
-    // debugger
+
     return this.state.watchLists &&
       this.state.currentStockInfo &&
       this.props.charts ? (

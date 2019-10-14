@@ -3,13 +3,11 @@ import React from "react";
 import { faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import {  Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 import GreetingContainer from "../greetings/greetings_container";
 
 import RootFeatBox from "../extra_features/root_feat_box";
-
 
 class PreLogNav extends React.Component {
   render() {
@@ -26,38 +24,15 @@ class PreLogNav extends React.Component {
               </Link>
               <div className="lft-cont">
                 <div className="lft-cont-lft">
-                  <Link to="/investing" className="inv-btn">
-                    <span className="btn-n">Investing</span>
-                  </Link>
-
-                  <Link to="/cashmng" className="csh-mng-btn">
-                    <span className="btn-n">Cash Management</span>
-                    <div>
-                      <span className="cmgs">COMING SOON</span>
-                    </div>
-                  </Link>
-
                   <div className="mores">
-                    <div role="button" className="m-d m-dbord">
-                      <div>MORE</div>
-                      <svg className="m-arr" width="8" height="6" fill="none">
-                        <path
-                          d="M1 1L4 4L7 1"
-                          stroke="inherit"
-                          strokeWidth="2"
-                        />
-                      </svg>
-                    </div>
-                    <RootFeatBox />
+                    <div role="button" className="m-d m-dbord"></div>
                   </div>
                 </div>
-                  <GreetingContainer />
+                <GreetingContainer />
               </div>
             </div>
           </div>
         </nav>
-
-       
       </div>
     );
   }

@@ -52,7 +52,33 @@ class User < ApplicationRecord
     JSON.parse(response)
   end
   
+#  export const createProfileCharts = (transactions, charts) => {
+#   //we reverse to line the charts up. Not all charts have 5 years of data, but all have data starting from now going back
+#   Object.keys(charts).forEach(symbol => charts[symbol].reverse());
+#   const baseChart = createBlankChart(charts["AAPL"]); //We ensure that we always have the apple chart and we know it goes back the full five years
+#   baseChart.forEach((day, i) => {
+#     const numSharesOnDay = countStocks(transactions, day.date); //how many and which stocks did the user have on this day?
+#     Object.keys(numSharesOnDay).forEach(symbol => {
+#       const dayPrice = charts[symbol][i];
+#       const numShares = numSharesOnDay[symbol];
+#       day.open += dayPrice.open * numShares;
+#       day.close += dayPrice.close * numShares;
+#     });
+#   });
+#   return createDateRangeCharts(baseChart.reverse());
+# };
 
+#   def create_profile_charts(transactions, charts)
+    
+#   end
+
+  def create_blank_chart(chart, date)
+    char.each do |ele| 
+      ele.close = 0
+      ele.open = 0
+      ele.date = new Date(today)
+    end
+  end
   private
 
   def ensure_session_token

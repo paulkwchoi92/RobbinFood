@@ -5,7 +5,6 @@ import {
 } from "../actions/stock_actions";
 
 export default (state = {}, action) => {
-  // debugger
   switch (action.type) {
     case RECEIVE_ONE_STOCK:
       return Object.assign({}, state, {

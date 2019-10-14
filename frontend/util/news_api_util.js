@@ -1,5 +1,4 @@
 const keys = require("../../config/keys/keys")
-// console.log(keys)
 export const fetchTopNews = () => {
   {
     return $.ajax({

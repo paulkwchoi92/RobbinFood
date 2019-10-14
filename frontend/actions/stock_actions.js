@@ -17,7 +17,7 @@ import { formatChart, createProfile1dChart, createProfileCharts, createDateRange
 // action creators
 export const receiveOneStock = stock => ({
   type: RECEIVE_ONE_STOCK,
-  stock
+  stock: stock 
 });
 
 export const receiveManyStocks = stocks => ({
