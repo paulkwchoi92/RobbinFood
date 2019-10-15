@@ -10,7 +10,7 @@ class StockChart extends React.Component {
     this.state = { currentChart: "1d" };
   }
   render() {
-    debugger
+    // debugger
 
     const current = this.state.currentChart;
     let data = this.props.charts[current];

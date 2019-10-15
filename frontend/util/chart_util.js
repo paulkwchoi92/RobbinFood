@@ -15,11 +15,14 @@ export const formatMoney = float => {
 
 
 export const createProfileCharts = (transactions, charts) => {
+  // debugger
   //we reverse to line the charts up. Not all charts have 5 years of data, but all have data starting from now going back
   Object.keys(charts).forEach(symbol => charts[symbol].reverse());
   const baseChart = createBlankChart(charts["AAPL"]); //We ensure that we always have the apple chart and we know it goes back the full five years
   baseChart.forEach((day, i) => {
+    
     const numSharesOnDay = countStocks(transactions, day.date); //how many and which stocks did the user have on this day?
+    // debugger
     Object.keys(numSharesOnDay).forEach(symbol => {
       const dayPrice = charts[symbol][i];
       const numShares = numSharesOnDay[symbol];
@@ -27,6 +30,7 @@ export const createProfileCharts = (transactions, charts) => {
       day.close += dayPrice.close * numShares;
     });
   });
+  // debugger
   return createDateRangeCharts(baseChart.reverse());
 };
 
