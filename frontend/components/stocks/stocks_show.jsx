@@ -67,7 +67,7 @@ class StockShow extends React.Component {
         }
       });
     }
-
+        // debugger
     return this.state.watchLists &&
       this.state.currentStockInfo &&
       this.props.charts ? (
