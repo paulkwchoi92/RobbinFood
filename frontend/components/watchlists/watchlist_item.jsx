@@ -8,6 +8,7 @@ export default props => {
   if (!stock.symbol || !stock.prev || !stock.chart || !stock.price) {
     return null;
   }
+  // debugger
   return (
     <Link className="watchlist-item" to={`/stocks/${stock.symbol}`}>
       <div className="flex-column">

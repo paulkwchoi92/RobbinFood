@@ -51,6 +51,24 @@ class User < ApplicationRecord
     response = RestClient.get(request)
     JSON.parse(response)
   end
+
+  def get_watchlist_display 
+    owned_stocks_arr = self.owned_stocks.keys 
+    watchlists_arr = []
+    watchlists_hash = {}
+    filtered_watchlists =self.watchlists.each do |watch|
+      watchlists_arr.push(watch.symbol) if !owned_stocks_arr.include?(watch.symbol)
+    end
+    owned_stocks_display = owned_stocks_arr.map do |ele| 
+        daycharturl = "https://intraday.worldtradingdata.com/api/v1/intraday?symbol=#{ele}&range=1&interval=1&sort=asc&api_token=zWGOqwDCoe0BBKe3FN1SM3x1ahCMbEs47EywsN8rpHTEByE7dMrezhsqBv4A"
+        singleDay = JSON.parse(RestClient.get(daycharturl))
+        ele = singleDay
+    end
+    watchlists_hash["owned"] = owned_stocks_display
+    watchlists_hash["watch"] = watchlists_arr
+
+    watchlists_hash
+  end
   
 #  export const createProfileCharts = (transactions, charts) => {
 #   //we reverse to line the charts up. Not all charts have 5 years of data, but all have data starting from now going back
