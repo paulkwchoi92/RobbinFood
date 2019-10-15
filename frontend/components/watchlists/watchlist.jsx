@@ -2,6 +2,7 @@ import React from 'react';
 import WatchlistItem from './watchlist_item';
 
 export default props => {
+  // debugger
   
   return (
     <div id="watchlist">
