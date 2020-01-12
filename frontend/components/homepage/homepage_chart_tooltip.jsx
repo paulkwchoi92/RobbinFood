@@ -1,5 +1,5 @@
-import React from 'react';
-import { formatMoney } from "../../util/chart_util"
+import React from "react";
+import { formatMoney } from "../../util/chart_util";
 
 export default ({ active, payload, value, prev, coordinate }) => {
   let stockValue;
@@ -10,7 +10,7 @@ export default ({ active, payload, value, prev, coordinate }) => {
   } else {
     stockValue = value;
   }
-  const diff = (stockValue - prev);
+  const diff = stockValue - prev;
   const showDiff = diff.toFixed(2);
   let percent = prev === 0 ? 0 : (diff / prev) * 100;
   const showPercent = percent.toFixed(2);
@@ -20,13 +20,12 @@ export default ({ active, payload, value, prev, coordinate }) => {
       <div id="chart-percents">
         {`${diff > 0 ? "+" : ""}${showDiff} (${showPercent}%)`}
       </div>
-      <div
-        id="chart-time"
-        style={{ left: coordinate.x - 32 }}>
+      <div id="chart-time" style={{ left: coordinate.x - 32 }}>
         <span>
           {`${payload && payload[0] ? payload[0].payload.label : ""}`}
         </span>
       </div>
     </div>
-  )
-}
+  );
+};
+sdfsdfsdf;
