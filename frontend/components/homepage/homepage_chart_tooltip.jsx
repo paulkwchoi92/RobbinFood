@@ -28,4 +28,4 @@ export default ({ active, payload, value, prev, coordinate }) => {
     </div>
   );
 };
-sdfsdfsdf;
+
